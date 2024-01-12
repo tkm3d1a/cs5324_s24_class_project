@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2024-01-07" view-index="0" gantt-divider-location="336" resource-divider-location="300" version="3.2.3247" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-12-17" view-index="0" gantt-divider-location="336" resource-divider-location="503" version="3.2.3247" locale="en_US">
     <description/>
     <view zooming-state="default:6" id="gantt-chart">
         <field id="tpd3" name="Name" width="185" order="0"/>
@@ -11,8 +11,8 @@
         </option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="210" order="0"/>
-        <field id="1" name="Default role" width="86" order="1"/>
+        <field id="0" name="Name" width="311" order="0"/>
+        <field id="1" name="Default role" width="188" order="1"/>
     </view>
     <!-- -->
     <calendars>
