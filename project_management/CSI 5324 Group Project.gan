@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2024-01-07" view-index="0" gantt-divider-location="336" resource-divider-location="300" version="3.2.3247" locale="en_US">
+    <description/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Name" width="185" order="0"/>
+        <field id="tpd4" name="Begin date" width="75" order="1"/>
+        <field id="tpd5" name="End date" width="75" order="2"/>
+        <option id="taskLabelDown" value="name"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="color.recent">
+            <![CDATA[#000000]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Iteration 1 - Analysis" color="#000000" meeting="false" start="2024-01-07" duration="37" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <task id="4" name="Project Vision" color="#8cb6ce" meeting="false" start="2024-01-07" duration="8" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+                <task id="25" name="Dev PV" color="#8cb6ce" meeting="false" start="2024-01-07" duration="3" complete="0" thirdDate="2024-01-07" thirdDate-constraint="0" expand="true">
+                    <depend id="26" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="26" name="Document PV" color="#8cb6ce" meeting="false" start="2024-01-10" duration="5" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="5" name="Team Assembly" color="#8cb6ce" meeting="false" start="2024-01-15" duration="2" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="6" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="6" name="Infrastructure Init" color="#8cb6ce" meeting="false" start="2024-01-17" duration="2" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="7" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="7" name="Req. Analysis" color="#8cb6ce" meeting="false" start="2024-01-19" duration="3" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="8" name="Use cases" color="#8cb6ce" meeting="false" start="2024-01-22" duration="2" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" name="Tracebility Matrix" color="#8cb6ce" meeting="false" start="2024-01-24" duration="3" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="10" name="System Sequence Diagrams" color="#8cb6ce" meeting="false" start="2024-01-27" duration="4" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="11" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="11" name="System Operations" color="#8cb6ce" meeting="false" start="2024-01-31" duration="3" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" name="Wireframes" color="#8cb6ce" meeting="false" start="2024-02-03" duration="2" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="13" name="Domain Model" color="#8cb6ce" meeting="false" start="2024-02-05" duration="3" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" name="Activity Diagrams" color="#8cb6ce" meeting="false" start="2024-02-08" duration="3" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="15" name="Presentation and Reporting" color="#8cb6ce" meeting="false" start="2024-02-11" duration="2" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+                <depend id="16" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="1" name="Iteration 2 - Design" color="#000000" meeting="false" start="2024-02-13" duration="48" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <task id="16" name="Design Model" color="#8cb6ce" meeting="false" start="2024-02-13" duration="3" complete="0" thirdDate="2024-02-13" thirdDate-constraint="1" expand="true">
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="18" name="Sequence Diagrams" color="#8cb6ce" meeting="false" start="2024-02-16" duration="3" complete="0" thirdDate="2024-04-02" thirdDate-constraint="0" expand="true">
+                <depend id="19" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="19" name="Package Diagrams" color="#8cb6ce" meeting="false" start="2024-02-19" duration="3" complete="0" thirdDate="2024-02-12" thirdDate-constraint="0" expand="true">
+                <depend id="20" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="20" name="GRASP Patterns" color="#8cb6ce" meeting="false" start="2024-02-22" duration="3" complete="0" thirdDate="2024-02-12" thirdDate-constraint="0" expand="true">
+                <depend id="21" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="21" name="Test Coverage" color="#8cb6ce" meeting="false" start="2024-02-25" duration="3" complete="0" thirdDate="2024-02-12" thirdDate-constraint="0" expand="true">
+                <depend id="22" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="22" name="Prototyping and Testing" color="#8cb6ce" meeting="false" start="2024-02-28" duration="3" complete="0" thirdDate="2024-02-12" thirdDate-constraint="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="23" name="Components and Deployment" color="#8cb6ce" meeting="false" start="2024-03-02" duration="3" complete="0" thirdDate="2024-02-12" thirdDate-constraint="0" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="24" name="Presentation and reporting" color="#8cb6ce" meeting="false" start="2024-03-05" duration="27" complete="0" thirdDate="2024-02-12" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="2" name="Iteration 3 - Implementation" color="#000000" meeting="false" start="2024-04-02" duration="11" complete="0" thirdDate="2024-01-11" thirdDate-constraint="0" expand="true">
+            <task id="17" name="Backend" color="#8cb6ce" meeting="false" start="2024-04-02" duration="11" complete="0" thirdDate="2024-04-02" thirdDate-constraint="1" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="1" name="Developer" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="2" name="Tester" function="SoftwareDevelopment:4" contacts="" phone=""/>
+        <resource id="3" name="Team Lead" function="Default:1" contacts="" phone=""/>
+        <resource id="4" name="Analyst" function="SoftwareDevelopment:8" contacts="" phone=""/>
+    </resources>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
