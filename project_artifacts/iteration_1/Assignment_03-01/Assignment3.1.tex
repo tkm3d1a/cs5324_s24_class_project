@@ -36,7 +36,13 @@
 \listoffigures
 \newpage
 
-According to C. Larman, The three strategies to identify candidate concepts are reuse or modify existing models, use a category list and identify noun phrases. The concepts on the domain model for CS Department Automated Information Timeline project have been derived by identifying the noun phrases from the requirements and use cases.
+According to C. Larman, The three strategies to identify candidate concepts are:
+\begin{itemize}
+    \item Noun-Phrase Identification from use cases and requirements
+    \item Conceptual Class Category Lists
+    \item Class Responsibility Collaborators
+\end{itemize}
+The concepts on the domain model for CS Department Automated Information Timeline project have been derived by identifying the noun phrases from use cases and the requirements.
 
 \section{Concepts, Attributes, and Associations (Draft)}
 Below are the candidate concepts and their attributes identified using the noun phrases from the requirements.\\
@@ -79,5 +85,13 @@ These candidate concepts are further discussed among the team members and are fu
      \includegraphics[scale=0.45]{images/DomainModel.jpg}
         \captionof{figure}{Final version of the Domain Model}
         \label{fig:Final version of the Domain Model}
-        
+
+    The domain model draft had the concept of Displayed Media and Displayed post which were managed by the office manager but the team decided in favor office manager staging the posts and media directly since it was the core responsibility of the office manager as outlined in the project requirements. The requirement that the TV display only displays 10 most recent posts/media is represented by the 0...10 multiplicity in the "stages" association between the office manager and post and media. The system will impose a limit of 10 on the number of posts and media that can be staged for display by a office manager. In the event of multiple Office Managers, t 10 tagged/staged media or posts will be randomly selected for display to maintain a limit of 10 items in a specific category being displayed at any given time.\\
+    \\
+    The concept of Media Library was included as an aggregation of media so that users can browse the approved media(photos and videos). Based on the multiplicities between Post, Media, Calendar, and DisplayMonitor it can be observed that the Display monitor display 0 to 10 posts, 0 to 10 media and 0 to 1 calendar. If there are less than 10 items of a approved post or a media, all approved posts and media will be displayed.\\
+    \\
+    DisplayedPost and DisplayedMedia are "Software Constructs" and they are not conceptually different than posts; the final domain model addresses this redundancy by eliminating these and modeling with appropriate associations. Additionally, their removal assisted in the discovery that these classes may not be necessary as the intent of the classes, which is to provide a storage location for displayed items, could be captured through attributes located on the parent class itself.\\
+    \\
+    Upon creation of any category of item submitted to the application, the new item will be initially set to a state which does not allow for display/inclusion in the application. This state can only be updated through a review by a system administrator. 
+    
 \end{document}
