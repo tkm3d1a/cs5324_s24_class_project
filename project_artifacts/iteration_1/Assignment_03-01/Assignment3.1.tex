@@ -1,0 +1,49 @@
+% The first argument is the \documentclass, which tells latex which template
+% we're using to build this document. It's usually safe to just use "article".
+\documentclass{article}
+
+% include some packages...
+\usepackage{fullpage} % change settings for a smaller margin
+\usepackage{graphicx} % gives access to the \includegraphics commands
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{enumitem}
+\graphicspath{{./images/}}
+
+% tell Latex to use no paragraph indentation, but leave some space between
+% paragraphs 
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\newcommand{\tib}[1]{\textit{\textbf{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+% these commands merely set the values for the title/date/author; they don't put
+% them in the document... see \maketitle below
+\title{CS Department Automated Information Timeline. \\ Assignment 3.1: Domain Model}
+\date{\today}
+\author{Matthew Hays, Pawan Bhandari, Sarah Faron, Tim Klimpel}
+
+% all document content goes between \begin{document} and \end{document}
+\begin{document}
+
+% this command actually creates the title/date/author in the document
+\maketitle
+\newpage
+\tableofcontents
+\listoffigures
+\newpage
+
+\section{Identifying Candidate Concepts}
+According to C. Larman, The three strategies to identify candidate concepts are as follows:
+\begin{enumerate}
+    \item \textbf{Reuse or modify existing models}
+    \item \textbf{Use a category list}
+    \item \textbf{Identify noun phrases}
+\end{enumerate}
+\section{Concepts, Attributes, and Associations}
+\section{Domain Model}
+\subsection{Domain Model (Draft)}
+\subsection{Discussion of domain model draft}
+\subsection{Domain Model (Final)}
+\end{document}
