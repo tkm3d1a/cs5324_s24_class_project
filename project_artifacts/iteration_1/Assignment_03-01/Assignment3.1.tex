@@ -8,6 +8,8 @@
 \usepackage{amsfonts}
 \usepackage{float}
 \usepackage{enumitem}
+\usepackage{bookmark}
+\usepackage{caption}
 \graphicspath{{./images/}}
 
 % tell Latex to use no paragraph indentation, but leave some space between
@@ -34,16 +36,50 @@
 \listoffigures
 \newpage
 
-\section{Identifying Candidate Concepts}
-According to C. Larman, The three strategies to identify candidate concepts are as follows:
-\begin{enumerate}
-    \item \textbf{Reuse or modify existing models}
-    \item \textbf{Use a category list}
-    \item \textbf{Identify noun phrases}
-\end{enumerate}
-\section{Concepts, Attributes, and Associations}
+According to C. Larman, The three strategies to identify candidate concepts are reuse or modify existing models, use a category list and identify noun phrases. The concepts on the domain model for CS Department Automated Information Timeline project have been derived by identifying the noun phrases from the requirements and use cases.
+
+\section{Concepts, Attributes, and Associations (Draft)}
+Below are the candidate concepts and their attributes identified using the noun phrases from the requirements.\\
+
+\begin{minipage}{0.3\textwidth}
+    \begin{enumerate}
+        \item \textbf{Post}: title, content
+        \item \textbf{DisplayedPost}
+        \item \textbf{Page}: title, content
+        \item \textbf{Event}: dateOfEvent
+        \item \textbf{EventCalender}
+        \item \textbf{Media}: title, mediatype
+        \item \textbf{MediaLibrary}
+        \item \textbf{Notification}
+        \item \textbf{Faculty}: name
+        \item \textbf{OfficeManager}: name
+        \item \textbf{Administrator}
+        \item \textbf{DisplayedMedia}
+        \item \textbf{DisplayMonitor}
+    \end{enumerate}
+\end{minipage}%
+\begin{minipage}{0.7\textwidth}
+    \includegraphics[scale=0.52]{images/draft-Concepts.png}
+    \captionof{figure}{Candidate concepts and associations (Draft)}
+\end{minipage}
+
+These candidate concepts are further discussed among the team members and are further refined to create a final version of the domain model.
+
 \section{Domain Model}
-\subsection{Domain Model (Draft)}
-\subsection{Discussion of domain model draft}
-\subsection{Domain Model (Final)}
+    \subsection{Domain Model (Draft)}
+        \includegraphics[scale=0.44]{images/draft-DomainModel.png}
+        \captionof{figure}{Domain Model Draft}
+        \label{fig:enter-label}
+
+        
+    \subsection{Discussion of domain model draft}
+    TODO: What to include??\\
+    Copy your draft and reason about your use cases, data you might need to collect, and any unnecessary redundancy or cycles
+
+    
+    \subsection{Domain Model (Final)}
+     \includegraphics[scale=0.45]{images/DomainModel.jpg}
+        \captionof{figure}{Final version of the Domain Model}
+        \label{fig:enter-label}
+        
 \end{document}
