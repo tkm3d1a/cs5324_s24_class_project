@@ -37,7 +37,11 @@
 \listoffigures
 \newpage
 
-\section{Background from readings}
+\section{Introduction}
+\subsection{Purpose}
+The purpose of this assignment is to work as a team and collaboratively develop a final Domain model for the group project.  The team met multiple times over the course of a few days to work together and come to the final model presented in the third section of this document (Located here: \nameref{fig:FinalDomain}).
+
+\subsection{Background from Readings}\label{sec:readings}
 According to C. Larman, The three strategies to identify candidate concepts are:
 \begin{itemize}
     \item Noun-Phrase Identification from use cases and requirements
@@ -123,9 +127,8 @@ Below are the summarized use cases.  This listing has been updated from the prev
     \item UC21 - Receive notification for approval request \textit{(New Use Case)}
     \item UC22 - Receive notification for approval completion \textit{(New Use Case)}
     \item UC23 - Upload new Media \textit{(New Use Case)}
+    \item UC24 - Send Notifications for approval request/completions \textit{(New Use Case)}
 \end{itemize}
-
-
 % \subsection{Notes on Domain Model drafts}
 % The domain model draft had the concept of "Displayed Media" and "Displayed post" which were managed by the office manager but the team decided in favor of office manager staging the posts and media directly since it was the core responsibility of the office manager as outlined in the project requirements. This also seemed to align with the idea that the Domain model is meant to represent real world objects, and the agreeded upon thought was that the Post and Media items themselves would be responsible for knowing if they were staged or not.
 
@@ -162,11 +165,9 @@ This section contains items discussed as a group during the review and finalizat
     \caption{Final Domain Model}
     \label{fig:FinalDomain}
 \end{figure}
-
 \section{Updated Use Case Diagram}
-
 \begin{figure}[H]
-    \includegraphics[width=.9\textwidth]{updatedUseCaseDiagram.png}
+    \includegraphics[width=.88\textwidth]{updatedUseCaseDiagram.png}
     \centering
     \caption{Updated Use Case Diagram}
     \label{fig:updatedUseCaseDiagram}
