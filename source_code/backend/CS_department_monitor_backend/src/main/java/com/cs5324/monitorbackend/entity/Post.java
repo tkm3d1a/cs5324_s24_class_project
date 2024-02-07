@@ -46,4 +46,9 @@ public class Post {
     @NotNull
     @Column(nullable = false)
     private Boolean isStagedForDisplay = false;
+
+    // 0 to 1 relationship with media
+    // inverse relationship is 0 to 1
+    @OneToOne
+    private Media media;
 }
