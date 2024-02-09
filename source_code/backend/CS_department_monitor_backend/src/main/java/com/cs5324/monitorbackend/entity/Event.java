@@ -38,4 +38,9 @@ public class Event {
     @NotNull
     @Column(nullable = false)
     private ApprovalStatus approvalStatus = ApprovalStatus.ADMINISTRATIVE;
+
+    // An event has zero to one Notifications
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "notification_id", referencedColumnName = "id")
+    private Notification notification;
 }

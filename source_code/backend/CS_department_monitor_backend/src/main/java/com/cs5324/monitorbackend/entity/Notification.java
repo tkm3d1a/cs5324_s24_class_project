@@ -30,8 +30,10 @@ public class Notification {
     private Post post;
 
     // Media relationship
-    @OneToOne(mappedBy = "Notification")
+    @OneToOne(mappedBy = "notification")
     private Media media;
 
     // Event relationship
+    @OneToOne(mappedBy = "notification")
+    private Event event;
 }
