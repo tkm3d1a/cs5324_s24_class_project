@@ -24,4 +24,12 @@ public class Notification {
 
     @Version
     private Long version;
+
+    // Post relationship
+    @OneToOne(mappedBy = "notification")
+    private Post post;
+
+    // Media relationship
+
+    // Event relationship
 }
