@@ -38,4 +38,7 @@ public class Media {
     // inverse relationship is 0 to 1
     @OneToOne(mappedBy = "media")
     private Post post;
+
+    @OneToOne
+    private Notification notification;
 }

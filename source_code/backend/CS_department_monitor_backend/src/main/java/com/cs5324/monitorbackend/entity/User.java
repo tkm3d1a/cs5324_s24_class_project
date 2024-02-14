@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.UUID;
 
@@ -15,6 +14,7 @@ import java.util.UUID;
 @Setter
 @RequiredArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "users")
 public class User /*implements UserDetails*/ {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

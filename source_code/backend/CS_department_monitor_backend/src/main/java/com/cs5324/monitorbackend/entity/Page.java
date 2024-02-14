@@ -29,6 +29,5 @@ public class Page {
 
     @NotNull
     @OneToOne
-    @Column(nullable = false)
     private Event event;
 }
