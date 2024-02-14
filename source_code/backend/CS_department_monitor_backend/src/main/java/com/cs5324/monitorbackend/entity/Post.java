@@ -51,4 +51,7 @@ public class Post {
     // inverse relationship is 0 to 1
     @OneToOne
     private Media media;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Notification notification;
 }
