@@ -32,6 +32,11 @@ public class User implements Serializable {
     private boolean verified; //may need to remove or modify to support spring security
 
     @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
     private Set<Role> roles = new HashSet<>();
 
     public void addRoleToUser(Role role){
