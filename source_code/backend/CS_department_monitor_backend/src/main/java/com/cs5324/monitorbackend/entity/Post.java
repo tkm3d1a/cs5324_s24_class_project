@@ -45,7 +45,7 @@ public class Post {
 
     @NotNull
     @Column(nullable = false)
-    private Boolean isStagedForDisplay = false;
+    private Boolean isTagged = false; //Changed to match same flag from Page
 
     // 0 to 1 relationship with media
     // inverse relationship is 0 to 1

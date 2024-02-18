@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.MediaType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +34,10 @@ public class Media {
     private String title;
 
     private MediaType mediaType;
+
+    @NotNull
+    @Column(nullable = false)
+    private final Boolean isTagged = false; //Added to match the tagging from Posts and Pages
 
     //  0 to 1 relationship with Post entity.
     // inverse relationship is 0 to 1
