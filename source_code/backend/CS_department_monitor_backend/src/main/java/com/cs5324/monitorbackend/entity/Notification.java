@@ -36,4 +36,12 @@ public class Notification {
     // Event relationship
     @OneToOne(mappedBy = "notification")
     private Event event;
+
+    @PrePersist
+    @PreUpdate
+    private void verifyRelationships() {
+        int relationCount = ((post != null) ? 1 : 0) + ((media != null) ? 1 : 0) + ((event != null) ? 1 : 0);
+        if (relationCount != 1)
+            throw new PersistenceException("Invalid number of relationships detected. Expected 1, found " + relationCount);
+    }
 }
