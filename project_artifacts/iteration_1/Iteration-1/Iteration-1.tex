@@ -36,18 +36,67 @@
 \tableofcontents
 \listoffigures
 \newpage
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vision Statement}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Requirements}
 \subsection{Functional Requirements}
+\textbf{REQ01:} Faculty members can create a post for review, which will initially default to a proposed state until approved. \\
+\textbf{REQ02:} An admin/reviewer must approve a post before it can be published to the site. \\
+\textbf{REQ03:} A user can add events to an event calendar that can be displayed on screen. \\
+\textbf{REQ04:} A user can add pictures to posts. \\
+\textbf{REQ05:} A user can add videos to posts. \\
+\textbf{REQ06:} A user can add HTML pages to posts. \\
+\textbf{REQ07:} Created posts that will be displayed on a large format screen. \\
+\textbf{REQ08:} The system will allow management of which posts are displayed. \\
+\textbf{REQ09:} The system will allow management of which media is displayed. \\
+\textbf{REQ10:} The system will fall back to the 10 most recent posts if no posts are tagged, or less than 10 posts are tagged. \\
+\textbf{REQ11:} The Office manager will use the WYSIWYG editor to modify static content posts. \\
+\textbf{REQ12:} The Office Manager will use the WYSIWYG editor to tag posts for display on screen. \\
+\textbf{REQ13:} The system will allow audiences to use their mobile devices (e.g., through a QR code that brings them to the website) to browse all content beyond the 10 most recent posts. \\
+\textbf{REQ14:} The system will allow audiences to use their mobile device to browse the calendar. \\
+\textbf{REQ15:} A user will authenticate and be assigned a valid role or view the content as a non-authenticated user. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-Functional Requirements}
-
+\textbf{REQ16:} The system will have the following user roles: Faculty, Admin, and Office Manager. \\
+\textbf{REQ17:} Content rolling and updates to content will be completed via WebSockets. \\
+\textbf{REQ18:} The backend will consist of a Spring Framework REST API with a database and appropriate middleware. \\
+\textbf{REQ19:} The system will manage a media library which consists of all posted pictures and videos. \\
+\textbf{REQ20:} The system will consist of a front-end display: a television screen. \\
+\textbf{REQ21:} The system will consist of a front-end display: a web-based display optimized for all screen sizes. \\
+\textbf{REQ22:} The design of the user interface must utilize Baylor's official \href{https://brand.web.baylor.edu/brand-standards/official-brand-colors}{color scheme}.
+\begin{itemize}
+    \item Baylor Green: \#154734
+    \item University Gold: \#FFB81C
+    \item Secondary and accent colors can be chosen from the lists provided \href{https://brand.web.baylor.edu/brand-guidelines/design-colors}{here}.
+\end{itemize}
+\textbf{REQ23:} The system will have a WYSIWYG editor.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Glossary}
-
+The following terms are important to the development of the project:
+\begin{itemize}
+    \item \textbf{WYSIWYG Editor:} What You See Is What You Get editor
+    \item \textbf{WebSocket:}
+    \item \textbf{Post:} A picture, video, or manually created html page.
+    \item \textbf{Page:}
+    \item \textbf{Event Calendar:} A calendar which is displayed on screen which faculty can add events.
+    \item \textbf{Media Library:} A library which stores both picture and video content.
+    \item \textbf{Faculty:} Admin, Reviewer, Officer Manager, and other university employee.
+    \item \textbf{Admin:} A privileged user that holds all access rights.
+    \item \textbf{Reviewer:} A user that acts as a reviewer of posts to approve or reject posts that have been submitted for review.
+    \item \textbf{Officer Manager:} A faculty member that holds special privilege over the system under discussion to manage which posts are displayed at any given time.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Domain Model}
-
-\Section{Use Cases}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/DomainModel.jpg}
+    \centering
+    \caption{Domain Model for CS Department Automated Information Timeline}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Use Cases}
 \subsection{Use Case Diagram}
 \begin{figure}[H]
     \centering
@@ -55,7 +104,7 @@
     \centering
     \caption{Use Case Diagram for CS Department Automated Information Timeline}
 \end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Use Cases}
 There are a total of 16 use cases written at this stage in the project. Each team member was assigned 3 use cases to fully analyze. Each of these 12 use cases are written in fully-dressed form and accompanied by System Sequence Diagrams (SSDs) and Operations Contracts (OCs). The remaining 4 use cases are written in casual/brief form.
 
@@ -68,13 +117,13 @@ The assigned use cases are as follows:
         \hline
         UC11 & UC05 & UC04 & UC15 \\
         \hline
-        UC12 & UC06 & UC08 & UC16 \\
+        UC12 & UC06 & UC09 & UC16 \\
         \hline
-        UC13 & UC07 & UC09 & UC01 \\
+        UC13 & UC07 & UC10 & UC01 \\
         \hline
     \end{tabular}
 \end{center}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC01: View Media Library}
 % \begin{figure}[H]
 %     \centering
@@ -82,10 +131,13 @@ The assigned use cases are as follows:
 %     \centering
 %     \caption{System Sequence Diagram: View Media Library}
 % \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC02: View All Posts}
 Brief.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC03: View Event Calendar}
 Brief.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC04: Create Event}
 % \begin{figure}[H]
 %     \centering
@@ -93,66 +145,487 @@ Brief.
 %     \centering
 %     \caption{System Sequence Diagram: Create Event}
 % \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC05: Edit Event}
+\textbf{ID:} UC05 (Edit Event) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} user goal \\
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item Audience: Wants to view up-to-date information about events in the CS Department
+    \item Faculty: Wants the ability to provide updated information on events they submitted
+    \item Office Manager: Wants to display accurate event information on the calendar on the Lobby TV
+    \item Admin/Reviewer: Wants to update previously approved events with up-to-date information provided by the Faculty who submitted those events
+\end{itemize}
+\textbf{Preconditions:} Faculty created an event (UC04) and submitted it for review (UC08). Admin/Reviewer reviewed the event (UC09) and approved. Admin/Reviewer is identified and authenticated in the system. Faculty is identified and authenticated in the system and is viewing the event calendar (UC03). \\
+\textbf{Postconditions:} Event status is in a proposed state. \\
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item Faculty clicks the ``View My Events'' link on the event calendar page.
+    \item System returns a list of existing events authored by Faculty that have been approved.
+    \item Faculty selects the event they wish to edit from the returned list of their previously approved events.
+    \item System returns the event page for the selected event.
+    \item Faculty clicks the “Edit This Event” button on the event page.
+    \item Faculty enters the updated event information into the submission form:
+    \begin{itemize}
+        \item Event date
+        \item Event time
+        \item Event description
+    \end{itemize}
+    \item Faculty submits the updated event information for Admin/Reviewer review.
+    \item System provides Faculty with a submission confirmation message.
+\end{enumerate}
+\textbf{Extensions (or Alternate Flows):} \\
+3-4a. Faculty begins editing the event, then decides not to submit the updates for review:
+\begin{enumerate}
+    \item Upon leaving the web page, any changes to event date, time, or description entered into the submission form are erased.
+    \item Selected event remains unchanged in the system.
+\end{enumerate}
+3b. Faculty does not see the event they wish to edit in the returned list because the event has not yet been approved by the Admin/Reviewer:
+    \begin{enumerate}
+        \item Faculty must wait for approval from Admin/Reviewer on the original event before the event is eligible for editing.
+    \end{enumerate}
+\textbf{Special Requirements:} None \\
+\textbf{Technology and Data Variations List:} \\
+4a. Date input is required in the format MM/DD/YYYY. \\
+4b. Time input is required in the Standard Time format in the Central Time Zone. \\
+\textbf{Frequency of Occurrence:} Could be nearly continuous if Admin/Reviewer also reviews edited events and approves them (UC09) nearly continuously. \\
+\textbf{Open Issues:} None \\
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/SSD-UC05-EditEvent.png}
     \centering
     \caption{System Sequence Diagram: Edit Event}
 \end{figure}
+
+\textbf{Operation:} getOwnedEvents() \\
+\textbf{Cross-References:} UC05 (Edit Event), UC06 (Delete Event), UC07 (View Event) \\
+\textbf{Pre-conditions:} Event object has been created. Event has been associated with Faculty. Event attribute status is set to approved. \\
+\textbf{Post-conditions:} None. \\
+
+\textbf{Operation:} editEvent(eventID, date, time, desc) \\
+\textbf{Cross-References:} UC05 (Edit Event) \\
+\textbf{Pre-conditions:}
+\begin{itemize}
+    \item Event object has been created.
+    \item Event attribute status is set to approved.
+    \item Event has been associated with Faculty.
+\end{itemize}
+\textbf{Post-conditions:} editedEvent has been created.
+\begin{itemize}
+    \item editedEvent object has been created.
+    \item editedEvent attributes (date, time, desc) have been updated.
+    \item editedEvent has been associated with Faculty.
+\end{itemize}
+
+\textbf{Operation:} submitEvent(editedEvent) \\
+\textbf{Cross-References:} UC05 (Edit Event) \\
+\textbf{Pre-conditions:}
+\begin{itemize}
+    \item editedEvent object has been created.
+    \item editedEvent attributes (date, time, desc) have been updated.
+    \item editedEvent has been associated with Faculty.
+\end{itemize}
+\textbf{Post-conditions:}
+\begin{itemize}
+    \item Notification object is created.
+    \item Notification object is associated with editedEvent, Faculty, and Admin/Reviewer.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC06: Delete Event}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC06-DeleteEvent.png}
-%     \centering
-%     \caption{System Sequence Diagram: Delete Event}
-% \end{figure}
+\textbf{ID:} UC06 (Delete Event) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} user goal \\
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item Audience: Wants to view up-to-date information about events in the CS Department
+    \item Faculty: Wants the ability to delete events that they submitted that are no longer happening
+    \item Office Manager: Wants to display accurate event information on the calendar on the Lobby TV
+\end{itemize}
+\textbf{Preconditions:} Faculty created an event (UC04) and submitted it for review (UC08). Admin/Reviewer reviewed the event (UC09) and approved. Faculty is identified and authenticated in the system and is viewing the event calendar (UC03). \\
+\textbf{Postconditions:} Event status is in a deleted state. \\
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item Faculty clicks the ``View My Events'' link on the event calendar page.
+    \item System returns a list of existing events authored by Faculty that have been approved.
+    \item Faculty selects the event they wish to delete from the returned list of their previously approved events.
+    \item System returns the event page for the selected event.
+    \item Faculty clicks the ``Delete This Event'' button on the event page.
+    \item System prompts Faculty to confirm the removal of the event from the event calendar.
+    \item Faculty confirms the removal of the event from the event calendar by clicking ``Yes''.
+    \item System provides Faculty with a confirmation message.
+\end{enumerate}
+\textbf{Extensions (or Alternate Flows):} \\
+3a. Faculty does not see the event they wish to delete in the returned list because the event has not yet been approved by the Admin/Reviewer:
+\begin{enumerate}
+    \item Faculty must wait for approval from Admin/Reviewer on the original event before the event is eligible for removal from the event calendar.
+\end{enumerate}
+7a. Faculty decides they do not want to remove the event from the event calendar:
+\begin{enumerate}
+    \item Faculty clicks the ``No'' button and is redirected to the list of existing events authored by Faculty that have been approved.
+\end{enumerate}
+\textbf{Special Requirements:} None \\
+\textbf{Technology and Data Variations List:} None \\
+\textbf{Frequency of Occurrence:} Maximum once per submitted and approved event. \\
+\textbf{Open Issues:} None \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC06-DeleteEvent.png}
+    \centering
+    \caption{System Sequence Diagram: Delete Event}
+\end{figure}
+
+\textbf{Operation:} requestDelete() \\
+\textbf{Cross-References:} UC06 (Delete Event) \\
+\textbf{Pre-conditions:}
+\begin{itemize}
+    \item Event object has been created.
+    \item Event attribute status is set to approved.
+    \item Event has been associated with Faculty.
+\end{itemize}
+\textbf{Post-conditions:} None \\
+
+\textbf{Operation:} deleteEvent(eventID) \\
+\textbf{Cross-References:} UC06 (Delete Event) \\
+\textbf{Pre-conditions:}
+\begin{itemize}
+    \item Event object has been created.
+    \item Event attribute status is set to approved.
+    \item Event has been associated with Faculty.
+\end{itemize}
+\textbf{Post-conditions:}
+\begin{itemize}
+    \item Event attribute status is set to deleted.
+    \item Event associated with Faculty has been broken.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC07: View Event}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC07-ViewEvent.png}
-%     \centering
-%     \caption{System Sequence Diagram: View Event}
-% \end{figure}
+\textbf{ID:} UC07 (View Event) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} user goal \\
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item Audience: Wants to view up-to-date information about events in the CS Department
+    \item Faculty: Wants the ability to view events they have submitted
+    \item Office Manager: Wants to display calendar events on the Lobby TV
+    \item Admin/Reviewer: Wants to view events submitted by Faculty so they can review them
+\end{itemize}
+\textbf{Preconditions:} Faculty created an event (UC04) and submitted it for review (UC08). Admin/Reviewer reviewed the event (UC09) and approved. Faculty is identified and authenticated in the system and is viewing the event calendar (UC03). \\
+\textbf{Postconditions:} Event status is in an approved state. \\
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item Faculty clicks the “View My Events” link on the event calendar page.
+    \item System returns a list of existing events authored by Faculty that have been approved.
+    \item Faculty selects the event they wish to view from the returned list of their previously approved events.
+    \item System returns the event page for the selected event.
+\end{enumerate}
+\textbf{Extensions (or Alternate Flows):} \\
+3a. Faculty does not see the event they wish to view in the returned list because the event has not yet been approved by the Admin/Reviewer:
+\begin{enumerate}
+    \item Faculty must wait for approval from Admin/Reviewer on the original event before the event is eligible for viewing from the event calendar.
+\end{enumerate}
+\textbf{Special Requirements:} None \\
+\textbf{Technology and Data Variations List:} None \\
+\textbf{Frequency of Occurrence:} Continuous \\
+\textbf{Open Issues:} None \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC07-ViewEvent.png}
+    \centering
+    \caption{System Sequence Diagram: View Event}
+\end{figure}
+
+\textbf{Operation:} viewEvent(eventID) \\
+\textbf{Cross-References:} UC07 (View Event) \\
+\textbf{Pre-conditions:}
+\begin{itemize}
+    \item Event object has been created.
+    \item Event attribute status is set to approved.
+    \item Event has been associated with Faculty.
+\end{itemize}
+\textbf{Post-conditions:} None \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC08: Submit For Review}
+Brief.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/SSD-UC08-SubmitForReview.png}
     \centering
     \caption{System Sequence Diagram: Submit For Review}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC09: Review For Approval}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC09-ReviewForApproval.png}
-%     \centering
-%     \caption{System Sequence Diagram: Review For Approval}
-% \end{figure}
+\textbf{ID:} UC09 (Review for Approval) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} User Goal \\
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item Faculty: A person that works for the university and is interested in gaining visibility of their post and/or event.
+    \item Administrator/Reviewer: A person that works for the university and is interested in reviewing and approving requests for system content additions.
+\end{itemize}
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Administrator/Reviewer a has been identified and authenticated.
+    \item Notification n has been created and persisted.
+    \item n.event, n.post, or n.media has been set.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item Notification n.entity was identified as either a Post, Event, or Media.
+    \item n.entity.status was set to either “Approved” or “Rejected”.
+    \item If the review was favorable, n.entity.status was set to “Approved”.
+    \item If the review was unfavorable, n.entity.status was set to “Rejected”.
+    \item n.reviewer was set to a.
+    \item n.entity was persisted.
+\end{itemize}
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item Administrator/Reviewer, a, gets all notifications.
+    \item For each Notification, n, in notifications, Administrator/Reviewer, a, performs manual review of the Post, Event, or Media attached to Notification, n.
+    \item Administrator/Reviewer, a, updates the Post, Event, or Media that was attached to Notification, n, to either “Approved” or “Rejected”.
+    \item If the review is favorable, n.event.status, n.post.status, or n.media.status is set to “Approved”.
+    \item If the review is not favorable, n.event.status, n.post.status, or n.media.status is set to “Rejected”.
+    \item The system persists the updated Post, Event, or Media with the status set by Administrator/Reviewer, a.
+    \item The system associates Administrator/Reviewer, a, with Notification n.
+    \item Notification, n, is persisted.
+    \item The Event, Post, or Media is persisted.
+\end{enumerate}
+\textbf{Extensions:} \\
+2a. There are multiple objects, Post, Event, or Media, attached to Notification n.
+\begin{itemize}
+    \item Administrator/Reviewer, a, deletes Notification, n.
+\end{itemize}
+\textbf{Special Requirements:} None \\
+\textbf{Technology and Data Variation List:}
+\begin{itemize}
+    \item Notification n.post is set and of Post type; n.event and n.media are null.
+    \item Notification n.event is set and of Event type; n.post and n.media are null.
+    \item Notification n.media is set and of Media type; n.post and n.event are null.
+\end{itemize}
+\textbf{Frequency of Occurrence:} Could be nearly continuous. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC09-ReviewForApproval.png}
+    \centering
+    \caption{System Sequence Diagram: Review For Approval}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC10: Create Post}
-Brief.
+
+\textbf{ID:} UC10 (Create Post) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} User Goal \\
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item Faculty: A person who works for the university and is interested in gaining visibility of this post and/or event.
+    \item Admin/Reviewer: A person who works for the university and approves and/or removes posts and/or event from the system.
+\end{itemize}
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Faculty, f, has been identified and authenticated.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item Post, p, was created.
+    \item p.status was set to “Pending”.
+    \item p.createdBy was set to Faculty f.
+    \item Post, p, was persisted.
+    \item Notification, n, was created.
+    \item n.post was set to Post p.
+    \item Notification, n, was persisted.
+\end{itemize}
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item Faculty writes the post using the post creation tool.
+    \item The post title is written by the faculty user.
+    \item The post body is written by the faculty user.
+    \item Faculty reviews the post draft.
+    \item Faculty submits the post to the system.
+    \item A post id is generated by the system.
+    \item A timestamp is generated by the system.
+    \item The user id of the faculty user is attached to the post object.
+    \item The system assigns the status of the post to the proposed state.
+    \item The system generates a notification object.
+    \item The post object is attached to the notification object.
+    \item The post object is persisted.
+    \item The notification object is persisted.
+    \item The system returns the persisted post object to the faculty user.
+\end{enumerate}
+\textbf{Extensions:} \\\relax
+*.a. Anytime the system does not respond.
+\begin{enumerate}
+    \item Faculty will notify the Admin/Reviewer.
+    \item Admin/Reviewer will restart the system.
+    \item Faculty will recreate and submit the post.
+\end{enumerate}
+5.a. Anytime the system does not respond.
+\begin{enumerate}
+    \item The system will return an error message to the faculty user.
+    \item The faculty user will resubmit the post.
+\end{enumerate}
+6.a. If the post is not persisted.
+\begin{enumerate}
+    \item The system will return an error message to the faculty user.
+    \item The faculty user will reattempt the submission of the post.
+\end{enumerate}
+\textbf{Special Requirements:} None \\
+\textbf{Technology and Data Variations List: }
+\begin{enumerate}
+    \item Date will be of the format “yyyy-MM-ddTHH:mm:ss”.
+    \item Id will be of the format of a universally unique identifier, UUID.
+\end{enumerate}
+\textbf{Frequency of Occurrence:} Could be nearly continuous. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC10-CreatePost.png}
+    \centering
+    \caption{System Sequence Diagram: Edit Post}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC11: Edit Post}
+\textbf{ID:} UC11 (Edit Post) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} User goal \\
+\textbf{Primary Actor:} Faculty or Admin/Reviewer \\
+\textbf{Stakeholders and Interests:}
+\begin{itemize}
+    \item Audience: A person that is interested in viewing all approved content on the system using their mobile device.
+    \item Faculty: A person that works for the university and is interested in gaining visibility of their post and/or event.
+    \item Office Manager: A person that works for the university and is interested in prioritizing the order of posts and/or events.
+    \item Admin/Reviewer: A person that works for the university and approves and/or removes posts and/or events from the system.
+\end{itemize}
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Faculty has been identified and authenticated.
+    \item A post has been created.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item Post has been updated and saved to database.
+    \item Media library has been updated with new images and videos from the updated post.
+    \item The display board reflects the updated post flagged for display.
+\end{itemize}
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item User selects a post to edit
+    \item System opens the editable view for the selected post with options to edit the text, delete the photos and videos, if present, on the post, upload photos and videos on the post and update the display flag.
+    \item User saves the updated post.
+    \item System presents the confirmation that the post is updated
+\end{enumerate}
+\textbf{Alternative Flows:}  \\
+a. At any time, system fails or becomes unresponsive and does not provide an error message
+\begin{enumerate}
+    \item User performs a hard refresh on the browser (ctrl + f5 or shift + reload)
+    \item System reloads the editable view for the post
+\end{enumerate}
+b. (3.a) Uploaded media is in unsupported format or exceeds the file size limit
+\begin{enumerate}
+    \item System prompts the user with the appropriate error message
+    \item User acknowledges the error and reuploads the media in supported format and size.
+\end{enumerate}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/SSD-UC11-EditPost.png}
     \centering
     \caption{System Sequence Diagram: Edit Post}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC12: Delete Post}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC12-DeletePost.png}
-%     \centering
-%     \caption{System Sequence Diagram: Delete Post}
-% \end{figure}
+\textbf{ID:} UC12 (Delete Post) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} User goal \\
+\textbf{Primary Actor:} Faculty or Admin/Reviewer \\
+\textbf{Stakeholders and Interests: }
+\begin{itemize}
+    \item Audience: A person that is interested in viewing all approved content on the system using their mobile device.
+    \item Faculty: A person that works for the university and is interested in gaining visibility of their post and/or event.
+    \item Office Manager: A person that works for the university and is interested in prioritizing the order of posts and/or events.
+    \item Admin/Reviewer: A person that works for the university and approves and/or removes posts and/or events from the system.
+\end{itemize}
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Faculty has been identified and authenticated.
+    \item A post to be deleted exists.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item The post has been deleted from the database.
+    \item Media library has been updated.
+    \item The display board no longer displays the deleted post.
+\end{itemize}
+\textbf{Main Success Scenario: }
+\begin{enumerate}
+    \item User navigates to the admin dashboard and accesses the manage post view.
+    \item User selects the post to be managed and clicks the delete post button.
+    \item System presents the confirmation window prompting the user if they are sure about deleting the post
+    \item User confirms deletion.
+    \item The system deletes the selected post from the database and updates the display board contents.
+    \item System presents the confirmation that the post is deleted
+\end{enumerate}
+\textbf{Alternative Flows: } \\
+a. At any time, system fails or becomes unresponsive and does not provide an error message
+\begin{enumerate}
+    \item User performs a hard refresh on the browser (ctrl + f5 or shift + reload)
+    \item System reloads the editable view for the post
+\end{enumerate}
+b. (4.a) User does not confirm post deletion (clicks no)
+\begin{enumerate}
+    \item No action is taken, and the post is displayed in manage post view
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC12-DeletePost.png}
+    \centering
+    \caption{System Sequence Diagram: Delete Post}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC13: View Post}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC13-ViewPost.png}
-%     \centering
-%     \caption{System Sequence Diagram: View Post}
-% \end{figure}
+\textbf{ID:} UC13 (View Post) \\
+\textbf{Scope:} CS Automated Information Timeline \\
+\textbf{Level:} User goal \\
+\textbf{Primary Actor:} Audience \\
+\textbf{Stakeholders and Interests: }
+\begin{itemize}
+    \item Audience: A person that is interested in viewing all approved content on the system using their mobile device.
+    \item Faculty: A person that works for the university and is interested in gaining visibility of their post and/or event.
+    \item Office Manager: A person that works for the university and is interested in prioritizing the order of posts and/or events.
+    \item Admin/Reviewer: A person that works for the university and approves and/or removes posts and/or events from the system.
+\end{itemize}
+\textbf{Preconditions: }
+\begin{itemize}
+    \item A post has been created and staged for display.
+\end{itemize}
+\textbf{Postconditions:} None \\
+\textbf{Main Success Scenario: }
+\begin{enumerate}
+    \item User accesses the web application UI by scanning the QR code on the display board.
+    \item System presents the web view with posts staged for display
+\end{enumerate}
+\textbf{Alternative Flows: } \\
+a. At any time, system fails or becomes unresponsive and does not provide an error message
+\begin{enumerate}
+    \item User performs a hard refresh on the browser (ctrl + f5 or shift + reload)
+    \item System reloads the editable view for the post
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC13-ViewPost.png}
+    \centering
+    \caption{System Sequence Diagram: View Post}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC14: Update HTML on Page}
 Brief.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC15: Manage Displayed Posts}
 % \begin{figure}[H]
 %     \centering
@@ -160,6 +633,7 @@ Brief.
 %     \centering
 %     \caption{System Sequence Diagram: Manage Displayed Posts}
 % \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC16: Manage Displayed Media}
 \begin{figure}[H]
     \centering
@@ -167,6 +641,7 @@ Brief.
     \centering
     \caption{System Sequence Diagram: Manage Displayed Media}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Activity Diagram: Create Event}
 \begin{figure}[H]
