@@ -19,11 +19,11 @@ public class User implements Serializable {
     private UUID id;
 
     @Column(nullable = false)
-    @Length(min=8)
+    @Length(min = 8)
     private String password;
 
     @Column(nullable = false)
-    @Length(min=4, max = 20)
+    @Length(min = 4, max = 20)
     private String username;
 
     @Email
@@ -39,7 +39,19 @@ public class User implements Serializable {
     )
     private Set<Role> roles = new HashSet<>();
 
-    public void addRoleToUser(Role role){
+    @OneToMany(mappedBy = "user")
+    private Set<Event> events = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Media> media = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Page> pages = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Post> posts = new HashSet<>();
+
+    public void addRoleToUser(Role role) {
         this.roles.add(role);
     }
 }

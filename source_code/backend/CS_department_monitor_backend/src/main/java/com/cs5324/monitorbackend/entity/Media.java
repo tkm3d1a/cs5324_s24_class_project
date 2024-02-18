@@ -46,4 +46,7 @@ public class Media {
 
     @OneToOne
     private Notification notification;
+
+    @ManyToOne
+    private User user;
 }

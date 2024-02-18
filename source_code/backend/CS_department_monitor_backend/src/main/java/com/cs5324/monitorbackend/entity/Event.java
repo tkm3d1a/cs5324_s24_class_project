@@ -43,4 +43,7 @@ public class Event {
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "notification_id", referencedColumnName = "id")
     private Notification notification;
+
+    @ManyToOne
+    private User user;
 }

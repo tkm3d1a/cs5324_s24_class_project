@@ -54,4 +54,7 @@ public class Post {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notification notification;
+
+    @ManyToOne
+    private User user;
 }

@@ -30,4 +30,7 @@ public class Page {
     @NotNull
     @OneToOne
     private Event event;
+
+    @ManyToOne
+    private User user;
 }
