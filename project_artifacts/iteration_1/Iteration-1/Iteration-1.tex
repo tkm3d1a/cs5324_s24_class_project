@@ -11,6 +11,7 @@
 \usepackage{caption}
 \usepackage[export]{adjustbox}
 \usepackage{bookmark}
+% \usepackage{subfiles}
 \graphicspath{{./images/}}
 
 % tell Latex to use no paragraph indentation, but leave some space between
@@ -42,51 +43,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Requirements}
 \subsection{Functional Requirements}
-\textbf{REQ01:} Faculty members can create a post for review, which will initially default to a proposed state until approved. \\
-\textbf{REQ02:} An admin/reviewer must approve a post before it can be published to the site. \\
-\textbf{REQ03:} A user can add events to an event calendar that can be displayed on screen. \\
-\textbf{REQ04:} A user can add pictures to posts. \\
-\textbf{REQ05:} A user can add videos to posts. \\
-\textbf{REQ06:} A user can add HTML pages to posts. \\
-\textbf{REQ07:} Created posts that will be displayed on a large format screen. \\
-\textbf{REQ08:} The system will allow management of which posts are displayed. \\
-\textbf{REQ09:} The system will allow management of which media is displayed. \\
-\textbf{REQ10:} The system will fall back to the 10 most recent posts if no posts are tagged, or less than 10 posts are tagged. \\
-\textbf{REQ11:} The Office manager will use the WYSIWYG editor to modify static content posts. \\
-\textbf{REQ12:} The Office Manager will use the WYSIWYG editor to tag posts for display on screen. \\
-\textbf{REQ13:} The system will allow audiences to use their mobile devices (e.g., through a QR code that brings them to the website) to browse all content beyond the 10 most recent posts. \\
-\textbf{REQ14:} The system will allow audiences to use their mobile device to browse the calendar. \\
-\textbf{REQ15:} A user will authenticate and be assigned a valid role or view the content as a non-authenticated user. \\
+
+\input{sections/func_requirements.tex}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-Functional Requirements}
-\textbf{REQ16:} The system will have the following user roles: Faculty, Admin, and Office Manager. \\
-\textbf{REQ17:} Content rolling and updates to content will be completed via WebSockets. \\
-\textbf{REQ18:} The backend will consist of a Spring Framework REST API with a database and appropriate middleware. \\
-\textbf{REQ19:} The system will manage a media library which consists of all posted pictures and videos. \\
-\textbf{REQ20:} The system will consist of a front-end display: a television screen. \\
-\textbf{REQ21:} The system will consist of a front-end display: a web-based display optimized for all screen sizes. \\
-\textbf{REQ22:} The design of the user interface must utilize Baylor's official \href{https://brand.web.baylor.edu/brand-standards/official-brand-colors}{color scheme}.
-\begin{itemize}
-    \item Baylor Green: \#154734
-    \item University Gold: \#FFB81C
-    \item Secondary and accent colors can be chosen from the lists provided \href{https://brand.web.baylor.edu/brand-guidelines/design-colors}{here}.
-\end{itemize}
-\textbf{REQ23:} The system will have a WYSIWYG editor.
+
+\input{sections/non_func_requirements.tex}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Glossary}
-The following terms are important to the development of the project:
-\begin{itemize}
-    \item \textbf{WYSIWYG Editor:} What You See Is What You Get editor
-    \item \textbf{WebSocket:}
-    \item \textbf{Post:} A picture, video, or manually created html page.
-    \item \textbf{Page:}
-    \item \textbf{Event Calendar:} A calendar which is displayed on screen which faculty can add events.
-    \item \textbf{Media Library:} A library which stores both picture and video content.
-    \item \textbf{Faculty:} Admin, Reviewer, Officer Manager, and other university employee.
-    \item \textbf{Admin:} A privileged user that holds all access rights.
-    \item \textbf{Reviewer:} A user that acts as a reviewer of posts to approve or reject posts that have been submitted for review.
-    \item \textbf{Officer Manager:} A faculty member that holds special privilege over the system under discussion to manage which posts are displayed at any given time.
-\end{itemize}
+
+\input{sections/glossary.tex}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Domain Model}
 \begin{figure}[H]
@@ -100,7 +69,7 @@ The following terms are important to the development of the project:
 \subsection{Use Case Diagram}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/UCD.png}
+    \includegraphics[width=0.7\textwidth]{images/UCD.png}
     \centering
     \caption{Use Case Diagram for CS Department Automated Information Timeline}
 \end{figure}
@@ -115,22 +84,17 @@ The assigned use cases are as follows:
         \hline
         Bhandari & Faron & Hays & Klimpel \\
         \hline
-        UC11 & UC05 & UC04 & UC15 \\
+        UC11     & UC05  & UC04 & UC15    \\
         \hline
-        UC12 & UC06 & UC09 & UC16 \\
+        UC12     & UC06  & UC09 & UC16    \\
         \hline
-        UC13 & UC07 & UC10 & UC01 \\
+        UC13     & UC07  & UC10 & UC01    \\
         \hline
     \end{tabular}
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC01: View Media Library}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC01-ViewMediaLibrary.png}
-%     \centering
-%     \caption{System Sequence Diagram: View Media Library}
-% \end{figure}
+\input{sections/uc01.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC02: View All Posts}
 Brief.
@@ -147,91 +111,7 @@ Brief.
 % \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC05: Edit Event}
-\textbf{ID:} UC05 (Edit Event) \\
-\textbf{Scope:} CS Automated Information Timeline \\
-\textbf{Level:} user goal \\
-\textbf{Stakeholders and Interests:}
-\begin{itemize}
-    \item Audience: Wants to view up-to-date information about events in the CS Department
-    \item Faculty: Wants the ability to provide updated information on events they submitted
-    \item Office Manager: Wants to display accurate event information on the calendar on the Lobby TV
-    \item Admin/Reviewer: Wants to update previously approved events with up-to-date information provided by the Faculty who submitted those events
-\end{itemize}
-\textbf{Preconditions:} Faculty created an event (UC04) and submitted it for review (UC08). Admin/Reviewer reviewed the event (UC09) and approved. Admin/Reviewer is identified and authenticated in the system. Faculty is identified and authenticated in the system and is viewing the event calendar (UC03). \\
-\textbf{Postconditions:} Event status is in a proposed state. \\
-\textbf{Main Success Scenario:}
-\begin{enumerate}
-    \item Faculty clicks the ``View My Events'' link on the event calendar page.
-    \item System returns a list of existing events authored by Faculty that have been approved.
-    \item Faculty selects the event they wish to edit from the returned list of their previously approved events.
-    \item System returns the event page for the selected event.
-    \item Faculty clicks the “Edit This Event” button on the event page.
-    \item Faculty enters the updated event information into the submission form:
-    \begin{itemize}
-        \item Event date
-        \item Event time
-        \item Event description
-    \end{itemize}
-    \item Faculty submits the updated event information for Admin/Reviewer review.
-    \item System provides Faculty with a submission confirmation message.
-\end{enumerate}
-\textbf{Extensions (or Alternate Flows):} \\
-3-4a. Faculty begins editing the event, then decides not to submit the updates for review:
-\begin{enumerate}
-    \item Upon leaving the web page, any changes to event date, time, or description entered into the submission form are erased.
-    \item Selected event remains unchanged in the system.
-\end{enumerate}
-3b. Faculty does not see the event they wish to edit in the returned list because the event has not yet been approved by the Admin/Reviewer:
-    \begin{enumerate}
-        \item Faculty must wait for approval from Admin/Reviewer on the original event before the event is eligible for editing.
-    \end{enumerate}
-\textbf{Special Requirements:} None \\
-\textbf{Technology and Data Variations List:} \\
-4a. Date input is required in the format MM/DD/YYYY. \\
-4b. Time input is required in the Standard Time format in the Central Time Zone. \\
-\textbf{Frequency of Occurrence:} Could be nearly continuous if Admin/Reviewer also reviews edited events and approves them (UC09) nearly continuously. \\
-\textbf{Open Issues:} None \\
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/SSD-UC05-EditEvent.png}
-    \centering
-    \caption{System Sequence Diagram: Edit Event}
-\end{figure}
-
-\textbf{Operation:} getOwnedEvents() \\
-\textbf{Cross-References:} UC05 (Edit Event), UC06 (Delete Event), UC07 (View Event) \\
-\textbf{Pre-conditions:} Event object has been created. Event has been associated with Faculty. Event attribute status is set to approved. \\
-\textbf{Post-conditions:} None. \\
-
-\textbf{Operation:} editEvent(eventID, date, time, desc) \\
-\textbf{Cross-References:} UC05 (Edit Event) \\
-\textbf{Pre-conditions:}
-\begin{itemize}
-    \item Event object has been created.
-    \item Event attribute status is set to approved.
-    \item Event has been associated with Faculty.
-\end{itemize}
-\textbf{Post-conditions:} editedEvent has been created.
-\begin{itemize}
-    \item editedEvent object has been created.
-    \item editedEvent attributes (date, time, desc) have been updated.
-    \item editedEvent has been associated with Faculty.
-\end{itemize}
-
-\textbf{Operation:} submitEvent(editedEvent) \\
-\textbf{Cross-References:} UC05 (Edit Event) \\
-\textbf{Pre-conditions:}
-\begin{itemize}
-    \item editedEvent object has been created.
-    \item editedEvent attributes (date, time, desc) have been updated.
-    \item editedEvent has been associated with Faculty.
-\end{itemize}
-\textbf{Post-conditions:}
-\begin{itemize}
-    \item Notification object is created.
-    \item Notification object is associated with editedEvent, Faculty, and Admin/Reviewer.
-\end{itemize}
+\input{sections/uc05.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC06: Delete Event}
 \textbf{ID:} UC06 (Delete Event) \\
@@ -627,12 +507,12 @@ a. At any time, system fails or becomes unresponsive and does not provide an err
 Brief.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC15: Manage Displayed Posts}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/SSD-UC15-ManageDisplayedPosts.png}
-%     \centering
-%     \caption{System Sequence Diagram: Manage Displayed Posts}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC15-ManageDisplayedPosts.png}
+    \centering
+    \caption{System Sequence Diagram: Manage Displayed Posts}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC16: Manage Displayed Media}
 \begin{figure}[H]
