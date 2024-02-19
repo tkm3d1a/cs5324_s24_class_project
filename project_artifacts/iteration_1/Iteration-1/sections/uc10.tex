@@ -66,5 +66,22 @@
     \centering
     \includegraphics[width=0.8\textwidth]{images/SSD-UC10-CreatePost.png}
     \centering
-    \caption{System Sequence Diagram: Edit Post}
+    \caption{System Sequence Diagram: Create Post}
 \end{figure}
+
+\textbf{Operation:} createPost(post: Post) \\
+\textbf{Cross References:} UC10 (Create Post) \\
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Faculty, f, has been identified and authenticated.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item Post, p, was created.
+    \item p.status was set to “Pending”.
+    \item p.createdBy was set to Faculty f.
+    \item Post, p, was persisted.
+    \item Notification, n, was created.
+    \item n.post was set to Post p.
+    \item Notification, n, was persisted.
+\end{itemize}

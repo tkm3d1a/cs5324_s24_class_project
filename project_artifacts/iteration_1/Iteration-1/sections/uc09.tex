@@ -53,3 +53,44 @@
     \centering
     \caption{System Sequence Diagram: Review For Approval}
 \end{figure}
+
+\textbf{Operation:} getNotifications() \\
+\textbf{Cross References:} UC09 (Review for Approval) \\
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Admin/Reviewer, a, has been identified and authenticated.
+    \item Notification, n, has been created and persisted.
+    \item Notification n.entity has been set to Post p, Event e, and/or Media m.
+\end{itemize}
+\textbf{Postconditions:} None \\
+
+\textbf{Operation:} deleteNotification(notification: Notification) \\
+\textbf{Cross References:} UC09 (Review for Approval) \\
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Admin/Reviewer, a, has been identified and authenticated.
+    \item Notification, n, has been created and persisted.
+    \item Notification n.entity has been set to Post p, Event e, and/or Media m.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item Association n.entity was disassociated.
+    \item All entities, Post p, Event e, and/or Media m, from association n.entity were removed from persistence and destroyed.
+    \item Notification, n, was removed from persistence and destroyed.
+\end{itemize}
+
+\textbf{Operation:} setStatus(status: String) \\
+\textbf{Cross References:} UC09 (Review for Approval) \\
+\textbf{Preconditions:}
+\begin{itemize}
+    \item Admin/Reviewer, a, has been identified and authenticated.
+    \item Notification, n, has been created and persisted.
+    \item n.reviewer has been set to Admin/Reviewer a.
+    \item n.entity has been set to one of Post p, Event e, or Media m.
+\end{itemize}
+\textbf{Postconditions:}
+\begin{itemize}
+    \item Notification n.entity.status was set to status.
+    \item Notification n.reviewer was set to a.
+    \item Notification, n, was persisted.
+\end{itemize}
