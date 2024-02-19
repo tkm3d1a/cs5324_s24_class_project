@@ -38,10 +38,10 @@
 \newpage
 \section{Introduction}
 \subsection{Purpose}
-The purpose of this assignment is to work as a team and collaboratively to identify General Responsibility Assignment Software Patterns (GRASP) in the design of the CS Department Automated Information Timeline project. The team met multiple times over the course of a few days to work together and identify the GRASP concepts. Section 2 of this document consists of the identified GRASP concepts and section 3 contains the annotated sequence diagrams.
+The purpose of this assignment is to collaborate as a team to identify General Responsibility Assignment Software Patterns (GRASP) in the design of the CS Department Automated Information Timeline project. The team (aka The Incredibles) met multiple times over the course of a few days to work together and identify the GRASP concepts in the design. Section 2 of this document consists of the identified GRASP concepts and section 3 contains the annotated sequence diagrams.
 
 \section{GRASP concepts}
-Table below lists all classes that appear in the sequence diagrams and under GRASP concept the class is suited for.
+Table below categorizes all the classes that appear on the sequence diagrams based on the GRASP concept they implement.
 \begin{table}[H]
     \centering
     \begin{tabular}{| c | c | c | c |}
@@ -65,7 +65,7 @@ Low coupling and high cohesion is achieved by clearly separating out Controller,
 The mapper classes (EventMapper and NotificationMapper) were also identified as a creators because they are meant to be injected in service classes to create objects to be used as entities. Mapper classes support low coupling by removing a need for mapping user inputs directly to domain object needs and high cohesion by dealing only with JSON Serialization/deserialization of Event/EventDTO objects.
 
 \section{Annotated Sequence diagrams}
-A subset of sequence diagrams are annotated with the identified GRASP concepts and these are included below. These sequence diagrams cover all the classed and the GRASP patterns they implement.
+A subset of sequence diagrams are annotated with the identified GRASP concepts and are included below. These sequence diagrams cover all the classes and the GRASP patterns they implement.
 
 \subsection{Create Event}
         \includegraphics[scale=0.34]{images/SD-UC04-CreateEvent.png}
