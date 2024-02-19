@@ -1,5 +1,6 @@
 package com.cs5324.monitorbackend.entity;
 
+import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,9 +10,8 @@ import java.util.UUID;
 
 @Entity
 @Data
-@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 public class Page {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -19,13 +19,17 @@ public class Page {
 
     @NotBlank
     @Column(nullable = false)
-    private final String title;
+    private String title;
 
-    private final String content;
+    private String content;
 
     @NotNull
     @Column(nullable = false)
-    private final Boolean isTagged = false;
+    private Boolean isTagged = false;
+
+    @NotNull
+    @Column(nullable = false)
+    private ItemStatus itemStatus = ItemStatus.PENDING;
 
     @NotNull
     @OneToOne

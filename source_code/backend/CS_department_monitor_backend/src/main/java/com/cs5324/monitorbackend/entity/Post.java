@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +15,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@NoArgsConstructor
 @AllArgsConstructor
 public class Post {
     @Id
@@ -49,7 +48,7 @@ public class Post {
 
     // 0 to 1 relationship with media
     // inverse relationship is 0 to 1
-    @OneToOne
+    @OneToOne(mappedBy = "post")
     private Media media;
 
     @OneToOne(cascade = CascadeType.ALL)

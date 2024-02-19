@@ -39,10 +39,11 @@ public class Event {
     @Column(nullable = false)
     private ItemStatus approvalStatus = ItemStatus.PENDING;
 
-    // An event has zero to one Notifications
-    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "notification_id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL)
     private Notification notification;
+
+    @OneToOne(mappedBy = "event")
+    private Page page;
 
     @ManyToOne
     private User user;

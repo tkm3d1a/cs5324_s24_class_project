@@ -1,9 +1,9 @@
 package com.cs5324.monitorbackend.entity;
 
+import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.entity.enums.MediaType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@NoArgsConstructor
 @AllArgsConstructor
 public class Media {
     @Id
@@ -37,14 +37,18 @@ public class Media {
 
     @NotNull
     @Column(nullable = false)
-    private final Boolean isTagged = false; //Added to match the tagging from Posts and Pages
+    private Boolean isTagged = false; //Added to match the tagging from Posts and Pages
+
+    @NotNull
+    @Column(nullable = false)
+    private ItemStatus itemStatus = ItemStatus.PENDING;
 
     //  0 to 1 relationship with Post entity.
     // inverse relationship is 0 to 1
-    @OneToOne(mappedBy = "media")
+    @OneToOne
     private Post post;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Notification notification;
 
     @ManyToOne
