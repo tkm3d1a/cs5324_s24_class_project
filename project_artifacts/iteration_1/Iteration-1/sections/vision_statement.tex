@@ -1,0 +1,9 @@
+The Baylor University Computer Science Department needs a system for faculty to passively share information on department news and events with students and other faculty members. To fulfill this need, our team is developing an automated, web-based system that will populate faculty content, perform content rolling, and automate content updates. \\
+
+Using our system, any faculty can propose a post, but only one admin/reviewer can approve the post for publishing. In addition to the embedded post timeline, the system also has an event calendar. Similarly, any faculty can propose an event to add to the calendar, but only one admin/reviewer can approve the event for publishing to the event calendar. \\
+
+This content is available for viewing through a TV screen in the department lobby, which is manually managed by our CS Department office manager. The system is configured to either (1) show only the most recent content on the lobby TV or (2) show staged media tagged manually by the office manager. The system uses \hyperref[sec:Glossary]{WebSockets} to roll and update recent content automatically, as well as a \hyperref[sec:Glossary]{WYSIWYG} editor to modify and tag static content pages. \\
+
+Since not everything can be displayed in the lobby, the system suppports a web view accessible to all visitors with a mobile device via QR code. Through the web application, all audience members can browse all content available beyond the posts and events tagged for the lobby TV. \\
+
+The system uses Spring middleware with database and REST API to support the two described web-based and UI-responsive frontends. \\

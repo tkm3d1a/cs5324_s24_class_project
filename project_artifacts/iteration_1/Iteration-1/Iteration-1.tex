@@ -22,6 +22,9 @@
 \newcommand{\tib}[1]{\textit{\textbf{#1}}}
 \newcommand{\code}[1]{\texttt{#1}}
 
+% Remove blank pages
+%\let\cleardoublepage=\clearpage
+
 % these commands merely set the values for the title/date/author; they don't put
 % them in the document... see \maketitle below
 \title{CS Department Automated Information Timeline \\ Iteration 1 Submission}
@@ -40,22 +43,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vision Statement}
 
+\input{sections/vision_statement.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Requirements}
 \subsection{Functional Requirements}
 
 \input{sections/func_requirements.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-Functional Requirements}
 
 \input{sections/non_func_requirements.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Glossary}
+\section{Glossary} \label{sec:Glossary}
 
 \input{sections/glossary.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Domain Model}
 
@@ -72,15 +73,15 @@ The below Domain model represents a Draft version of the current planned domain 
 \subsection{Use Case Diagram}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/UCD.png}
+    \includegraphics[width=0.64\textwidth]{images/UCD.png}
     \centering
     \caption{Use Case Diagram for CS Department Automated Information Timeline}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Use Cases}
-There are a total of 16 use cases written at this stage in the project. Each team member was assigned 3 use cases to fully analyze. Each of these 12 use cases are written in fully-dressed form and accompanied by System Sequence Diagrams (SSDs) and Operations Contracts (OCs). The remaining 4 use cases are written in casual/brief form.
+There are a total of 16 use cases written at this stage in the project. Each team member was assigned 3 use cases to fully analyze. Each of these 12 use cases are written in fully-dressed form and accompanied by System Sequence Diagrams (SSDs) and Operations Contracts (OCs). The remaining 4 use cases are written in brief/casual form.
 
-The assigned use cases are as follows:
+The assigned (fully-dressed) use cases are as follows:
 
 \begin{center}
     \begin{tabular}{ | c | c | c | c | }
@@ -100,10 +101,10 @@ The assigned use cases are as follows:
 \input{sections/uc01.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC02: View All Posts}
-Brief.
+\input{sections/uc02.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC03: View Event Calendar}
-Brief.
+\input{sections/uc03.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC04: Create Event}
 \input{sections/uc04.tex}
@@ -118,36 +119,7 @@ Brief.
 \input{sections/uc07.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC08: Submit For Review}
-\textbf{Main Success Scenario:} A faculty user submits a post, event, media, or page to the system. The system generates an id and a timestamp that is set to the system time upon submission and associates these attributes with the post, event, media, or page object. The system associates the faculty user that submitted with the post, event, media, or page. The system assigns the status of the post, event, media, or page to the proposed status. The system generates a notification object and attaches the post, event, media, or page object with the notification. The system persists both the created post, event, media, or page object and the created notification object to the database. The created post, event, media, or page is returned to the faculty user. \\
-\\
-\textbf{Alternative Flows:}
-\begin{itemize}
-    \item The post, event, media, page, or notification object is not persisted.
-    \begin{itemize}
-        \item The system will respond to the faculty user with an error message indicating the reason for persistence failure.
-        \item The faculty member will correct the identified error and attempt to resubmit the post, event, media, or page item.
-    \end{itemize}
-    \item If the system does not respond within a given timeframe.
-    \begin{itemize}
-        \item The system will return an error message to the faculty user indicating a timeout has occurred.
-        \item The faculty user will reattempt the submission of the post, event, media, or page item.
-        \begin{itemize}
-            \item If the system continues to fail to respond within a given timeframe.
-            \begin{itemize}
-                \item The faculty user will inform the admin/reviewer of the error.
-                \item The admin/reviewer will restart the system.
-                \item The faculty user will reattempt submission of the post, event, media, or page item.
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/SSD-UC08-SubmitForReview.png}
-    \centering
-    \caption{System Sequence Diagram: Submit For Review}
-\end{figure}
+\input{sections/uc08.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC09: Review For Approval}
 \input{sections/uc09.tex}
@@ -164,8 +136,8 @@ Brief.
 \subsubsection{UC13: View Post}
 \input{sections/uc13.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{UC14: Update HTML on Page}
-Brief.
+\subsubsection{UC14: Edit Page of Event}
+\input{sections/uc14.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC15: Manage Displayed Posts}
 \input{sections/uc15.tex}
@@ -183,21 +155,29 @@ Brief.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Wireframes}
-\subsection{TV}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/wireframe-TV.png}
-%     \centering
-%     \caption{Wireframe: TV}
-% \end{figure}
+\subsection{Faculty Dashboard}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_FacultyDashboard.png}
+    \centering
+    \caption{Wireframe: Faculty Dashboard}
+\end{figure}
 
-\subsection{Website}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{images/wireframe-website.png}
-%     \centering
-%     \caption{Wireframe: Website}
-% \end{figure}
+\subsection{TV}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_TV_Display.png}
+    \centering
+    \caption{Wireframe: TV}
+\end{figure}
+
+\subsection{Web UI}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_webUI.png}
+    \centering
+    \caption{Wireframe: Web UI}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Class Diagram}
 \begin{figure}[H]
