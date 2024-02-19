@@ -1,0 +1,30 @@
+\textbf{Main Success Scenario:} A faculty user submits a post, event, media, or page to the system. The system generates an id and a timestamp that is set to the system time upon submission and associates these attributes with the post, event, media, or page object. The system associates the faculty user that submitted with the post, event, media, or page. The system assigns the status of the post, event, media, or page to the proposed status. The system generates a notification object and attaches the post, event, media, or page object with the notification. The system persists both the created post, event, media, or page object and the created notification object to the database. The created post, event, media, or page is returned to the faculty user. \\
+\\
+\textbf{Alternative Flows:}
+\begin{itemize}
+    \item The post, event, media, page, or notification object is not persisted.
+    \begin{itemize}
+        \item The system will respond to the faculty user with an error message indicating the reason for persistence failure.
+        \item The faculty member will correct the identified error and attempt to resubmit the post, event, media, or page item.
+    \end{itemize}
+    \item If the system does not respond within a given timeframe.
+    \begin{itemize}
+        \item The system will return an error message to the faculty user indicating a timeout has occurred.
+        \item The faculty user will reattempt the submission of the post, event, media, or page item.
+        \begin{itemize}
+            \item If the system continues to fail to respond within a given timeframe.
+            \begin{itemize}
+                \item The faculty user will inform the admin/reviewer of the error.
+                \item The admin/reviewer will restart the system.
+                \item The faculty user will reattempt submission of the post, event, media, or page item.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/SSD-UC08-SubmitForReview.png}
+    \centering
+    \caption{System Sequence Diagram: Submit For Review}
+\end{figure}
