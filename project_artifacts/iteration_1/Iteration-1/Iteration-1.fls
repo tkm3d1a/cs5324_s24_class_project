@@ -637,6 +637,10 @@ INPUT ./Iteration-1.lof
 INPUT Iteration-1.lof
 INPUT Iteration-1.lof
 OUTPUT Iteration-1.lof
+INPUT ./sections/vision_statement.tex
+INPUT sections/vision_statement.tex
+INPUT ./sections/vision_statement.tex
+INPUT sections/vision_statement.tex
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT ./sections/func_requirements.tex
 INPUT sections/func_requirements.tex
@@ -675,6 +679,10 @@ INPUT ./sections/uc02.tex
 INPUT sections/uc02.tex
 INPUT ./sections/uc02.tex
 INPUT sections/uc02.tex
+INPUT ./sections/uc03.tex
+INPUT sections/uc03.tex
+INPUT ./sections/uc03.tex
+INPUT sections/uc03.tex
 INPUT ./sections/uc04.tex
 INPUT sections/uc04.tex
 INPUT ./sections/uc04.tex

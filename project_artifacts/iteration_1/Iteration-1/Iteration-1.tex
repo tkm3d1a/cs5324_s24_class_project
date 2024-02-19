@@ -22,6 +22,9 @@
 \newcommand{\tib}[1]{\textit{\textbf{#1}}}
 \newcommand{\code}[1]{\texttt{#1}}
 
+% Remove blank pages
+%\let\cleardoublepage=\clearpage
+
 % these commands merely set the values for the title/date/author; they don't put
 % them in the document... see \maketitle below
 \title{CS Department Automated Information Timeline \\ Iteration 1 Submission}
@@ -40,22 +43,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Vision Statement}
 
+\input{sections/vision_statement.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Requirements}
 \subsection{Functional Requirements}
 
 \input{sections/func_requirements.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Non-Functional Requirements}
 
 \input{sections/non_func_requirements.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Glossary}
+\section{Glossary} \label{sec:Glossary}
 
 \input{sections/glossary.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Domain Model}
 
@@ -72,15 +73,15 @@ The below Domain model represents a Draft version of the current planned domain 
 \subsection{Use Case Diagram}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/UCD.png}
+    \includegraphics[width=0.64\textwidth]{images/UCD.png}
     \centering
     \caption{Use Case Diagram for CS Department Automated Information Timeline}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Use Cases}
-There are a total of 16 use cases written at this stage in the project. Each team member was assigned 3 use cases to fully analyze. Each of these 12 use cases are written in fully-dressed form and accompanied by System Sequence Diagrams (SSDs) and Operations Contracts (OCs). The remaining 4 use cases are written in casual/brief form.
+There are a total of 16 use cases written at this stage in the project. Each team member was assigned 3 use cases to fully analyze. Each of these 12 use cases are written in fully-dressed form and accompanied by System Sequence Diagrams (SSDs) and Operations Contracts (OCs). The remaining 4 use cases are written in brief/casual form.
 
-The assigned use cases are as follows:
+The assigned (fully-dressed) use cases are as follows:
 
 \begin{center}
     \begin{tabular}{ | c | c | c | c | }
@@ -103,7 +104,7 @@ The assigned use cases are as follows:
 \input{sections/uc02.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC03: View Event Calendar}
-Brief.
+\input{sections/uc03.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{UC04: Create Event}
 \input{sections/uc04.tex}
