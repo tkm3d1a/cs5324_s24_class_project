@@ -1,0 +1,30 @@
+INFO:  latexindent.exe version 3.23.5, 2024-01-01, a script to indent .tex files
+       latexindent.exe lives here: C:/Users/timkl/AppData/Roaming/TinyTeX/bin/windows/
+       Sun Feb 18 19:02:31 2024
+       Filename: c:/Code/CS5324/cs5324_s24_class_project/project_artifacts/iteration_1/Assignment_06_03/__latexindent_temp_base.tex
+INFO:  Processing switches:
+       -y|--yaml: YAML settings specified via command line
+       -c|--cruft: cruft directory
+INFO:  Directory for backup files and c:/Code/CS5324/cs5324_s24_class_project/project_artifacts/iteration_1/Assignment_04-01//indent.log:
+       c:/Code/CS5324/cs5324_s24_class_project/project_artifacts/iteration_1/Assignment_04-01/
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from C:/Users/timkl/AppData/Roaming/TinyTeX/bin/windows/defaultSettings.yaml
+       Reading defaultSettings.yaml (2nd attempt) from C:/Users/timkl/AppData/Roaming/TinyTeX/bin/windows/../../texmf-dist/scripts/latexindent/defaultSettings.yaml
+       and then, if necessary, C:/Users/timkl/AppData/Roaming/TinyTeX/bin/windows/LatexIndent/defaultSettings.yaml
+INFO:  YAML reading settings
+       Home directory is C:\Users\timkl
+       latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
+       see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
+INFO:  YAML settings read: -y switch
+       YAML setting: defaultIndent:'    '
+       single-quoted string found in -y switch: '    ', substitute to     
+       Updating mainSettings with defaultIndent:     
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl
