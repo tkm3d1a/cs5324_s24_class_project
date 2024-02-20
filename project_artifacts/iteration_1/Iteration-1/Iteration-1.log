@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.9)  19 FEB 2024 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.9)  19 FEB 2024 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -336,19 +336,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--53
  []
 
 [4] (./sections/non_func_requirements.tex) (./sections/glossary.tex)
-<images/DomainModel.png, id=136, 908.64468pt x 674.52pt>
+<images/DomainModel.png, id=134, 908.64468pt x 674.52pt>
 File: images/DomainModel.png Graphic file (type png)
 <use images/DomainModel.png>
 Package pdftex.def Info: images/DomainModel.png  used on input line 67.
 (pdftex.def)             Requested size: 375.80544pt x 278.9737pt.
  [5]
-<images/UCD.png, id=143, 511.15968pt x 901.86937pt>
+<images/UCD.png, id=141, 511.15968pt x 901.86937pt>
 File: images/UCD.png Graphic file (type png)
 <use images/UCD.png>
 Package pdftex.def Info: images/UCD.png  used on input line 76.
 (pdftex.def)             Requested size: 300.64291pt x 530.4332pt.
  [6 <./images/DomainModel.png>] [7 <./images/UCD.png>] (./sections/uc01.tex [8]
-<images/SSD-UC01-ViewMediaLibrary.png, id=166, 252.34274pt x 155.98276pt>
+<images/SSD-UC01-ViewMediaLibrary.png, id=164, 252.34274pt x 155.98276pt>
 File: images/SSD-UC01-ViewMediaLibrary.png Graphic file (type png)
 <use images/SSD-UC01-ViewMediaLibrary.png>
 Package pdftex.def Info: images/SSD-UC01-ViewMediaLibrary.png  used on input line 44.
@@ -364,7 +364,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--109
  []
 
 (./sections/uc04.tex [10]
-<images/SSD-UC04-CreateEvent.png, id=185, 407.72325pt x 136.71075pt>
+<images/SSD-UC04-CreateEvent.png, id=183, 407.72325pt x 136.71075pt>
 File: images/SSD-UC04-CreateEvent.png Graphic file (type png)
 <use images/SSD-UC04-CreateEvent.png>
 Package pdftex.def Info: images/SSD-UC04-CreateEvent.png  used on input line 63.
@@ -374,7 +374,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--46
 
  []
 
-<images/SSD-UC05-EditEvent.png, id=214, 374.14781pt x 247.67531pt>
+<images/SSD-UC05-EditEvent.png, id=212, 374.14781pt x 247.67531pt>
 File: images/SSD-UC05-EditEvent.png Graphic file (type png)
 <use images/SSD-UC05-EditEvent.png>
 Package pdftex.def Info: images/SSD-UC05-EditEvent.png  used on input line 49.
@@ -389,7 +389,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--37
 
  []
 
-<images/SSD-UC06-DeleteEvent.png, id=228, 299.31825pt x 237.88875pt>
+<images/SSD-UC06-DeleteEvent.png, id=226, 299.31825pt x 237.88875pt>
 File: images/SSD-UC06-DeleteEvent.png Graphic file (type png)
 <use images/SSD-UC06-DeleteEvent.png>
 Package pdftex.def Info: images/SSD-UC06-DeleteEvent.png  used on input line 40.
@@ -404,7 +404,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--30
 
  []
 
-<images/SSD-UC07-ViewEvent.png, id=248, 353.52075pt x 237.88875pt>
+<images/SSD-UC07-ViewEvent.png, id=246, 353.52075pt x 237.88875pt>
 File: images/SSD-UC07-ViewEvent.png Graphic file (type png)
 <use images/SSD-UC07-ViewEvent.png>
 Package pdftex.def Info: images/SSD-UC07-ViewEvent.png  used on input line 33.
@@ -419,18 +419,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--5
 
  []
 
-[18 <./images/SSD-UC07-ViewEvent.png>]
-<images/SSD-UC08-SubmitForReview.png, id=263, 424.58624pt x 142.28156pt>
-File: images/SSD-UC08-SubmitForReview.png Graphic file (type png)
-<use images/SSD-UC08-SubmitForReview.png>
-Package pdftex.def Info: images/SSD-UC08-SubmitForReview.png  used on input line 27.
-(pdftex.def)             Requested size: 375.80544pt x 125.93979pt.
-) (./sections/uc09.tex [19 <./images/SSD-UC08-SubmitForReview.png>]
+[18 <./images/SSD-UC07-ViewEvent.png>]) (./sections/uc09.tex [19]
 Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-<images/SSD-UC09-ReviewForApproval.png, id=270, 672.111pt x 508.299pt>
+<images/SSD-UC09-ReviewForApproval.png, id=267, 672.111pt x 508.299pt>
 File: images/SSD-UC09-ReviewForApproval.png Graphic file (type png)
 <use images/SSD-UC09-ReviewForApproval.png>
 Package pdftex.def Info: images/SSD-UC09-ReviewForApproval.png  used on input line 52.
@@ -446,25 +440,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
  []
 
 [23]
-<images/SSD-UC10-CreatePost.png, id=319, 539.01375pt x 124.0635pt>
+<images/SSD-UC10-CreatePost.png, id=315, 539.01375pt x 124.0635pt>
 File: images/SSD-UC10-CreatePost.png Graphic file (type png)
 <use images/SSD-UC10-CreatePost.png>
 Package pdftex.def Info: images/SSD-UC10-CreatePost.png  used on input line 67.
 (pdftex.def)             Requested size: 375.80544pt x 86.49931pt.
 ) (./sections/uc11.tex [24 <./images/SSD-UC10-CreatePost.png>]
-<images/SSD-UC11-EditPost.png, id=327, 370.38374pt x 345.54094pt>
+<images/SSD-UC11-EditPost.png, id=323, 370.38374pt x 345.54094pt>
 File: images/SSD-UC11-EditPost.png Graphic file (type png)
 <use images/SSD-UC11-EditPost.png>
 Package pdftex.def Info: images/SSD-UC11-EditPost.png  used on input line 44.
 (pdftex.def)             Requested size: 375.80544pt x 350.6017pt.
  [25]) (./sections/uc12.tex [26 <./images/SSD-UC11-EditPost.png>]
-<images/SSD-UC12-DeletePost.png, id=346, 291.489pt x 235.47975pt>
+<images/SSD-UC12-DeletePost.png, id=342, 291.489pt x 235.47975pt>
 File: images/SSD-UC12-DeletePost.png Graphic file (type png)
 <use images/SSD-UC12-DeletePost.png>
 Package pdftex.def Info: images/SSD-UC12-DeletePost.png  used on input line 45.
 (pdftex.def)             Requested size: 375.80544pt x 303.61205pt.
  [27]) (./sections/uc13.tex [28 <./images/SSD-UC12-DeletePost.png>]
-<images/SSD-UC13-ViewPost.png, id=365, 320.99925pt x 226.446pt>
+<images/SSD-UC13-ViewPost.png, id=361, 320.99925pt x 226.446pt>
 File: images/SSD-UC13-ViewPost.png Graphic file (type png)
 <use images/SSD-UC13-ViewPost.png>
 Package pdftex.def Info: images/SSD-UC13-ViewPost.png  used on input line 31.
@@ -475,61 +469,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--142
  []
 
 (./sections/uc15.tex [30 <./images/SSD-UC13-ViewPost.png>] [31]
-<images/SSD-UC15-ManageDisplayedPosts.png, id=397, 296.307pt x 264.38776pt>
+<images/SSD-UC15-ManageDisplayedPosts.png, id=393, 296.307pt x 264.38776pt>
 File: images/SSD-UC15-ManageDisplayedPosts.png Graphic file (type png)
 <use images/SSD-UC15-ManageDisplayedPosts.png>
 Package pdftex.def Info: images/SSD-UC15-ManageDisplayedPosts.png  used on input line 59.
 (pdftex.def)             Requested size: 375.80544pt x 335.34915pt.
  [32 <./images/SSD-UC15-ManageDisplayedPosts.png>]) (./sections/uc16.tex [33] [34]
-<images/SSD-UC16-ManageDisplayedMedia.png, id=438, 313.77225pt x 314.97675pt>
+<images/SSD-UC16-ManageDisplayedMedia.png, id=434, 313.77225pt x 314.97675pt>
 File: images/SSD-UC16-ManageDisplayedMedia.png Graphic file (type png)
 <use images/SSD-UC16-ManageDisplayedMedia.png>
 Package pdftex.def Info: images/SSD-UC16-ManageDisplayedMedia.png  used on input line 64.
 (pdftex.def)             Requested size: 375.80544pt x 377.2733pt.
  [35 <./images/SSD-UC16-ManageDisplayedMedia.png>])
-<images/SubmitEvent.png, id=454, 880.03781pt x 926.71219pt>
+<images/SubmitEvent.png, id=450, 880.03781pt x 926.71219pt>
 File: images/SubmitEvent.png Graphic file (type png)
 <use images/SubmitEvent.png>
 Package pdftex.def Info: images/SubmitEvent.png  used on input line 151.
 (pdftex.def)             Requested size: 460.35791pt x 484.76363pt.
  [36]
-<images/wireframe_FacultyDashboard.png, id=459, 807.015pt x 605.69142pt>
+<images/wireframe_FacultyDashboard.png, id=455, 807.015pt x 605.69142pt>
 File: images/wireframe_FacultyDashboard.png Graphic file (type png)
 <use images/wireframe_FacultyDashboard.png>
 Package pdftex.def Info: images/wireframe_FacultyDashboard.png  used on input line 161.
 (pdftex.def)             Requested size: 375.80544pt x 282.05025pt.
  [37 <./images/SubmitEvent.png>]
-<images/wireframe_TV_Display.png, id=466, 808.30554pt x 608.70268pt>
+<images/wireframe_TV_Display.png, id=462, 808.30554pt x 608.70268pt>
 File: images/wireframe_TV_Display.png Graphic file (type png)
 <use images/wireframe_TV_Display.png>
 Package pdftex.def Info: images/wireframe_TV_Display.png  used on input line 169.
 (pdftex.def)             Requested size: 375.80544pt x 283.00667pt.
  [38 <./images/wireframe_FacultyDashboard.png>]
-<images/wireframe_webUI.png, id=472, 811.31679pt x 614.295pt>
+<images/wireframe_webUI.png, id=468, 811.31679pt x 614.295pt>
 File: images/wireframe_webUI.png Graphic file (type png)
 <use images/wireframe_webUI.png>
 Package pdftex.def Info: images/wireframe_webUI.png  used on input line 177.
 (pdftex.def)             Requested size: 375.80544pt x 284.53816pt.
  [39 <./images/wireframe_TV_Display.png>]
-<images/ClassDiagram.png, id=478, 666.99188pt x 626.34pt>
+<images/ClassDiagram.png, id=474, 666.99188pt x 626.34pt>
 File: images/ClassDiagram.png Graphic file (type png)
 <use images/ClassDiagram.png>
 Package pdftex.def Info: images/ClassDiagram.png  used on input line 185.
 (pdftex.def)             Requested size: 460.35791pt x 432.30885pt.
  [40 <./images/wireframe_webUI.png>] [41 <./images/ClassDiagram.png>] (./Iteration-1.aux) ) 
 Here is how much of TeX's memory you used:
- 11880 strings out of 476093
- 197432 string characters out of 5795578
+ 11872 strings out of 476093
+ 197146 string characters out of 5795578
  1859787 words of memory out of 5000000
- 31779 multiletter control sequences out of 15000+600000
+ 31773 multiletter control sequences out of 15000+600000
  520831 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,6n,91p,961b,669s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Iteration-1.pdf (41 pages, 773203 bytes).
+Output written on Iteration-1.pdf (41 pages, 764784 bytes).
 PDF statistics:
- 675 PDF objects out of 1000 (max. 8388607)
- 572 compressed objects within 6 object streams
- 249 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 671 PDF objects out of 1000 (max. 8388607)
+ 570 compressed objects within 6 object streams
+ 248 named destinations out of 1000 (max. 500000)
+ 352 words of extra memory for PDF output out of 10000 (max. 10000000)
 

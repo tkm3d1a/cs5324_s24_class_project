@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1708366201 "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" "Iteration-1.pdf" "Iteration-1" 1708366205 0
-  "Iteration-1.aux" 1708366205 16789 14ba78188998e7258812bbcb8537603c "pdflatex"
-  "Iteration-1.lof" 1708366205 2475 fc68c5f54603c6031318cab923e3c7b7 "pdflatex"
+["pdflatex"] 1708383684 "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" "Iteration-1.pdf" "Iteration-1" 1708383689 0
+  "Iteration-1.aux" 1708383689 16618 5745f23bd6309bc96f8d9b555d6e6be5 "pdflatex"
+  "Iteration-1.lof" 1708383689 2345 33711487421f7909a0953c461848b258 "pdflatex"
   "Iteration-1.tex" 1708366199 7506 c052c5c5bf24eed044fe8df6cafefbf9 ""
-  "Iteration-1.toc" 1708366205 2761 ed3cbffb50a96c9cf7453b9590702b27 "pdflatex"
+  "Iteration-1.toc" 1708383689 2761 ed3cbffb50a96c9cf7453b9590702b27 "pdflatex"
   "c:/Users/Sarah" 1652337486 18982 b75711cff421cc641527bb9898ab4161 ""
   "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" 1708366199 7506 c052c5c5bf24eed044fe8df6cafefbf9 ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1673320750 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -110,7 +110,6 @@
   "images/SSD-UC05-EditEvent.png" 1708228114 19321 2c02b3f8f4958a4d9120242fdd2becf3 ""
   "images/SSD-UC06-DeleteEvent.png" 1708234486 22386 a99ab87654858c263c925deccbf47178 ""
   "images/SSD-UC07-ViewEvent.png" 1708233688 19805 b34496cfa6c0297cb931cb4c830269c3 ""
-  "images/SSD-UC08-SubmitForReview.png" 1708228114 9486 a1d5bbe81ecd11d14c77b7266902c1dc ""
   "images/SSD-UC09-ReviewForApproval.png" 1708239879 43651 d62c4c076a5a4061f8649902a821bc55 ""
   "images/SSD-UC10-CreatePost.png" 1708240583 9936 d0e4a3237cf0ffcbf8079527252aa9b8 ""
   "images/SSD-UC11-EditPost.png" 1708228114 21254 1a10c62be60566fd8d19ae9e62c1ab24 ""
@@ -133,7 +132,7 @@
   "sections/uc05.tex" 1708328216 4640 8c401cc4c51a81cb74294ac698c90788 ""
   "sections/uc06.tex" 1708328243 3447 9da5ba6d7d23d75e1c243b506cea7d28 ""
   "sections/uc07.tex" 1708328266 2376 38afce80a62619895d455c6145a209f8 ""
-  "sections/uc08.tex" 1708360525 2188 8101f198865c173ea9b95e54ff8aef0f ""
+  "sections/uc08.tex" 1708383674 2200 3da871af263dcab0fee579b877a70692 ""
   "sections/uc09.tex" 1708304995 4758 7aa4ef92fc960e181194695cb8cdfd9a ""
   "sections/uc10.tex" 1708305153 3549 3604cc6ce53789893c3f9e612876778b ""
   "sections/uc11.tex" 1708296988 2951 368d974fe62cdf4fc49d38f27d0b2a49 ""
