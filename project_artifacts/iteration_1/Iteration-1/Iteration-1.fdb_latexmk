@@ -1,11 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1708383684 "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" "Iteration-1.pdf" "Iteration-1" 1708383689 0
-  "Iteration-1.aux" 1708383689 16618 5745f23bd6309bc96f8d9b555d6e6be5 "pdflatex"
-  "Iteration-1.lof" 1708383689 2345 33711487421f7909a0953c461848b258 "pdflatex"
-  "Iteration-1.tex" 1708366199 7506 c052c5c5bf24eed044fe8df6cafefbf9 ""
-  "Iteration-1.toc" 1708383689 2761 ed3cbffb50a96c9cf7453b9590702b27 "pdflatex"
+["pdflatex"] 1708396317 "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" "Iteration-1.pdf" "Iteration-1" 1708396321 0
+  "Iteration-1.aux" 1708396320 16618 ff4b678d767b80bb37da91b1171c8a6b "pdflatex"
+  "Iteration-1.lof" 1708396320 2345 33711487421f7909a0953c461848b258 "pdflatex"
+  "Iteration-1.tex" 1708396315 7531 7c68b9eeef2348c60effb5e1c2ee2ff0 ""
+  "Iteration-1.toc" 1708396320 2761 ed3cbffb50a96c9cf7453b9590702b27 "pdflatex"
   "c:/Users/Sarah" 1652337486 18982 b75711cff421cc641527bb9898ab4161 ""
-  "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" 1708366199 7506 c052c5c5bf24eed044fe8df6cafefbf9 ""
+  "c:/Users/Sarah Smallwood/Desktop/grad_school/CSI_5324/cs5324_s24_class_project/project_artifacts/iteration_1/Iteration-1/Iteration-1.tex" 1708396315 7531 7c68b9eeef2348c60effb5e1c2ee2ff0 ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1673320750 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1673322027 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1673321485 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -122,6 +122,7 @@
   "images/wireframe_FacultyDashboard.png" 1708358434 51033 de42938ca1cb0ac2a4d3d9ff1b354b3e ""
   "images/wireframe_TV_Display.png" 1708358434 45806 861033af5ad8f9bf80bae4036fe1cba4 ""
   "images/wireframe_webUI.png" 1708358434 48965 991198c218685ed5ae0c76e3b415b3f3 ""
+  "sections/code.tex" 1708396187 1515 5a826351bdc22811362f71dc695304b5 ""
   "sections/func_requirements.tex" 1708366198 1491 943a065387af6ddfc2ef0be2765cb1c4 ""
   "sections/glossary.tex" 1708362292 1278 c19bc6588f324b198ff6a7191eb15213 ""
   "sections/non_func_requirements.tex" 1708296265 1112 e62caff78219a07a13929edb838be913 ""
