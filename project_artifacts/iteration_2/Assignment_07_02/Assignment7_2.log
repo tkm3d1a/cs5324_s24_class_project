@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.9)  24 FEB 2024 17:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.9)  24 FEB 2024 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -306,12 +306,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `Assignment7_2.lof'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 56.
+ (c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--58
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
 
  []
 
@@ -337,15 +339,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--74
 
 [3] (./Assignment7_2.aux) ) 
 Here is how much of TeX's memory you used:
- 11362 strings out of 476093
- 188305 string characters out of 5795578
+ 11382 strings out of 476093
+ 188642 string characters out of 5795578
  1855787 words of memory out of 5000000
- 31578 multiletter control sequences out of 15000+600000
+ 31595 multiletter control sequences out of 15000+600000
  520150 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,6n,91p,648b,429s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Assignment7_2.pdf (3 pages, 96780 bytes).
+Output written on Assignment7_2.pdf (3 pages, 98046 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
