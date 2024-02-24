@@ -1,0 +1,56 @@
+% The first argument is the \documentclass, which tells latex which template
+% we're using to build this document. It's usually safe to just use "article".
+\documentclass{article}
+
+% include some packages...
+\usepackage{fullpage} % change settings for a smaller margin
+\usepackage{graphicx} % gives access to the \includegraphics commands
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[export]{adjustbox}
+\usepackage{bookmark}
+\graphicspath{{./images/}}
+
+% tell Latex to use no paragraph indentation, but leave some space between
+% paragraphs
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\newcommand{\tib}[1]{\textit{\textbf{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+% these commands merely set the values for the title/date/author; they don't put
+% them in the document... see \maketitle below
+\title{CS Department Automated Information Timeline \\ Assignment 7.2: OCL}
+\date{\today}
+\author{Matthew Hays, Pawan Bhandari, Sarah Faron, Tim Klimpel \\ The Incredibles}
+
+% all document content goes between \begin{document} and \end{document}
+\begin{document}
+
+% this command actually creates the title/date/author in the document
+\maketitle
+\newpage
+\tableofcontents
+\listoffigures
+\newpage
+\section{Introduction}
+\subsection{Purpose}
+The purpose of this assignment is to collaborate as a team to identify the most challenging constraints in the design of the CS Department Automated Information Timeline project and describe them using OCL. The team (aka The Incredibles) met multiple times over the course of a few days to work together and identify the constraints in the design.
+
+\section{Identifying Constraints}
+
+
+\section{Describing Constraints with OCL}
+
+\subsection{Constraint 1}
+
+\subsection{Constraint 2}
+
+\subsection{Constraint 3}
+
+
+
+\end{document}
