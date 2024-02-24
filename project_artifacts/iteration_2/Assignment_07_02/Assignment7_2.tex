@@ -52,7 +52,7 @@ The purpose of this assignment is to collaborate as a team to identify the three
 \subsection{Constraint 1: Staging Approved Posts}
 
 The Office Manager can only stage approved posts. \\
-\
+
 \{\textbf{context:} Post::tagPost():Post \\
 \textbf{inv:} self.approvalStatus = ItemStatus.APPROVED\} \\
 
@@ -72,5 +72,15 @@ A notification can only be associated with one post, media, or event. \\
 \{\textbf{context:} Notification \\
 \textbf{implies:} (post.page $<$$>$ null xor post.media $<$$>$ null) xor (post.event $<$$>$ null)\}  \\
 
+\section{Reference: Class Diagram}
+
+To serve as a reference for the constraints listed and OCL written to describe them, below is the JPA Data Model of our system as of the Iteration 1 submission.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.98\textwidth]{images/ClassDiagram.png}
+    \centering
+    \caption{Class Diagram}
+\end{figure}
 
 \end{document}

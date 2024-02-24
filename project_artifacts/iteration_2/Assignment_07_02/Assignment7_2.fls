@@ -642,6 +642,11 @@ INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
+INPUT ./images/ClassDiagram.png
+INPUT ./images/ClassDiagram.png
+INPUT images/ClassDiagram.png
+INPUT ./images/ClassDiagram.png
+INPUT ./images/ClassDiagram.png
 INPUT Assignment7_2.aux
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
