@@ -38,19 +38,39 @@
 \newpage
 \section{Introduction}
 \subsection{Purpose}
-The purpose of this assignment is to collaborate as a team to identify the most challenging constraints in the design of the CS Department Automated Information Timeline project and describe them using OCL. The team (aka The Incredibles) met multiple times over the course of a few days to work together and identify the constraints in the design.
+The purpose of this assignment is to collaborate as a team to identify the three most challenging constraints in the design of the CS Department Automated Information Timeline project and describe them using OCL. The team (aka The Incredibles) met multiple times over the course of a few days to work together and identify the constraints in the design.
 
 \section{Identifying Constraints}
-
+\begin{enumerate}
+    \item The Office Manager can only stage approved posts.
+    \item The main display cannot display more than 10 posts, and all displayed posts must be approved.
+    \item A notification can only be associated with one post, media, or event.
+\end{enumerate}
 
 \section{Describing Constraints with OCL}
 
-\subsection{Constraint 1}
+\subsection{Constraint 1: Staging Approved Posts}
 
-\subsection{Constraint 2}
+The Office Manager can only stage approved posts. \\
 
-\subsection{Constraint 3}
+\textbf{context:} Post::tagPost():Post \\
+\textbf{inv:} self.approvalStatus = ItemStatus.APPROVED \\
 
+\subsection{Constraint 2: Displaying Posts}
+
+The main display cannot display more than 10 posts, and all displayed posts must be approved. \\
+
+\textbf{context:} PostController::displayPosts(): Set$<$Post$>$ \\
+\textbf{inv:} let posts = self.getApprovedPosts(): Set$<$Posts$>$ \\
+\textbf{inv:} posts$\rightarrow$size() $\leq$ 10 \\
+\textbf{inv:} posts$\rightarrow$forEach(p | p.approvalStatus = ItemStatus.APPROVED) \\
+
+\subsection{Constraint 3: Notifications}
+
+A notification can only be associated with one post, media, or event. \\
+
+\textbf{context:} Notification \\
+\textbf{inv:} (post.page $<$$>$ null xor post.media $<$$>$ null) xor (post.event $<$$>$ null)  \\
 
 
 \end{document}
