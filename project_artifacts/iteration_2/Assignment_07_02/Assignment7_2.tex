@@ -70,7 +70,7 @@ The main display cannot display more than 10 posts, and all displayed posts must
 A notification can only be associated with one post, media, or event. \\
 
 \{\textbf{context:} Notification \\
-\textbf{implies:} (post.page $<$$>$ null xor post.media $<$$>$ null) xor (post.event $<$$>$ null)\}  \\
+\textbf{inv:} (self.post $<$$>$ null xor self.media $<$$>$ null) xor (self.event $<$$>$ null)\}  \\
 
 \section{Reference: Class Diagram}
 

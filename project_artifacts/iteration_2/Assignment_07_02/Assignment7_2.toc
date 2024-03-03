@@ -1,8 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Purpose}{3}{subsection.1.1}%
-\contentsline {section}{\numberline {2}Identifying Constraints}{3}{section.2}%
-\contentsline {section}{\numberline {3}Describing Constraints with OCL}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Constraint 1: Staging Approved Posts}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Constraint 2: Displaying Posts}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Constraint 3: Notifications}{3}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Reference: Class Diagram}{4}{section.4}%
