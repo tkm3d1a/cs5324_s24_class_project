@@ -1,2 +1,4 @@
 # Adding to ignore cusotm VSC plugin config settings
 .markdownlint.json
+**/.DS_Store
+**/target

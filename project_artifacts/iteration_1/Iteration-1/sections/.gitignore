@@ -1,0 +1,8 @@
+# Cleaning up to only upload .tex files
+
+*.aux
+*.fdb*
+*.fls
+*.log
+*.pdf
+*.gz
