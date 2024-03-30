@@ -4,6 +4,7 @@ import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
+import com.cs5324.monitorbackend.exception.EventDoesNotExistException;
 import com.cs5324.monitorbackend.repository.EventRepository;
 import com.cs5324.monitorbackend.repository.UserRepository;
 import jakarta.annotation.Resource;
@@ -41,15 +42,15 @@ public class EventService{
         return ownedEvents;
     }
 
-    public Event getEvent(Set<Event> ownedEvents, UUID eventId){
+    public Optional<Event> getEvent(UUID eventId){
 
-        for(Event event : ownedEvents){
-            if(event.getId() == eventId){
-                return event;
-            }
+        Optional<Event> event = eventRepo.findById(eventId);
+        if(event.isEmpty()){
+            log.warn("Event not found");
+            throw new EventDoesNotExistException();
         }
 
-        return null;
+        return event;
     }
 
     public Notification submitEdits(Event editedEvent){
