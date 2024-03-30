@@ -40,6 +40,18 @@ public class MediaService{
     public List<Media> getAllMediaSortByCreatedDesc(){
         return mediaRepo.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
     }
+    public Media getMediaById(UUID mediaId){
+        log.info("Getting existing media entry");
+        Optional<Media> mediaToUpdateOpt = mediaRepo.findById(mediaId);
+        if(mediaToUpdateOpt.isEmpty()){
+            log.warn("Media not found");
+            throw new MediaDoesNotExistException();
+        }
+        return mediaToUpdateOpt.get();
+    }
+    public List<Media> getMediaByType(String mediaType){
+        return null;
+    }
     //UPDATE
     public Media updateMedia(UUID mediaId, MediaDTO mediaDTO){
         log.info("Updating existing media entry");
@@ -58,6 +70,11 @@ public class MediaService{
         return mediaRepo.save(mediaToUpdate);
     }
     //DELETE
+    public void deleteMedia(UUID mediaId){
+        log.info("deleting existing media entry");
+        //TODO: need to add handling once media is tied to posts/users/display/etc
+        mediaRepo.deleteById(mediaId);
+    }
 
     //PROTECTED
     //PRIVATE
