@@ -26,6 +26,22 @@ public class MediaController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetMapping("/{mediaId}")
+    public ResponseEntity<?> getMedia(@PathVariable String mediaId){
+        Map<String,Object> response = new LinkedHashMap<>();
+        UUID mediaIdConverted;
+        try {
+            mediaIdConverted = UUID.fromString(mediaId);
+        } catch (Exception e) {
+            log.error("error in getMedia: {}",e.getMessage());
+            response.put("error","invalid UUID passed in URL path");
+            return ResponseEntity.badRequest().body(response);
+        }
+        response.put("result", "successful");
+        response.put("media", mediaService.getMediaById(mediaIdConverted));
+        return ResponseEntity.ok().body(response);
+    }
+
     @PostMapping
     public ResponseEntity<?> createNewMedia(@RequestBody MediaDTO mediaDTO){
         Map<String,Object> response = new LinkedHashMap<>();
@@ -41,12 +57,30 @@ public class MediaController {
         try {
             mediaIdConverted = UUID.fromString(mediaId);
         } catch (Exception e) {
-            log.error(e.getMessage());
-            response.put("error","invalid UUID passed in URL path");
+            log.error("error in updateMedia: {}", e.getMessage());
+            response.put("result", "error");
+            response.put("msg","invalid UUID passed in URL path");
             return ResponseEntity.badRequest().body(response);
         }
         response.put("result", "successful");
         response.put("updatedMedia", mediaService.updateMedia(mediaIdConverted,mediaDTO));
+        return ResponseEntity.ok().body(response);
+    }
+
+    @DeleteMapping("/{mediaId}")
+    public ResponseEntity<?> deleteMedia(@PathVariable String mediaId){
+        Map<String,Object> response = new LinkedHashMap<>();
+        UUID mediaIdConverted;
+        try {
+            mediaIdConverted = UUID.fromString(mediaId);
+            mediaService.deleteMedia(mediaIdConverted);
+        } catch (Exception e) {
+            log.error("error in deleteMedia: {}",e.getMessage());
+            response.put("error","invalid UUID passed in URL path");
+            return ResponseEntity.badRequest().body(response);
+        }
+        response.put("result", "successful");
+        response.put("msg", "media with ID "+mediaId+" deleted");
         return ResponseEntity.ok().body(response);
     }
 }
