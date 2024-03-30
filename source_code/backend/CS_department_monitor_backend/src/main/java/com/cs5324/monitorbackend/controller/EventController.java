@@ -19,18 +19,21 @@ import java.util.UUID;
 public class EventController {
     private final EventService eventService;
 
+    // Returns all events owned by userId
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity getOwnedEvents(UUID userId){
         Set<Event> ownedEvents = eventService.getEvents(userId);
         return new ResponseEntity(ownedEvents, HttpStatus.OK);
     }
 
+    // UC07: View Event -- returns event selected by owner
     @RequestMapping(value = "/selected", method = RequestMethod.GET)
     public ResponseEntity getSelectedEvent(Set<Event> ownedEvents, UUID eventId){
         Event selectedEvent = eventService.getEvent(ownedEvents, eventId);
         return new ResponseEntity(selectedEvent, HttpStatus.OK);
     }
 
+    // UC05: Edit Event
     @RequestMapping(value = "/selected/edit", method = RequestMethod.POST)
     public ResponseEntity submitEditedEvent(Event editedEvent){
         Notification editedNotif = eventService.submitEdits(editedEvent);
