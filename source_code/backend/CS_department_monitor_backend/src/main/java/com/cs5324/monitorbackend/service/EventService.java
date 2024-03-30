@@ -5,8 +5,8 @@ import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.EventDoesNotExistException;
+import com.cs5324.monitorbackend.exception.UserNotFoundException;
 import com.cs5324.monitorbackend.repository.EventRepository;
-import com.cs5324.monitorbackend.repository.UserRepository;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,11 +25,11 @@ public class EventService{
     private final EventRepository eventRepo;
 
     @Resource
-    private final UserRepository userRepo;
+    private final UserService userService;
 
     public Set<Event> getEvents(UUID userId){
 
-        Optional<User> user = userRepo.findById(userId);
+        Optional<User> user = userService.getUser(userId);
         Set<Event> allOwnedEvents = user.get().getEvents();
 
         Set<Event> ownedEvents = new HashSet<Event>();
@@ -53,15 +53,26 @@ public class EventService{
         return event;
     }
 
-    public Notification submitEdits(Event editedEvent){
-        editedEvent.setApprovalStatus(ItemStatus.PENDING);
-        editedEvent.setDateOfEvent(editedEvent.getDateOfEvent());
-        editedEvent.setPage(editedEvent.getPage());
+    public Notification submitEdits(Event event) throws EventDoesNotExistException{
 
-        Notification editedNotif = new Notification();
-        editedEvent.setNotification(editedNotif);
+        Optional<Event> eventToEdit = eventRepo.findById(event.getId());
+        if(eventToEdit.isPresent()) {
+            Event editedEvent = eventToEdit.get();
 
-        return editedNotif;
+            editedEvent.setApprovalStatus(ItemStatus.PENDING);
+            if(event.getDateOfEvent() != null) editedEvent.setDateOfEvent(editedEvent.getDateOfEvent());
+            if(event.getDateOfEvent() != null) editedEvent.setPage(editedEvent.getPage());
+            eventRepo.save(editedEvent);
+
+            Notification editedNotif = new Notification();
+            editedEvent.setNotification(editedNotif);
+
+            return editedNotif;
+
+        } else {
+            throw new EventDoesNotExistException();
+        }
+
     }
 
 }
