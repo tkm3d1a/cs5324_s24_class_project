@@ -37,6 +37,7 @@ public class Event {
 
     @NotNull
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ItemStatus approvalStatus = ItemStatus.PENDING;
 
     @OneToOne(cascade = CascadeType.ALL)
