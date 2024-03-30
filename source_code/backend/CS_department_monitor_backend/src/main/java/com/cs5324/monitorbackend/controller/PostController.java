@@ -1,6 +1,7 @@
 package com.cs5324.monitorbackend.controller;
 
 import com.cs5324.monitorbackend.entity.Post;
+
 import com.cs5324.monitorbackend.exception.PostNotFoundException;
 import com.cs5324.monitorbackend.responsebody.PostResponse;
 import com.cs5324.monitorbackend.service.PostService;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +26,15 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
+
+
+    @PostMapping(consumes = "application/json")
+    public ResponseEntity<Post> createPost(@RequestBody Post post) {
+        try {
+            return ResponseEntity.ok(postService.createPost(post));
+        } catch (Exception ex) {
+            return ResponseEntity.internalServerError().body(null);
+        }
 
     //localhost:8080/api/posts?userId=2bcc6af8-4c97-4afc-96af-b03a128e8a32
     @GetMapping
@@ -48,5 +59,6 @@ public class PostController {
     @GetMapping("/populate")
     public ResponseEntity<List<PostResponse>> populatePosts() {
         return ResponseEntity.ok(postService.populate());
+
     }
 }

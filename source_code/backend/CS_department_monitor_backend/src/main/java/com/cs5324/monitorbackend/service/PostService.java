@@ -1,12 +1,15 @@
 package com.cs5324.monitorbackend.service;
 
 import com.cs5324.monitorbackend.entity.Post;
+
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.PostNotFoundException;
+
 import com.cs5324.monitorbackend.repository.PostRepository;
 import com.cs5324.monitorbackend.responsebody.PostResponse;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,11 +23,13 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class PostService{
-    @Resource
     private final PostRepository postRepo;
 
-    @Resource
     private final UserService userService;
+  
+  public Post createPost(@Valid Post post) {
+        return postRepo.save(post);
+    }
 
     public List<PostResponse> getPostsForUser(UUID userId) {
         log.info("Retrieving posts created by the user with userId: {}", userId);
@@ -95,5 +100,6 @@ public class PostService{
         postRepo.save(post2);
 
         return postRepo.findAll().stream().map(this::mapPostResponse).toList();
+
     }
 }
