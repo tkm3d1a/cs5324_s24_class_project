@@ -19,4 +19,13 @@ public class MediaControllerAdvice {
         errorMap.put("errorMessage",exception.getMessage());
         return errorMap;
     }
+
+    @ResponseBody
+    @ExceptionHandler(MediaDoesNotExistException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> exceptionHandler(MediaDoesNotExistException exception){
+        Map<String,String> errorMap = new LinkedHashMap<>();
+        errorMap.put("errorMessage",exception.getMessage());
+        return errorMap;
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -30,6 +31,22 @@ public class MediaController {
         Map<String,Object> response = new LinkedHashMap<>();
         response.put("result", "successful");
         response.put("savedMedia", mediaService.createNewMediaEntry(mediaDTO));
+        return ResponseEntity.ok().body(response);
+    }
+
+    @PatchMapping("/{mediaId}")
+    public ResponseEntity<?> updateMedia(@PathVariable String mediaId, @RequestBody MediaDTO mediaDTO){
+        Map<String,Object> response = new LinkedHashMap<>();
+        UUID mediaIdConverted;
+        try {
+            mediaIdConverted = UUID.fromString(mediaId);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            response.put("error","invalid UUID passed in URL path");
+            return ResponseEntity.badRequest().body(response);
+        }
+        response.put("result", "successful");
+        response.put("updatedMedia", mediaService.updateMedia(mediaIdConverted,mediaDTO));
         return ResponseEntity.ok().body(response);
     }
 }

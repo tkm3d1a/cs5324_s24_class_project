@@ -30,7 +30,8 @@ public class SecurityConfig {
                 .securityMatcher("/api/**")
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers(HttpMethod.GET).permitAll()
-                            .requestMatchers(HttpMethod.POST).authenticated();
+                            .requestMatchers(HttpMethod.POST).authenticated()
+                            .requestMatchers(HttpMethod.PATCH).authenticated();
                 })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .httpBasic(withDefaults())
