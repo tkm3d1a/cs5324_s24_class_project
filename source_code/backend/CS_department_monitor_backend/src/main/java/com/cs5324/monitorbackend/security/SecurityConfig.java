@@ -31,6 +31,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers(HttpMethod.GET).permitAll()
                             .requestMatchers(HttpMethod.POST).authenticated()
+                            .requestMatchers(HttpMethod.PATCH).authenticated()
                             .requestMatchers(HttpMethod.DELETE).authenticated();
                 })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

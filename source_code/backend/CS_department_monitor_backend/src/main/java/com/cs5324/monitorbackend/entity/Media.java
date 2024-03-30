@@ -22,17 +22,11 @@ public class Media {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Version
-    private Long version;
-
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedAt;
-
+    @Version private Long version;
+    @CreationTimestamp private LocalDateTime createdAt;
+    @UpdateTimestamp private LocalDateTime updatedAt;
     private String title;
-
+    private String link;
     private MediaType mediaType;
 
     @NotNull
@@ -46,12 +40,10 @@ public class Media {
 
     //  0 to 1 relationship with Post entity.
     // inverse relationship is 0 to 1
-    @OneToOne
-    private Post post;
+    @OneToOne private Post post;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notification notification;
 
-    @ManyToOne
-    private User user;
+    @ManyToOne private User user;
 }

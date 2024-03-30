@@ -46,15 +46,19 @@ public class User implements Serializable {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Event> events = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Media> media = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Page> pages = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Post> posts = new HashSet<>();
 
     public void addRoleToUser(Role role) {
