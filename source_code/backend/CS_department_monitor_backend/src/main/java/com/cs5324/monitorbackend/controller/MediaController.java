@@ -27,7 +27,6 @@ public class MediaController {
 
     @PostMapping
     public ResponseEntity<?> createNewMedia(@RequestBody MediaDTO mediaDTO){
-        log.info("MediaDTO (controller): {}", mediaDTO);
         Map<String,Object> response = new LinkedHashMap<>();
         response.put("result", "successful");
         response.put("savedMedia", mediaService.createNewMediaEntry(mediaDTO));

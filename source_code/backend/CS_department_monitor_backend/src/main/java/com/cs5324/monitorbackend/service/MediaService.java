@@ -21,7 +21,7 @@ public class MediaService{
 
     //CREATE
     public Media createNewMediaEntry(MediaDTO mediaDTO){
-        log.info("MediaDTO: {}", mediaDTO);
+        log.info("Creating new media entry");
         Media newMedia = new Media();
         newMedia.setTitle(mediaDTO.getTitle());
         newMedia.setLink(mediaDTO.getLink());
