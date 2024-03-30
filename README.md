@@ -1,6 +1,6 @@
-# Team we will make a good name eventually
+# The Incredibles
 
-## Spring '24 CS5324 class project
+## Spring '24 CSI 5324 Class Project
 
 ## Team Members
 
