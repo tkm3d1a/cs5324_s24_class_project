@@ -18,4 +18,8 @@ public class UserService {
     public Optional<User> getUser(UUID uuid) {
         return userRepository.findById(uuid);
     }
+
+    public void saveUser(User user) {
+        userRepository.save(user);
+    }
 }

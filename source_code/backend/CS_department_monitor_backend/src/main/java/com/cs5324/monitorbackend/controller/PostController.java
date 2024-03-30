@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.controller;
 
 import com.cs5324.monitorbackend.entity.Post;
 import com.cs5324.monitorbackend.exception.PostNotFoundException;
+import com.cs5324.monitorbackend.responsebody.PostResponse;
 import com.cs5324.monitorbackend.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,18 +27,26 @@ public class PostController {
 
     //localhost:8080/api/posts?userId=2bcc6af8-4c97-4afc-96af-b03a128e8a32
     @GetMapping
-    public ResponseEntity<List<Post>> viewPosts(@RequestParam UUID userId) throws PostNotFoundException {
+    public ResponseEntity<List<PostResponse>> viewPosts(@RequestParam UUID userId) throws PostNotFoundException {
         return ResponseEntity.ok(postService.getPostsForUser(userId));
     }
 
+    //localhost:8080/api/posts/822c747b-ce04-42ad-adf1-784e7caa2105
     @DeleteMapping("{id}")
     public ResponseEntity<Object> deletePost(@PathVariable UUID id) {
         postService.deletePostByID(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    //http://localhost:8080/api/posts
     @PostMapping
-    public ResponseEntity<Post> editPost(@RequestBody Post post) throws PostNotFoundException {
+    public ResponseEntity<PostResponse> editPost(@RequestBody Post post) throws PostNotFoundException {
         return ResponseEntity.ok(postService.editPost(post));
+    }
+
+    //localhost:8080/api/posts/populate
+    @GetMapping("/populate")
+    public ResponseEntity<List<PostResponse>> populatePosts() {
+        return ResponseEntity.ok(postService.populate());
     }
 }
