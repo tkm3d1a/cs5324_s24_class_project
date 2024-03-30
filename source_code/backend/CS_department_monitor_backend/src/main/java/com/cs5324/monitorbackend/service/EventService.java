@@ -10,6 +10,7 @@ import com.cs5324.monitorbackend.repository.EventRepository;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -53,7 +54,11 @@ public class EventService{
         return event;
     }
 
-    public Notification submitEdits(Event event) throws EventDoesNotExistException{
+    public Notification submitEdits(Event event) throws BadRequestException, EventDoesNotExistException{
+
+        if (event.getId() == null){
+            throw new BadRequestException();
+        }
 
         Optional<Event> eventToEdit = eventRepo.findById(event.getId());
         if(eventToEdit.isPresent()) {
@@ -62,10 +67,10 @@ public class EventService{
             editedEvent.setApprovalStatus(ItemStatus.PENDING);
             if(event.getDateOfEvent() != null) editedEvent.setDateOfEvent(editedEvent.getDateOfEvent());
             if(event.getDateOfEvent() != null) editedEvent.setPage(editedEvent.getPage());
-            eventRepo.save(editedEvent);
 
             Notification editedNotif = new Notification();
             editedEvent.setNotification(editedNotif);
+            eventRepo.save(editedEvent);
 
             return editedNotif;
 

@@ -4,6 +4,7 @@ import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.service.EventService;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +35,7 @@ public class EventController {
 
     // UC05: Edit Event
     @RequestMapping(value = "/selected/edit", method = RequestMethod.PATCH)
-    public ResponseEntity submitEditedEvent(@RequestBody Event event){
+    public ResponseEntity submitEditedEvent(@RequestBody Event event) throws BadRequestException {
         Notification editedNotif = eventService.submitEdits(event);
         return new ResponseEntity(editedNotif, HttpStatus.OK);
     }
