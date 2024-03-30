@@ -40,6 +40,7 @@ public class Post {
 
     @NotNull
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ItemStatus status = ItemStatus.PENDING;
 
     @NotNull
