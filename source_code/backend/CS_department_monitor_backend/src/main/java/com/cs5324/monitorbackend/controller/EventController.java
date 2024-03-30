@@ -34,8 +34,8 @@ public class EventController {
 
     // UC05: Edit Event
     @RequestMapping(value = "/selected/edit", method = RequestMethod.PATCH)
-    public ResponseEntity submitEditedEvent(@RequestBody Event editedEvent){
-        Notification editedNotif = eventService.submitEdits(editedEvent);
+    public ResponseEntity submitEditedEvent(@RequestBody Event event){
+        Notification editedNotif = eventService.submitEdits(event);
         return new ResponseEntity(editedNotif, HttpStatus.OK);
     }
 
