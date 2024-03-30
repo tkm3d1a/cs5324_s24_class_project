@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -44,15 +46,19 @@ public class User implements Serializable {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Event> events = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Media> media = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Page> pages = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @ToString.Exclude
     private Set<Post> posts = new HashSet<>();
 
     public void addRoleToUser(Role role) {
