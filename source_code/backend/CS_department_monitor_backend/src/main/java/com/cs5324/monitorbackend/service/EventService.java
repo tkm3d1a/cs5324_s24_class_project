@@ -2,7 +2,6 @@ package com.cs5324.monitorbackend.service;
 
 import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.entity.Notification;
-import com.cs5324.monitorbackend.entity.Page;
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.repository.EventRepository;
