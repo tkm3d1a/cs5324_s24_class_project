@@ -40,6 +40,7 @@ public class Page {
     private Boolean isTagged = false;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ItemStatus itemStatus = ItemStatus.PENDING;
 

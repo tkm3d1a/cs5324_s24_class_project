@@ -35,6 +35,7 @@ public class Media {
 
     @NotNull
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ItemStatus itemStatus = ItemStatus.PENDING;
 
     //  0 to 1 relationship with Post entity.
