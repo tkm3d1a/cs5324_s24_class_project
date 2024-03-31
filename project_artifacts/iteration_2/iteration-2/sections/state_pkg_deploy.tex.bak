@@ -1,0 +1,32 @@
+
+\subsection{Purpose}
+The purpose of this assignment is to collaborate as a team and create a state machine diagram, package diagram and a deployment diagram for the CS Department Automated Information Timeline project. Team members met multiple times over the course of few days to work together and create these diagrams which are presented in the subsequent sections.
+
+\section{State Machine Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.98\textwidth]{images/State_Machine_Diagram.png}
+    \centering
+    \caption{State Machine Diagram for review and staging of submitted posts, events and pages.}
+\end{figure}
+
+\section{Package Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.64\textwidth]{images/Package_Diagram.png}
+    \centering
+    \caption{Package Diagram}
+\end{figure}
+
+\section{Deployment Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.38\textwidth]{images/Deployment_Diagram.png}
+    \centering
+    \caption{Deployment Diagram}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,26 @@
+Below are the three most challenging constraints in the design of the CS Department Automated Information Timeline project which are described in OCL.
+
+\subsection{Describing Constraints with OCL}
+
+\subsubsection{Constraint 1: Staging Approved Posts}
+
+The Office Manager can only stage approved posts. \\
+
+\{\textbf{context:} Post::tagPost():Post \\
+\textbf{inv:} self.approvalStatus = ItemStatus.APPROVED\} \\
+
+\subsubsection{Constraint 2: Displaying Posts}
+
+The main display cannot display more than 10 posts, and all displayed posts must be approved. \\
+
+\{\textbf{context:} PostController::displayPosts(): Set$<$Post$>$ \\
+\textbf{inv:} let posts = self.getApprovedPosts(): Set$<$Posts$>$ \\
+\textbf{inv:} posts$\rightarrow$size() $\leq$ 10 \\
+\textbf{inv:} posts$\rightarrow$forEach(p | p.approvalStatus = ItemStatus.APPROVED)\} \\
+
+\subsubsection{Constraint 3: Notifications}
+
+A notification can only be associated with one post, media, or event. \\
+
+\{\textbf{context:} Notification \\
+\textbf{inv:} (self.post $<$$>$ null xor self.media $<$$>$ null) xor (self.event $<$$>$ null)\}  \\
