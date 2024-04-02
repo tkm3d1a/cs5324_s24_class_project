@@ -1,4 +1,4 @@
-% \subsection{Iteration 1: JPA data model}
+\subsection{Iteration 1: JPA data model}
 For the initial iteration submission, we have provided an implemented domain using the
 Spring JPA framework. The following items were considered in this iteration. The code base will continue to evolve over subsequent iterations.
 \begin{itemize}
@@ -17,7 +17,12 @@ Spring JPA framework. The following items were considered in this iteration. The
     \item Custom user implementation of UserDetails and UserDetailsService (from Spring security) was used to create the base user class. This was chosen since it will provide roles tied to logged in users and can be fetched to determine which options are available to a logged in user based on the granted authorities for that role.
 \end{itemize}
 
-% \subsection{Iteration 2: Rest API implementation of selected use cases}
-% CRUD APIs to manage posts, events and media has been implemented in the backend using spring boot.
-% \\
-The source code with JPA implementation is provided in a zip folder along with this document. The github repository this source code is hosted at is \href{https://github.com/tkm3d1a/cs5324_s24_class_project}{linked here}.
+\subsection{Iteration 2: Rest API implementation of selected use cases}
+For the second iteration submission, progress on the source code has been made, including but not limited to:
+\begin{itemize}
+    \item The creation of controller and service skeletons
+    \item The implementation of Use Cases 1 (view media library), 5 (edit event), 7 (view event), 10 (create post), 11 (edit post), 12 (delete post) and 13 (view post).
+    \item Preliminary JUnit tests for use cases
+\end{itemize}
+
+The source code with JPA \& API implementation is provided in a zip folder along with this document. The github repository this source code is hosted at is \href{https://github.com/tkm3d1a/cs5324_s24_class_project}{linked here}.
