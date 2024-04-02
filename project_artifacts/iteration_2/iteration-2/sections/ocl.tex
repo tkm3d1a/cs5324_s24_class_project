@@ -14,9 +14,11 @@ The Office Manager can only stage approved posts. \\
 The main display cannot display more than 10 posts, and all displayed posts must be approved. \\
 
 \{\textbf{context:} PostController::displayPosts(): Set$<$Post$>$ \\
-\textbf{inv:} let posts = self.getApprovedPosts(): Set$<$Posts$>$ \\
-\textbf{inv:} posts$\rightarrow$size() $\leq$ 10 \\
-\textbf{inv:} posts$\rightarrow$forEach(p | p.approvalStatus = ItemStatus.APPROVED)\} \\
+% \textbf{inv:} let posts = self.getApprovedPosts(): Set$<$Posts$>$ \\
+\textbf{inv:} let posts = Posts.allInstances()$\rightarrow$ select(p $|$ p.approvalStatus = ItemStatus.APPROVED) $\rightarrow$ sortedBy(p $|$ p.createdAt) $\rightarrow$ asSequence() $\rightarrow$ reverse() $\rightarrow$ subSequence(1, 10) implies posts $\rightarrow$ size() $\leq$ 10 \} \\
+% \textbf{inv:} posts$\rightarrow$size() $\leq$ 10 \\
+% \textbf{inv:} posts$\rightarrow$forEach(p | p.approvalStatus = ItemStatus.APPROVED)\} 
+\\
 
 \subsubsection{Constraint 3: Notifications}
 
@@ -24,3 +26,4 @@ A notification can only be associated with one post, media, or event. \\
 
 \{\textbf{context:} Notification \\
 \textbf{inv:} (self.post $<$$>$ null xor self.media $<$$>$ null) xor (self.event $<$$>$ null)\}  \\
+ 
