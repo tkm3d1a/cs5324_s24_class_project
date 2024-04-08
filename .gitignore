@@ -2,3 +2,4 @@
 .markdownlint.json
 **/.DS_Store
 **/target
+.idea
