@@ -40,4 +40,9 @@ public class EventController {
         return new ResponseEntity(editedNotif, HttpStatus.OK);
     }
 
+    @PostMapping(consumes = "application/json")
+    public Event createEvent(@RequestBody Event event) {
+        return eventService.createEvent(event);
+    }
+
 }
