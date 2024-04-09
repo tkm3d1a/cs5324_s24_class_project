@@ -21,8 +21,12 @@ public class ReviewController {
         }
     }
 
-    @PostMapping(consumes = "application/json")
-    public ResponseEntity<Notification> reviewForApproval(@RequestBody Notification notification) {
-        return ResponseEntity.ok(reviewService.reviewForApproval(notification));
+    @PostMapping(params = "isApproved", consumes = "application/json")
+    public ResponseEntity<Notification> reviewForApproval(@RequestBody Notification notification, @RequestParam(name = "isApproved") boolean isApproved) {
+        try {
+            return ResponseEntity.ok(reviewService.reviewForApproval(notification, isApproved));
+        } catch (Exception ex) {
+            return ResponseEntity.badRequest().body(null);
+        }
     }
 }

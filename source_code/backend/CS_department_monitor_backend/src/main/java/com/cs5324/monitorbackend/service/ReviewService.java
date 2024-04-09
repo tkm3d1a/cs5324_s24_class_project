@@ -9,6 +9,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -43,10 +44,10 @@ public class ReviewService {
         // Get all notifications where the post, event, or media has not been approved.
     }
 
-    public Notification reviewForApproval(@Valid Notification notification) {
+    public Notification reviewForApproval(@Valid Notification notification, boolean isApproved) throws BadRequestException {
         if (notification.getEvent() == null && notification.getPost() == null && notification.getMedia() == null) {
             return null;
         }
-        return notificationService.saveNotification(notification);
+        return notificationService.reviewForApproval(notification, isApproved);
     }
 }
