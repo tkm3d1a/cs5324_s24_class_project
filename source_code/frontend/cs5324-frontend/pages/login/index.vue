@@ -19,7 +19,7 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
 .login-wrapper {
 	height: 36rem;
 }
