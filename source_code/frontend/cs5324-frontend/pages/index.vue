@@ -1,28 +1,16 @@
 <template>
-	<header class="border-4 m-1">
-		<nav>
-			<ul>
-				<li class="border-2 m-1 p-px">
-					<NuxtLink to="/">Home</NuxtLink>
-				</li>
-				<li class="border-2 m-1 p-px">
-					<NuxtLink to="/about">About</NuxtLink>
-				</li>
-				<li class="border-2 m-1 p-px">
-					<NuxtLink to="/editor">Editor</NuxtLink>
-				</li>
-			</ul>
-		</nav>
-	</header>
+	<Navigation />
 </template>
-  
-<script>
-import Tiptap from '../components/Tiptap.vue'
 
-export default {
+<script>
+import Tiptap from '../components/Tiptap.vue';
+
+const App = {
 	name: 'App',
 	components: {
-		Tiptap
-	}
-}
+		Tiptap,
+	},
+};
+
+export default App;
 </script>
