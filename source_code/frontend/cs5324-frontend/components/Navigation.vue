@@ -13,6 +13,9 @@
 			<li class="px-20">
 				<NuxtLink to="/editor">Editor</NuxtLink>
 			</li>
+			<li class="px-20">
+				<NuxtLink to="/posts">Posts</NuxtLink>
+			</li>
 		</ul>
 		<div class="flex px-6">
 			<NuxtLink to="/login">Login</NuxtLink>
@@ -20,8 +23,8 @@
 	</nav>
 </template>
 
-<style>
+<style lang="scss">
 a {
-	color: white;
+	@apply text-baylor-gold;
 }
 </style>

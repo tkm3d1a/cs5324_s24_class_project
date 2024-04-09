@@ -18,6 +18,7 @@
   "dependencies": {
     "@tiptap/pm": "^2.1.16",
     "@tiptap/starter-kit": "^2.1.16",
-    "@tiptap/vue-3": "^2.1.16"
+    "@tiptap/vue-3": "^2.1.16",
+    "sass": "^1.74.1"
   }
 }
