@@ -35,6 +35,7 @@ public class PostController {
         } catch (Exception ex) {
             return ResponseEntity.internalServerError().body(null);
         }
+    }
 
     //localhost:8080/api/posts?userId=2bcc6af8-4c97-4afc-96af-b03a128e8a32
     @GetMapping
