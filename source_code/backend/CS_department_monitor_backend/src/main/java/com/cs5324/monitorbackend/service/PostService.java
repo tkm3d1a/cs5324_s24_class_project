@@ -1,17 +1,15 @@
 package com.cs5324.monitorbackend.service;
 
 import com.cs5324.monitorbackend.entity.Post;
-
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.PostNotFoundException;
-
 import com.cs5324.monitorbackend.repository.PostRepository;
 import com.cs5324.monitorbackend.responsebody.PostResponse;
-import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -62,6 +60,10 @@ public class PostService{
         } else {
             throw new PostNotFoundException(post.getId());
         }
+    }
+
+    public Iterable<Post> getAll() {
+      return postRepo.findAll(Sort.by("createdAt").descending());
     }
 
     private PostResponse mapPostResponse(Post post) {

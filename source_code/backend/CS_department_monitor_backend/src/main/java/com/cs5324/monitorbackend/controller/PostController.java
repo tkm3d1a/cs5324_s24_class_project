@@ -60,6 +60,10 @@ public class PostController {
     @GetMapping("/populate")
     public ResponseEntity<List<PostResponse>> populatePosts() {
         return ResponseEntity.ok(postService.populate());
+    }
 
+    @GetMapping("/all")
+    public Iterable<Post> viewAllPosts() {
+        return postService.getAll();
     }
 }
