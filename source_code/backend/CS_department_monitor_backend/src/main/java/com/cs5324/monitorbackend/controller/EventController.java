@@ -4,6 +4,7 @@ import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.service.EventService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping(path = "/api/events", produces = "application/json")
 @RequiredArgsConstructor
+@Slf4j
 public class EventController {
     private final EventService eventService;
 
@@ -45,4 +47,12 @@ public class EventController {
         return eventService.createEvent(event);
     }
 
+    @DeleteMapping
+    public void deleteEvent(Event event) {
+        try {
+            eventService.deleteEvent(event);
+        } catch (Exception ex) {
+            log.info("Cannot delete {}", event);
+        }
+    }
 }
