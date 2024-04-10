@@ -25,15 +25,15 @@ public class Notification {
     private Long version;
 
     // Post relationship
-    @OneToOne(mappedBy = "notification")
+    @OneToOne(mappedBy = "notification", cascade = CascadeType.PERSIST)
     private Post post;
 
     // Media relationship
-    @OneToOne(mappedBy = "notification")
+    @OneToOne(mappedBy = "notification", cascade = CascadeType.PERSIST)
     private Media media;
 
     // Event relationship
-    @OneToOne(mappedBy = "notification")
+    @OneToOne(mappedBy = "notification", cascade = CascadeType.PERSIST)
     private Event event;
 
     @PrePersist

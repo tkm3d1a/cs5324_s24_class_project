@@ -5,27 +5,23 @@ import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.EventDoesNotExistException;
-import com.cs5324.monitorbackend.exception.UserNotFoundException;
 import com.cs5324.monitorbackend.repository.EventRepository;
-import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class EventService{
-    @Resource
     private final EventRepository eventRepo;
-
-    @Resource
     private final UserService userService;
 
     public Set<Event> getEvents(UUID userId){
@@ -78,6 +74,10 @@ public class EventService{
             throw new EventDoesNotExistException();
         }
 
+    }
+
+    public Event createEvent(@Valid Event event) {
+        return eventRepo.save(event);
     }
 
 }

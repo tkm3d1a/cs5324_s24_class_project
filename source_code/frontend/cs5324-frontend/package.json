@@ -11,13 +11,14 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.0",
-    "nuxt": "^3.9.0",
+    "nuxt": "^3.11.2",
     "vue": "^3.4.6",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@tiptap/pm": "^2.1.16",
     "@tiptap/starter-kit": "^2.1.16",
-    "@tiptap/vue-3": "^2.1.16"
+    "@tiptap/vue-3": "^2.1.16",
+    "sass": "^1.74.1"
   }
 }
