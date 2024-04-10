@@ -13,9 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -52,6 +50,14 @@ public class MediaService{
     public List<Media> getMediaByType(String mediaType){
         return null;
     }
+    public List<Media> getMediaByApprovalStatus(ItemStatus status) {
+        List<Media> approvedMedia = mediaRepo.findByItemStatusIn(List.of(status));
+        approvedMedia.sort(Comparator.comparing(Media::getCreatedAt));
+        return approvedMedia;
+    }
+    public List<Media> getMediaByTagStatus() {
+        return mediaRepo.findByIsTaggedOrderByCreatedAtDesc(true);
+    }
     //UPDATE
     public Media updateMedia(UUID mediaId, MediaDTO mediaDTO){
         log.info("Updating existing media entry");
@@ -69,12 +75,29 @@ public class MediaService{
         }
         return mediaRepo.save(mediaToUpdate);
     }
+    public List<Media> updateTagStatus(List<Media> newTagged, List<Media> oldTagged) {
+
+        for(Media oldMedia : oldTagged){
+            oldMedia.setIsTagged(false);
+            mediaRepo.save(oldMedia);
+        }
+
+        List<Media> confirmationMedia = new LinkedList<>();
+        for(Media newMedia : newTagged){
+            newMedia.setIsTagged(true);
+            confirmationMedia.add(mediaRepo.save(newMedia));
+        }
+
+        return confirmationMedia;
+
+    }
     //DELETE
     public void deleteMedia(UUID mediaId){
         log.info("deleting existing media entry");
         //TODO: need to add handling once media is tied to posts/users/display/etc
         mediaRepo.deleteById(mediaId);
     }
+
 
     //PROTECTED
     //PRIVATE
