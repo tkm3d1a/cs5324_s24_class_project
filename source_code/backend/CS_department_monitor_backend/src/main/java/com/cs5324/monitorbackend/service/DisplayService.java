@@ -4,6 +4,7 @@ import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.entity.Media;
 import com.cs5324.monitorbackend.entity.Post;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
+import jakarta.mail.FetchProfile;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,14 @@ public class DisplayService{
     private final EventService eventService;
 
     public List<Media> getMediaToDisplay(){
-        return mediaService.getAllMediaSortByCreatedDesc();
+        List<Media> eligibleMedia = mediaService.getMediaByTagStatus();
+        if(eligibleMedia.size() < 10){
+            List<Media> sortedMedia = mediaService.getMediaByApprovalStatus(ItemStatus.APPROVED);
+            while(eligibleMedia.size() < 10){
+                eligibleMedia.add(sortedMedia.remove(0));
+            }
+        }
+        return eligibleMedia;
     }
 
     public List<Post> getPostToDisplay(){
