@@ -16,6 +16,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Media {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

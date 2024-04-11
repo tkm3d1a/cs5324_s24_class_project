@@ -1,5 +1,6 @@
 package com.cs5324.monitorbackend.controller;
 
+import com.cs5324.monitorbackend.entity.Media;
 import com.cs5324.monitorbackend.entity.MediaDTO;
 import com.cs5324.monitorbackend.service.MediaService;
 import lombok.RequiredArgsConstructor;
@@ -7,9 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Slf4j
 @RestController
@@ -47,6 +46,19 @@ public class MediaController {
         Map<String,Object> response = new LinkedHashMap<>();
         response.put("result", "successful");
         response.put("savedMedia", mediaService.createNewMediaEntry(mediaDTO));
+        return ResponseEntity.ok().body(response);
+    }
+
+    @PostMapping("/populate")
+    public ResponseEntity<?> populateMedia(){
+        Map<String,Object> response = new LinkedHashMap<>();
+        List<Media> populatedMedia = mediaService.populate();
+        List<UUID> mediaIds = new ArrayList<>();
+        for(Media pMedia : populatedMedia){
+            mediaIds.add(pMedia.getId());
+        }
+        response.put("mediaIds", mediaIds);
+        response.put("mediaAdded", populatedMedia);
         return ResponseEntity.ok().body(response);
     }
 
