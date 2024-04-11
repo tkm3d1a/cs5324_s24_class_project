@@ -3,6 +3,7 @@ package com.cs5324.monitorbackend.services;
 import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.repository.EventRepository;
 import com.cs5324.monitorbackend.service.EventService;
+import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -12,8 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -41,5 +41,13 @@ public class EventServiceTests {
         assertNotNull(event);
         assertNotNull(event.getId());
         assertEquals(LocalDate.of(2002, 1, 1), event.getDateOfEvent());
+    }
+
+    @Test
+    public void createEvent_NullDateOfEvent(){
+        Event e = new Event();
+        when(eventRepository.save(e)).thenThrow(ConstraintViolationException.class);
+
+        assertThrows(ConstraintViolationException.class, () -> eventService.createEvent(e));
     }
 }
