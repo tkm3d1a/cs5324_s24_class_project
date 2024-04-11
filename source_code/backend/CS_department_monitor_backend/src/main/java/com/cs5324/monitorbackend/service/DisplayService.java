@@ -4,12 +4,13 @@ import com.cs5324.monitorbackend.entity.Event;
 import com.cs5324.monitorbackend.entity.Media;
 import com.cs5324.monitorbackend.entity.Post;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
-import jakarta.mail.FetchProfile;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -21,14 +22,18 @@ public class DisplayService{
     private final EventService eventService;
 
     public List<Media> getMediaToDisplay(){
-        List<Media> eligibleMedia = mediaService.getMediaByTagStatus();
-        if(eligibleMedia.size() < 10){
+        List<Media> taggedMedia = mediaService.getMediaByTagStatus();
+        log.info("taggedMedia Size: {}", taggedMedia.size());
+        if(taggedMedia.size() < 10){
             List<Media> sortedMedia = mediaService.getMediaByApprovalStatus(ItemStatus.APPROVED);
-            while(eligibleMedia.size() < 10){
-                eligibleMedia.add(sortedMedia.remove(0));
+            for(Media tagged : taggedMedia){
+                sortedMedia.remove(tagged);
+            }
+            while(taggedMedia.size() < 10 && !sortedMedia.isEmpty()){
+                taggedMedia.add(sortedMedia.remove(0));
             }
         }
-        return eligibleMedia;
+        return taggedMedia;
     }
 
     public List<Post> getPostToDisplay(){
@@ -46,20 +51,25 @@ public class DisplayService{
         return mediaService.getMediaByApprovalStatus(ItemStatus.APPROVED);
     }
 
-    public List<Media> tagMediaForDisplay(List<Media> newTaggedMedia){
+    public List<Media> tagMediaForDisplay(List<String> newTaggedMediaIds){
         List<Media> currentTaggedMedia = mediaService.getMediaByTagStatus();
-
-        boolean listMatchStatus = true;
-        for(Media newMedia : newTaggedMedia){
-            if (!currentTaggedMedia.contains(newMedia)) {
-                listMatchStatus = false;
-                break;
+        List<Media> newTaggedMedia = new ArrayList<>();
+        for(String newMediaId : newTaggedMediaIds){
+            log.info("Converting to UUID...");
+            UUID mediaIdConverted;
+            try {
+                log.info("newMediaId: {}", newMediaId);
+                mediaIdConverted = UUID.fromString(newMediaId);
+                log.info("convertedId: {}", mediaIdConverted);
+                Media newMedia = mediaService.getMediaById(mediaIdConverted);
+                log.info("newMedia: {}", newMedia);
+                newTaggedMedia.add(newMedia);
+            } catch (Exception e) {
+                log.error("error in converting MediaID: {}", e.getMessage());
+                log.error("bad UUID passed: {}", newMediaId);
             }
         }
-        if(listMatchStatus){
-            return mediaService.updateTagStatus(newTaggedMedia, currentTaggedMedia);
-        } else {
-            return currentTaggedMedia;
-        }
+
+        return mediaService.updateTagStatus(newTaggedMedia, currentTaggedMedia);
     }
 }
