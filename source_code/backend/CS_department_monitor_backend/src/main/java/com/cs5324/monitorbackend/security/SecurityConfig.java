@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -25,6 +26,7 @@ public class SecurityConfig {
 
     @Bean
     @Order(1)
+    @Profile("prod")
     SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .securityMatcher("/api/**")
@@ -33,6 +35,24 @@ public class SecurityConfig {
                             .requestMatchers(HttpMethod.POST).authenticated()
                             .requestMatchers(HttpMethod.PATCH).authenticated()
                             .requestMatchers(HttpMethod.DELETE).authenticated();
+                })
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .httpBasic(withDefaults())
+                .csrf(AbstractHttpConfigurer::disable)
+                .build();
+    }
+
+    @Bean
+    @Order(1)
+    @Profile("!prod")
+    SecurityFilterChain apiSecurityFilterChainDev(HttpSecurity http) throws Exception {
+        return http
+                .securityMatcher("/api/**")
+                .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers(HttpMethod.GET).permitAll()
+                            .requestMatchers(HttpMethod.POST).permitAll()
+                            .requestMatchers(HttpMethod.PATCH).permitAll()
+                            .requestMatchers(HttpMethod.DELETE).permitAll();
                 })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .httpBasic(withDefaults())
