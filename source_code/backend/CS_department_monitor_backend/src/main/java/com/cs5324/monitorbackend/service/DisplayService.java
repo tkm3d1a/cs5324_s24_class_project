@@ -25,7 +25,7 @@ public class DisplayService{
         List<Media> taggedMedia = mediaService.getMediaByTagStatus();
         log.info("taggedMedia Size: {}", taggedMedia.size());
         if(taggedMedia.size() < 10){
-            List<Media> sortedMedia = mediaService.getMediaByApprovalStatus(ItemStatus.APPROVED);
+            List<Media> sortedMedia = mediaEligibleForDisplay();
             for(Media tagged : taggedMedia){
                 sortedMedia.remove(tagged);
             }
@@ -47,7 +47,7 @@ public class DisplayService{
         return null;
     }
 
-    public List<Media> mediaEligibleForDisplay(){
+    private List<Media> mediaEligibleForDisplay(){
         return mediaService.getMediaByApprovalStatus(ItemStatus.APPROVED);
     }
 
