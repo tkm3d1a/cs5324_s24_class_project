@@ -81,7 +81,9 @@ public class EventService{
     }
 
     public void deleteEvent(Event event) throws BadRequestException {
-        if(event.getId() == null) throw new BadRequestException();
+        if(event.getId() == null){
+            throw new BadRequestException();
+        }
         eventRepo.deleteById(event.getId());
     }
 

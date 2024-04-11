@@ -28,6 +28,12 @@ public class EventController {
         return new ResponseEntity(ownedEvents, HttpStatus.OK);
     }
 
+    // UC04: Create Event
+    @PostMapping(consumes = "application/json")
+    public Event createEvent(@RequestBody Event event) {
+        return eventService.createEvent(event);
+    }
+
     // UC07: View Event -- returns event selected by owner
     @RequestMapping(value = "/selected", method = RequestMethod.GET)
     public ResponseEntity getSelectedEvent(@RequestParam(value="id",required=true) UUID eventId){
@@ -42,13 +48,9 @@ public class EventController {
         return new ResponseEntity(editedNotif, HttpStatus.OK);
     }
 
-    @PostMapping(consumes = "application/json")
-    public Event createEvent(@RequestBody Event event) {
-        return eventService.createEvent(event);
-    }
-
-    @DeleteMapping
-    public void deleteEvent(Event event) {
+    // UC06: Delete Event
+    @RequestMapping(method = RequestMethod.DELETE)
+    public void deleteEvent(@RequestBody Event event) {
         try {
             eventService.deleteEvent(event);
         } catch (Exception ex) {
