@@ -18,6 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode(exclude = "notification")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -43,6 +44,7 @@ public class Event {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
+    @ToString.Exclude
     private Notification notification;
 
     @OneToOne(mappedBy = "event")

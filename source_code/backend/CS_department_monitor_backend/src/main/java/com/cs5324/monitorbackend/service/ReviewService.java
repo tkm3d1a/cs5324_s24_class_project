@@ -45,9 +45,6 @@ public class ReviewService {
     }
 
     public Notification reviewForApproval(@Valid Notification notification, boolean isApproved) throws BadRequestException {
-        if (notification.getEvent() == null && notification.getPost() == null && notification.getMedia() == null) {
-            return null;
-        }
         return notificationService.reviewForApproval(notification, isApproved);
     }
 }

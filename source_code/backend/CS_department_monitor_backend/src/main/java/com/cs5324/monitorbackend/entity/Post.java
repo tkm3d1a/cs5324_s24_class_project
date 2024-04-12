@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -29,6 +30,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@EqualsAndHashCode(exclude = "notification")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -65,6 +67,8 @@ public class Post {
     private Media media;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude
     private Notification notification;
 
     @ManyToOne
