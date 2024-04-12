@@ -98,6 +98,7 @@ public class EventServiceTests {
         assertEquals(editedEvent.getDateOfEvent(), edits.getDateOfEvent());
         assertEquals(editedEvent.getApprovalStatus(), ItemStatus.PENDING);
         assertNotNull(editedEvent.getNotification());
+        assertEquals(editedEvent.getNotification(),editNotif);
     }
 
     @Test
