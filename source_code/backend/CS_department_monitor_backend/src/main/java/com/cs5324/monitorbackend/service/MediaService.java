@@ -119,10 +119,6 @@ public class MediaService{
         //TODO: need to add handling once media is tied to posts/users/display/etc
         mediaRepo.deleteById(mediaId);
     }
-
-
-
-
     //PROTECTED
     //PRIVATE
 }

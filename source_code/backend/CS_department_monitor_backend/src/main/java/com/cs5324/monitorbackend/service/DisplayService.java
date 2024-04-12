@@ -37,10 +37,24 @@ public class DisplayService{
     }
 
     public List<Post> getPostToDisplay(){
-        //TODO: Create required method for posts
-        //return postService.getAllPosts();
-        return null;
+        List<Post> taggedPosts = postService.getPostsByTagStatus();
+        log.info("taggedPosts Size: {}", taggedPosts.size());
+        if(taggedPosts.size() < 10){
+            List<Post> sortedPosts = postEligibleForDisplay();
+            for(Post tagged : taggedPosts){
+                sortedPosts.remove(tagged);
+            }
+            while(taggedPosts.size() < 10 && !sortedPosts.isEmpty()){
+                taggedPosts.add(sortedPosts.remove(0));
+            }
+        }
+        return taggedPosts;
     }
+
+    private List<Post> postEligibleForDisplay() {
+        return postService.getPostsByApprovalStatus(ItemStatus.APPROVED);
+    }
+
     public List<Event> getEventToDisplay(){
         //TODO: Create required method for events
         //return eventService.getAllEvents();

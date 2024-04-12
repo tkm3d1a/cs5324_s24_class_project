@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.controller;
 
 import com.cs5324.monitorbackend.entity.Media;
 import com.cs5324.monitorbackend.entity.MediaIdListDTO;
+import com.cs5324.monitorbackend.entity.Post;
 import com.cs5324.monitorbackend.service.DisplayService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,15 @@ public class DisplayController {
         List<Media> displaySvcReturn = displayService.tagMediaForDisplay(newMediaIds);
         response.put("count", displaySvcReturn.size());
         response.put("taggedMedia", displaySvcReturn);
+        return ResponseEntity.ok().body(response);
+    }
+
+    @GetMapping("/posts")
+    public ResponseEntity<?> getPostsToDisplay(){
+        Map<String,Object> response = new LinkedHashMap<>();
+        List<Post> displaySvcReturn = displayService.getPostToDisplay();
+        response.put("count", displaySvcReturn.size());
+        response.put("posts", displaySvcReturn);
         return ResponseEntity.ok().body(response);
     }
 }
