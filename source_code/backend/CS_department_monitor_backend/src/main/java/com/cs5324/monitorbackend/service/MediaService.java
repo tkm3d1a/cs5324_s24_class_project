@@ -13,9 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.time.LocalDateTime;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -36,6 +35,24 @@ public class MediaService{
         }
         return mediaRepo.save(newMedia);
     }
+    public List<Media> populate() {
+        List<Media> populatedMedia = new ArrayList<>();
+        int numberToCreate = 10;
+        for(int i = 0; i < numberToCreate; i++){
+            populatedMedia.add(populateSingleMediaImage(i));
+        }
+        return populatedMedia;
+    }
+
+    private Media populateSingleMediaImage(int count) {
+        Media newMedia = new Media();
+        newMedia.setMediaType(MediaType.IMAGE);
+        newMedia.setLink("Dummy link " + count);
+        newMedia.setTitle("Dummy Title " + count);
+        newMedia.setItemStatus(ItemStatus.APPROVED);
+        return mediaRepo.save(newMedia);
+    }
+
     //READ
     public List<Media> getAllMediaSortByCreatedDesc(){
         return mediaRepo.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
@@ -51,6 +68,14 @@ public class MediaService{
     }
     public List<Media> getMediaByType(String mediaType){
         return null;
+    }
+    public List<Media> getMediaByApprovalStatus(ItemStatus status) {
+        List<Media> approvedMedia = mediaRepo.findByItemStatusIn(List.of(status));
+        approvedMedia.sort(Comparator.comparing(Media::getCreatedAt).reversed());
+        return approvedMedia;
+    }
+    public List<Media> getMediaByTagStatus() {
+        return mediaRepo.findByIsTaggedOrderByCreatedAtDesc(true);
     }
     //UPDATE
     public Media updateMedia(UUID mediaId, MediaDTO mediaDTO){
@@ -69,12 +94,34 @@ public class MediaService{
         }
         return mediaRepo.save(mediaToUpdate);
     }
+    public List<Media> updateTagStatus(List<Media> newTagged, List<Media> oldTagged) {
+
+        for(Media oldMedia : oldTagged){
+            log.info("Updating oldMedia: {}", oldMedia);
+            oldMedia.setIsTagged(false);
+            mediaRepo.save(oldMedia);
+        }
+
+        List<Media> confirmationMedia = new LinkedList<>();
+        for(Media newMedia : newTagged){
+            log.info("Updating newMedia: {}", newMedia);
+            newMedia.setIsTagged(true);
+            newMedia.setUpdatedAt(LocalDateTime.now());
+            confirmationMedia.add(mediaRepo.save(newMedia));
+        }
+
+        return confirmationMedia;
+
+    }
     //DELETE
     public void deleteMedia(UUID mediaId){
         log.info("deleting existing media entry");
         //TODO: need to add handling once media is tied to posts/users/display/etc
         mediaRepo.deleteById(mediaId);
     }
+
+
+
 
     //PROTECTED
     //PRIVATE

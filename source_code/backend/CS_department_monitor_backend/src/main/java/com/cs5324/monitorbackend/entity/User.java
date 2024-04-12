@@ -20,6 +20,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@ToString
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

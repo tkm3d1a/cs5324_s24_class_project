@@ -109,6 +109,7 @@ public class EventServiceTests {
         assertNull(deletedEvent);
     }
 
+    @Test
     public void createEvent_NullDateOfEvent(){
         Event e = new Event();
         when(eventRepository.save(e)).thenThrow(ConstraintViolationException.class);
