@@ -6,6 +6,7 @@ import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.EventDoesNotExistException;
 import com.cs5324.monitorbackend.repository.EventRepository;
+import com.cs5324.monitorbackend.repository.NotificationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;
@@ -21,6 +22,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class EventService{
     private final EventRepository eventRepo;
+
+    private final NotificationRepository notificationRepo;
     private final UserService userService;
 
     public Set<Event> getEvents(UUID userId){
@@ -60,10 +63,13 @@ public class EventService{
             Event editedEvent = eventToEdit.get();
 
             editedEvent.setApprovalStatus(ItemStatus.PENDING);
-            if(event.getDateOfEvent() != null) editedEvent.setDateOfEvent(editedEvent.getDateOfEvent());
-            if(event.getDateOfEvent() != null) editedEvent.setPage(editedEvent.getPage());
+            if(event.getDateOfEvent() != null) editedEvent.setDateOfEvent(event.getDateOfEvent());
+            if(event.getPage() != null) editedEvent.setPage(event.getPage());
 
             Notification editedNotif = new Notification();
+            editedNotif.setEvent(editedEvent);
+            notificationRepo.save(editedNotif);
+
             editedEvent.setNotification(editedNotif);
             eventRepo.save(editedEvent);
 

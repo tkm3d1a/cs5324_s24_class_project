@@ -20,6 +20,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode(exclude = "notification")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

@@ -29,9 +29,9 @@ public class NotificationService{
     public Notification reviewForApproval(Notification notification, boolean isApproved) throws BadRequestException {
         if (notification.getId() == null) throw new BadRequestException();
         Notification n = notificationRepo.findById(notification.getId()).orElse(null);
-        Post p = notification.getPost();
-        Event e = notification.getEvent();
-        Media m = notification.getMedia();
+        Post p = n.getPost();
+        Event e = n.getEvent();
+        Media m = n.getMedia();
 
         if(p != null) {
             p.setStatus(isApproved ? ItemStatus.APPROVED : ItemStatus.REJECTED);
@@ -41,6 +41,6 @@ public class NotificationService{
             m.setItemStatus(isApproved ? ItemStatus.APPROVED : ItemStatus.REJECTED);
         }
 
-        return notificationRepo.save(notification);
+        return notificationRepo.save(n);
     }
 }

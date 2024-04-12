@@ -30,6 +30,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@EqualsAndHashCode(exclude = "notification")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -66,6 +67,8 @@ public class Post {
     private Media media;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude
     private Notification notification;
 
     @ManyToOne
