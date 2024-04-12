@@ -60,11 +60,12 @@ public class Media {
     @JsonIdentityReference(alwaysAsId = true)
     private Notification notification;
 
-    @ManyToOne
-    @JsonIdentityInfo(
-            generator = ObjectIdGenerators.PropertyGenerator.class,
-            property = "username"
-    )
-    @JsonIdentityReference(alwaysAsId = true)
-    private User user;
+    //Removed for performance increase on fetching posts - circular/multiple user reference causing extra join statements
+//    @ManyToOne
+//    @JsonIdentityInfo(
+//            generator = ObjectIdGenerators.PropertyGenerator.class,
+//            property = "username"
+//    )
+//    @JsonIdentityReference(alwaysAsId = true)
+//    private User user;
 }

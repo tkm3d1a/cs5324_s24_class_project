@@ -20,8 +20,9 @@ public class MediaController {
     @GetMapping
     public ResponseEntity<?> getAllMediaDefault(){
         Map<String,Object> response = new LinkedHashMap<>();
-        response.put("count",mediaService.getAllMediaSortByCreatedDesc().size());
-        response.put("media",mediaService.getAllMediaSortByCreatedDesc());
+        List<Media> allMedia = mediaService.getAllMediaSortByCreatedDesc();
+        response.put("count",allMedia.size());
+        response.put("media",allMedia);
         return ResponseEntity.ok().body(response);
     }
 
@@ -50,9 +51,9 @@ public class MediaController {
     }
 
     @PostMapping("/populate")
-    public ResponseEntity<?> populateMedia(){
+    public ResponseEntity<?> populateMedia(@RequestParam int mediaCount){
         Map<String,Object> response = new LinkedHashMap<>();
-        List<Media> populatedMedia = mediaService.populate();
+        List<Media> populatedMedia = mediaService.populate(mediaCount);
         List<UUID> mediaIds = new ArrayList<>();
         for(Media pMedia : populatedMedia){
             mediaIds.add(pMedia.getId());

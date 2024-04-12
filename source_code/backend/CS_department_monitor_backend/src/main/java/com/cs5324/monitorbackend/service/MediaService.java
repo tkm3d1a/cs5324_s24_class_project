@@ -35,10 +35,9 @@ public class MediaService{
         }
         return mediaRepo.save(newMedia);
     }
-    public List<Media> populate() {
+    public List<Media> populate(int mediaCount) {
         List<Media> populatedMedia = new ArrayList<>();
-        int numberToCreate = 10;
-        for(int i = 0; i < numberToCreate; i++){
+        for(int i = 0; i < mediaCount; i++){
             populatedMedia.add(populateSingleMediaImage(i));
         }
         return populatedMedia;
