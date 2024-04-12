@@ -29,9 +29,9 @@ public class EventController {
     }
 
     // UC04: Create Event
-    @PostMapping(consumes = "application/json")
-    public Event createEvent(@RequestBody Event event) {
-        return eventService.createEvent(event);
+    @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+    public ResponseEntity<Event> createNewEvent(@RequestBody Event event) {
+        return new ResponseEntity<Event>(eventService.createEvent(event), HttpStatus.CREATED);
     }
 
     // UC07: View Event -- returns event selected by owner
