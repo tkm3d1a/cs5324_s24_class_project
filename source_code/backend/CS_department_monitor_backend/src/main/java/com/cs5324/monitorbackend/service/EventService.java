@@ -63,8 +63,8 @@ public class EventService{
             Event editedEvent = eventToEdit.get();
 
             editedEvent.setApprovalStatus(ItemStatus.PENDING);
-            if(event.getDateOfEvent() != null) editedEvent.setDateOfEvent(editedEvent.getDateOfEvent());
-            if(event.getPage() != null) editedEvent.setPage(editedEvent.getPage());
+            if(event.getDateOfEvent() != null) editedEvent.setDateOfEvent(event.getDateOfEvent());
+            if(event.getPage() != null) editedEvent.setPage(event.getPage());
 
             Notification editedNotif = new Notification();
             editedNotif.setEvent(editedEvent);
