@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class MediaIdListDTO {
+public class IdListDTO {
     private int count;
-    private List<String> newMediaIds;
+    private List<String> ids;
 }

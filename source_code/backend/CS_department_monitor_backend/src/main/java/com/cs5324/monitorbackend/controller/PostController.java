@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping(path = "/api/posts", produces = "application/json")
@@ -67,7 +64,11 @@ public class PostController {
     public ResponseEntity<?> populateApprovedPosts(@RequestParam int postCount, @RequestParam int userCount){
         Map<String,Object> response = new LinkedHashMap<>();
         List<Post> approvedPosts = postService.populateApprovedPosts(postCount,userCount);
-        response.put("count",approvedPosts.size());
+        List<UUID> postIds = new ArrayList<>();
+        for(Post post : approvedPosts){
+            postIds.add(post.getId());
+        }
+        response.put("postIds",postIds);
         response.put("posts",approvedPosts);
         return ResponseEntity.ok().body(response);
     }

@@ -159,4 +159,31 @@ public class PostService{
         approvedPosts.sort(Comparator.comparing(Post::getCreatedAt).reversed());
         return approvedPosts;
     }
+
+    public Post getPostById(UUID postIdConverted) {
+        log.info("Getting existing media entry");
+        Optional<Post> postToUpdateOpt = postRepo.findById(postIdConverted);
+        if(postToUpdateOpt.isEmpty()){
+            log.warn("Media not found");
+            throw new PostNotFoundException(postIdConverted);
+        }
+        return postToUpdateOpt.get();
+    }
+
+    public List<Post> updateTagStatus(List<Post> newTagged, List<Post> oldTagged) {
+        for(Post oldPost : oldTagged){
+            log.info("Updating oldPost: {}", oldPost);
+            oldPost.setIsTagged(false);
+            postRepo.save(oldPost);
+        }
+
+        List<Post> confirmationPosts = new LinkedList<>();
+        for(Post newPost : newTagged){
+            log.info("Updating newMedia: {}", newPost);
+            newPost.setIsTagged(true);
+            confirmationPosts.add(postRepo.save(newPost));
+        }
+
+        return confirmationPosts;
+    }
 }

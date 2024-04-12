@@ -86,4 +86,26 @@ public class DisplayService{
 
         return mediaService.updateTagStatus(newTaggedMedia, currentTaggedMedia);
     }
+
+    public List<Post> tagPostForDisplay(List<String> newPostIds) {
+        List<Post> currentTaggedPosts = postService.getPostsByTagStatus();
+        List<Post> newTaggedPosts = new ArrayList<>();
+        for(String newPostId : newPostIds){
+            log.info("Converting to UUID...");
+            UUID postIdConverted;
+            try {
+                log.info("newMediaId: {}", newPostId);
+                postIdConverted = UUID.fromString(newPostId);
+                log.info("convertedId: {}", postIdConverted);
+                Post newPost = postService.getPostById(postIdConverted);
+                log.info("newMedia: {}", newPost);
+                newTaggedPosts.add(newPost);
+            } catch (Exception e) {
+                log.error("error in converting MediaID: {}", e.getMessage());
+                log.error("bad UUID passed: {}", newPostId);
+            }
+        }
+
+        return postService.updateTagStatus(newTaggedPosts, currentTaggedPosts);
+    }
 }
