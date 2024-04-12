@@ -47,11 +47,11 @@ public class Notification {
 
     // Event relationship
     @OneToOne(mappedBy = "notification", cascade = CascadeType.PERSIST)
-    @JsonIdentityInfo(
-            generator = ObjectIdGenerators.PropertyGenerator.class,
-            property = "dateOfEvent"
-    )
-    @JsonIdentityReference(alwaysAsId = true)
+//    @JsonIdentityInfo(
+//            generator = ObjectIdGenerators.PropertyGenerator.class,
+//            property = "dateOfEvent"
+//    )
+//    @JsonIdentityReference(alwaysAsId = true)
     private Event event;
 
     @PrePersist
