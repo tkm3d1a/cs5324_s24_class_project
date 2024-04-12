@@ -1,7 +1,9 @@
 package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -43,8 +45,11 @@ public class Event {
     private ItemStatus approvalStatus = ItemStatus.PENDING;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
-    @ToString.Exclude
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Notification notification;
 
     @OneToOne(mappedBy = "event")

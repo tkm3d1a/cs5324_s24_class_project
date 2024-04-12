@@ -2,7 +2,7 @@ package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -72,5 +72,10 @@ public class Post {
     private Notification notification;
 
     @ManyToOne
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "username"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private User user;
 }

@@ -2,7 +2,9 @@ package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.entity.enums.MediaType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -42,12 +44,27 @@ public class Media {
 
     //  0 to 1 relationship with Post entity.
     // inverse relationship is 0 to 1
-    @OneToOne private Post post;
+    @OneToOne
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "title"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
+    private Post post;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
-    @ToString.Exclude
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "id"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Notification notification;
 
-    @ManyToOne private User user;
+    @ManyToOne
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "username"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
+    private User user;
 }

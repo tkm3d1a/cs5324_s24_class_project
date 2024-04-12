@@ -1,6 +1,8 @@
 package com.cs5324.monitorbackend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -28,6 +30,7 @@ public class User implements Serializable {
 
     @Column(nullable = false)
     @Length(min = 8)
+    @JsonIgnore
     private String password;
 
     @Column(nullable = false)
@@ -45,22 +48,47 @@ public class User implements Serializable {
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "name"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "dateOfEvent"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Set<Event> events = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "title"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Set<Media> media = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "title"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Set<Page> pages = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "title"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Set<Post> posts = new HashSet<>();
 
     public void addRoleToUser(Role role) {
