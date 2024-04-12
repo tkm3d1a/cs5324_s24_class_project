@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.entity.enums.MediaType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@EqualsAndHashCode(exclude = "notification")
 public class Media {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -43,6 +45,8 @@ public class Media {
     @OneToOne private Post post;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
+    @ToString.Exclude
     private Notification notification;
 
     @ManyToOne private User user;

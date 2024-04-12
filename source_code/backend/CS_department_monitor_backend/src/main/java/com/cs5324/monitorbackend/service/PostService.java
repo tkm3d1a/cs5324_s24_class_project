@@ -1,5 +1,6 @@
 package com.cs5324.monitorbackend.service;
 
+import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.entity.Post;
 import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
@@ -26,6 +27,9 @@ public class PostService{
     private final UserService userService;
   
   public Post createPost(@Valid Post post) {
+      Notification n = new Notification();
+      n.setPost(post);
+      post.setNotification(n);
         return postRepo.save(post);
     }
 
