@@ -11,8 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +26,6 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
-
 
     @PostMapping(consumes = "application/json")
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
@@ -51,7 +50,7 @@ public class PostController {
     }
 
     //http://localhost:8080/api/posts
-    @PostMapping
+    @PatchMapping(consumes = "application/json")
     public ResponseEntity<PostResponse> editPost(@RequestBody Post post) throws PostNotFoundException {
         return ResponseEntity.ok(postService.editPost(post));
     }
