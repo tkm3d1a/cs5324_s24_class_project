@@ -6,7 +6,6 @@ import com.cs5324.monitorbackend.entity.User;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.EventDoesNotExistException;
 import com.cs5324.monitorbackend.repository.EventRepository;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;
@@ -76,7 +75,10 @@ public class EventService{
 
     }
 
-    public Event createEvent(@Valid Event event) {
+    public Event createEvent(Event event) {
+        Notification n = new Notification();
+        n.setEvent(event);
+        event.setNotification(n);
         return eventRepo.save(event);
     }
 
