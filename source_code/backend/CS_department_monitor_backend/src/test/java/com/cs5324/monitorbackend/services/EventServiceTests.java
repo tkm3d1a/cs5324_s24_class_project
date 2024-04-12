@@ -5,6 +5,7 @@ import com.cs5324.monitorbackend.entity.Notification;
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
 import com.cs5324.monitorbackend.exception.EventDoesNotExistException;
 import com.cs5324.monitorbackend.repository.EventRepository;
+import com.cs5324.monitorbackend.repository.NotificationRepository;
 import com.cs5324.monitorbackend.service.EventService;
 import org.apache.coyote.BadRequestException;
 import jakarta.validation.ConstraintViolationException;
@@ -26,6 +27,9 @@ import static org.mockito.Mockito.when;
 public class EventServiceTests {
     @Mock
     private EventRepository eventRepository;
+
+    @Mock
+    private NotificationRepository notificationRepository;
 
     @InjectMocks
     private EventService eventService;
@@ -73,6 +77,10 @@ public class EventServiceTests {
         e.setId(UUID.randomUUID());
         e.setDateOfEvent(LocalDate.of(2002, 1, 1));
 
+        // create initial notification
+        Notification n = new Notification();
+        n.setId(UUID.randomUUID());
+
         when(eventRepository.save(any(Event.class))).thenReturn(e);
         Event event = eventService.createEvent(e);
 
@@ -82,6 +90,7 @@ public class EventServiceTests {
         edits.setDateOfEvent(LocalDate.of(2002, 1, 2));
 
         when(eventRepository.findById(edits.getId())).thenReturn(Optional.of(edits));
+        when(notificationRepository.save(any(Notification.class))).thenReturn(n);
         Notification editNotif = eventService.submitEdits(edits);
 
         // check that event was successfully updated
