@@ -179,7 +179,7 @@ public class PostService{
 
         List<Post> confirmationPosts = new LinkedList<>();
         for(Post newPost : newTagged){
-            log.info("Updating newMedia: {}", newPost);
+            log.info("Updating newPost: {}", newPost);
             newPost.setIsTagged(true);
             confirmationPosts.add(postRepo.save(newPost));
         }
