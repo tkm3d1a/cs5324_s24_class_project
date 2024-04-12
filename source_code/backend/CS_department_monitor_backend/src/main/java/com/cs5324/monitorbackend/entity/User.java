@@ -64,14 +64,15 @@ public class User implements Serializable {
     @JsonIdentityReference(alwaysAsId = true)
     private Set<Event> events = new HashSet<>();
 
-    @OneToMany(mappedBy = "user")
-    @ToString.Exclude
-    @JsonIdentityInfo(
-            generator = ObjectIdGenerators.PropertyGenerator.class,
-            property = "title"
-    )
-    @JsonIdentityReference(alwaysAsId = true)
-    private Set<Media> media = new HashSet<>();
+    //Removed to match with removal of reference in MEDIA entity
+//    @OneToMany(mappedBy = "user")
+//    @ToString.Exclude
+//    @JsonIdentityInfo(
+//            generator = ObjectIdGenerators.PropertyGenerator.class,
+//            property = "title"
+//    )
+//    @JsonIdentityReference(alwaysAsId = true)
+//    private Set<Media> media = new HashSet<>();
 
     @OneToMany(mappedBy = "user")
     @ToString.Exclude
