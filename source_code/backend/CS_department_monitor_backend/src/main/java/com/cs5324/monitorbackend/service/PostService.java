@@ -13,10 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -26,7 +23,7 @@ public class PostService{
 
     private final UserService userService;
   
-  public Post createPost(@Valid Post post) {
+    public Post createPost(@Valid Post post) {
       Notification n = new Notification();
       n.setPost(post);
       post.setNotification(n);
@@ -66,7 +63,7 @@ public class PostService{
         }
     }
 
-    public Iterable<Post> getAll() {
+    public List<Post> getAll() {
       return postRepo.findAll(Sort.by("createdAt").descending());
     }
 
@@ -105,7 +102,88 @@ public class PostService{
         postRepo.save(post1);
         postRepo.save(post2);
 
+        User user2 = new User();
+        user2.setUsername("test_user2");
+        user2.setPassword("password");
+
+        Post post3 = new Post();
+        post3.setUser(user2);
+        post3.setTitle("Post3 Title Populated - APPROVED");
+        post3.setContent("Lorem3 Epsum3 Content3");
+        post3.setStatus(ItemStatus.APPROVED);
+
+        user2.addPost(post3);
+        userService.saveUser(user2);
+        postRepo.save(post3);
+
         return postRepo.findAll().stream().map(this::mapPostResponse).toList();
 
+    }
+
+    public List<Post> populateApprovedPosts(int countToPopulate, int userCount){
+        List<Post> populatedPosts = new ArrayList<>();
+        for(int i = 0; i < countToPopulate;i++){
+            int userId = (int)(Math.random() * userCount+1);
+            populatedPosts.add(populateSinglePost(i,userId));
+        }
+        return populatedPosts;
+    }
+
+    private Post populateSinglePost(int i,int userId) {
+        Post post = new Post();
+        String username = "Populate user " + userId;
+        User user = userService.findByUsername(username);
+        if(user.getId() == null){
+            user = new User();
+            user.setEnabled(true);
+            user.setUsername(username);
+            user.setPassword("password");
+            userService.saveUser(user);
+        }
+        log.info("user: {}", user);
+        post.setUser(user);
+        post.setTitle("APPROVED - Post " + i + " | user " + username);
+        post.setContent("Lorem ipsum lorem ipsum lorem ipsum " + username + " " + i);
+        post.setStatus(ItemStatus.APPROVED);
+        user.addPost(post);
+        userService.saveUser(user);
+        return postRepo.save(post);
+    }
+
+    public List<Post> getPostsByTagStatus() {
+        return postRepo.findByIsTaggedOrderByCreatedAtDesc(true);
+    }
+
+    public List<Post> getPostsByApprovalStatus(ItemStatus status) {
+        List<Post> approvedPosts = postRepo.findByStatusIn(List.of(status));
+        approvedPosts.sort(Comparator.comparing(Post::getCreatedAt).reversed());
+        return approvedPosts;
+    }
+
+    public Post getPostById(UUID postIdConverted) {
+        log.info("Getting existing media entry");
+        Optional<Post> postToUpdateOpt = postRepo.findById(postIdConverted);
+        if(postToUpdateOpt.isEmpty()){
+            log.warn("Media not found");
+            throw new PostNotFoundException(postIdConverted);
+        }
+        return postToUpdateOpt.get();
+    }
+
+    public List<Post> updateTagStatus(List<Post> newTagged, List<Post> oldTagged) {
+        for(Post oldPost : oldTagged){
+            log.info("Updating oldPost: {}", oldPost);
+            oldPost.setIsTagged(false);
+            postRepo.save(oldPost);
+        }
+
+        List<Post> confirmationPosts = new LinkedList<>();
+        for(Post newPost : newTagged){
+            log.info("Updating newMedia: {}", newPost);
+            newPost.setIsTagged(true);
+            confirmationPosts.add(postRepo.save(newPost));
+        }
+
+        return confirmationPosts;
     }
 }

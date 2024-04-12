@@ -18,8 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping(path = "/api/posts", produces = "application/json")
@@ -61,8 +60,21 @@ public class PostController {
         return ResponseEntity.ok(postService.populate());
     }
 
+    @PostMapping("/populate/approved")
+    public ResponseEntity<?> populateApprovedPosts(@RequestParam int postCount, @RequestParam int userCount){
+        Map<String,Object> response = new LinkedHashMap<>();
+        List<Post> approvedPosts = postService.populateApprovedPosts(postCount,userCount);
+        List<UUID> postIds = new ArrayList<>();
+        for(Post post : approvedPosts){
+            postIds.add(post.getId());
+        }
+        response.put("postIds",postIds);
+        response.put("posts",approvedPosts);
+        return ResponseEntity.ok().body(response);
+    }
+
     @GetMapping("/all")
-    public Iterable<Post> viewAllPosts() {
+    public List<Post> viewAllPosts() {
         return postService.getAll();
     }
 }

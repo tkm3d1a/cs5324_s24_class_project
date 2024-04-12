@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,5 +26,10 @@ public class UserService {
 
     public void saveUser(User user) {
         userRepository.save(user);
+    }
+
+    public User findByUsername(String username) {
+        User user = userRepository.findByUsername(username);
+        return Objects.requireNonNullElseGet(user, User::new);
     }
 }

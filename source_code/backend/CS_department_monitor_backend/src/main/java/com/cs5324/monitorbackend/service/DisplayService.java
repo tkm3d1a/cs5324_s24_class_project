@@ -37,10 +37,24 @@ public class DisplayService{
     }
 
     public List<Post> getPostToDisplay(){
-        //TODO: Create required method for posts
-        //return postService.getAllPosts();
-        return null;
+        List<Post> taggedPosts = postService.getPostsByTagStatus();
+        log.info("taggedPosts Size: {}", taggedPosts.size());
+        if(taggedPosts.size() < 10){
+            List<Post> sortedPosts = postEligibleForDisplay();
+            for(Post tagged : taggedPosts){
+                sortedPosts.remove(tagged);
+            }
+            while(taggedPosts.size() < 10 && !sortedPosts.isEmpty()){
+                taggedPosts.add(sortedPosts.remove(0));
+            }
+        }
+        return taggedPosts;
     }
+
+    private List<Post> postEligibleForDisplay() {
+        return postService.getPostsByApprovalStatus(ItemStatus.APPROVED);
+    }
+
     public List<Event> getEventToDisplay(){
         //TODO: Create required method for events
         //return eventService.getAllEvents();
@@ -71,5 +85,27 @@ public class DisplayService{
         }
 
         return mediaService.updateTagStatus(newTaggedMedia, currentTaggedMedia);
+    }
+
+    public List<Post> tagPostForDisplay(List<String> newPostIds) {
+        List<Post> currentTaggedPosts = postService.getPostsByTagStatus();
+        List<Post> newTaggedPosts = new ArrayList<>();
+        for(String newPostId : newPostIds){
+            log.info("Converting to UUID...");
+            UUID postIdConverted;
+            try {
+                log.info("newMediaId: {}", newPostId);
+                postIdConverted = UUID.fromString(newPostId);
+                log.info("convertedId: {}", postIdConverted);
+                Post newPost = postService.getPostById(postIdConverted);
+                log.info("newMedia: {}", newPost);
+                newTaggedPosts.add(newPost);
+            } catch (Exception e) {
+                log.error("error in converting MediaID: {}", e.getMessage());
+                log.error("bad UUID passed: {}", newPostId);
+            }
+        }
+
+        return postService.updateTagStatus(newTaggedPosts, currentTaggedPosts);
     }
 }
