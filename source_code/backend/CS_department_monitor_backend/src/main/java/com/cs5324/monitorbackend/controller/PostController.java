@@ -74,7 +74,11 @@ public class PostController {
     }
 
     @GetMapping("/all")
-    public List<Post> viewAllPosts() {
-        return postService.getAll();
+    public ResponseEntity<?> viewAllPosts() {
+        Map<String,Object> response = new LinkedHashMap<>();
+        List<Post> allPosts = postService.getAll();
+        response.put("count",allPosts.size());
+        response.put("posts",allPosts);
+        return ResponseEntity.ok().body(response);
     }
 }
