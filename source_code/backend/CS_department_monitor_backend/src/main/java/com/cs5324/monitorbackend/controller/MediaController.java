@@ -2,6 +2,7 @@ package com.cs5324.monitorbackend.controller;
 
 import com.cs5324.monitorbackend.entity.Media;
 import com.cs5324.monitorbackend.entity.MediaDTO;
+import com.cs5324.monitorbackend.responsebody.GenericMediaResponse;
 import com.cs5324.monitorbackend.service.MediaService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -52,15 +53,16 @@ public class MediaController {
 
     @PostMapping("/populate")
     public ResponseEntity<?> populateMedia(@RequestParam int mediaCount){
-        Map<String,Object> response = new LinkedHashMap<>();
+        GenericMediaResponse mediaResponse = new GenericMediaResponse();
         List<Media> populatedMedia = mediaService.populate(mediaCount);
         List<UUID> mediaIds = new ArrayList<>();
         for(Media pMedia : populatedMedia){
             mediaIds.add(pMedia.getId());
         }
-        response.put("mediaIds", mediaIds);
-        response.put("mediaAdded", populatedMedia);
-        return ResponseEntity.ok().body(response);
+
+        mediaResponse.setMediaIds(mediaIds);
+        mediaResponse.setMedia(populatedMedia);
+        return ResponseEntity.ok().body(mediaResponse);
     }
 
     @PatchMapping("/{mediaId}")

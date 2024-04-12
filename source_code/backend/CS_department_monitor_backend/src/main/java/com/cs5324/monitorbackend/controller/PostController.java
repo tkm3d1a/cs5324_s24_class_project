@@ -3,6 +3,7 @@ package com.cs5324.monitorbackend.controller;
 import com.cs5324.monitorbackend.entity.Post;
 
 import com.cs5324.monitorbackend.exception.PostNotFoundException;
+import com.cs5324.monitorbackend.responsebody.GenericPostResponse;
 import com.cs5324.monitorbackend.responsebody.PostResponse;
 import com.cs5324.monitorbackend.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -62,23 +63,24 @@ public class PostController {
 
     @PostMapping("/populate/approved")
     public ResponseEntity<?> populateApprovedPosts(@RequestParam int postCount, @RequestParam int userCount){
-        Map<String,Object> response = new LinkedHashMap<>();
+        GenericPostResponse postResponse = new GenericPostResponse();
         List<Post> approvedPosts = postService.populateApprovedPosts(postCount,userCount);
         List<UUID> postIds = new ArrayList<>();
         for(Post post : approvedPosts){
             postIds.add(post.getId());
         }
-        response.put("postIds",postIds);
-        response.put("posts",approvedPosts);
-        return ResponseEntity.ok().body(response);
+
+        postResponse.setPostIds(postIds);
+        postResponse.setPosts(approvedPosts);
+        return ResponseEntity.ok().body(postResponse);
     }
 
     @GetMapping("/all")
     public ResponseEntity<?> viewAllPosts() {
-        Map<String,Object> response = new LinkedHashMap<>();
+        GenericPostResponse postResponse = new GenericPostResponse();
         List<Post> allPosts = postService.getAll();
-        response.put("count",allPosts.size());
-        response.put("posts",allPosts);
-        return ResponseEntity.ok().body(response);
+        postResponse.setCount(allPosts.size());
+        postResponse.setPosts(allPosts);
+        return ResponseEntity.ok().body(postResponse);
     }
 }
