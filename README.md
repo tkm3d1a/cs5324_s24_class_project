@@ -49,12 +49,12 @@
     - Requires a UserId to be given as a path parameter.
   - POST / - Creates a new post and its associated Notification.
     - Requires an `Event` object on the Request Body.
-  - GET /selected - Returns a selected `Event`.
-    - Requires an event id as a path parameter.
-  - PATCH /selected/edit - Edits an existing event.
-    - Requires an `Event` on the request body.
-  - DELETE / - Deletes an event.
-    - Requires an `Event` on the request body.
+  - GET /api/events/selected?eventId retrieves the selected event.
+    - Needs a valid event with given id to exist in the db, else returns EventDoesNotExistException.
+  - PATCH /api/events/selected/edit edits the event in the db with matching eventId
+    - Needs a valid event with given id to exist in the db, else returns EventDoesNotExistException.
+  - DELETE /api/events deletes the event in the db with matching eventId
+    - Needs a valid event with given id to exist in the db, else returns EventDoesNotExistException.
 - /api/media
   - GET / - Returns a sorted list of media.
   - GET /{mediaId} - Returns a selected media item.
@@ -69,13 +69,13 @@
 - /api/posts
   - POST / - Creates a new post and associated Notification.
     - Requires a `Post` object on the request body.
-  - GET / - Gets a list of posts for the requesting user.
-    - Requires a user id as a request parameter.
-  - DELETE /{id} - Deletes a selected post.
-    - Requires a post id as a request parameter.
-  - PATCH / - Updates an existing post.
-    - Requires a `Post` on the request body.
-  - GET /populate - Populates the database with sample posts.
+  - GET /api/posts?userId retrievs all posts created by the user.
+    - Needs a valid userID that exists in the DB otherwise throws a NotFoundException
+  - DELETE /api/posts/{postID} delets a post.
+    - postID must be a valid UUID string but its not necessary for post with that postID to exit, returns 200 OK regardless.
+  - PATCH / updates the post and returns the updated post.
+    - Needs a valid postID on the request body that exists in the DB otherwise throws a NotFoundException
+  - GET /api/posts/populate can be used to populate the DB with a user with 2 posts. The response has the post details with postID and userID which can be used to test the get, delete and patch methods.
   - POST /populate/approved - Populates the database with sample approved posts.
     - Requires a desired post count as a request parameter.
   - GET /all - Returns all posts sorted on the created at attribute.
