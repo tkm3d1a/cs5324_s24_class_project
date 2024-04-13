@@ -1,6 +1,9 @@
 package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -12,9 +15,11 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Page {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -40,13 +45,24 @@ public class Page {
     private Boolean isTagged = false;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ItemStatus itemStatus = ItemStatus.PENDING;
 
     @NotNull
     @OneToOne
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "dateOfEvent"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private Event event;
 
     @ManyToOne
+    @JsonIdentityInfo(
+            generator = ObjectIdGenerators.PropertyGenerator.class,
+            property = "username"
+    )
+    @JsonIdentityReference(alwaysAsId = true)
     private User user;
 }

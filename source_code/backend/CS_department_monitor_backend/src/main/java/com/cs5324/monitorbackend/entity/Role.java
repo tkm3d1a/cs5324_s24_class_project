@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Table(name = "roles")
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Role implements Serializable {
 
     @Id
@@ -24,5 +26,6 @@ public class Role implements Serializable {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
+    @ToString.Exclude
     private Set<User> users = new HashSet<>();
 }

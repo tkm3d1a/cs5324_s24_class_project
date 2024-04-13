@@ -1,11 +1,10 @@
 package com.cs5324.monitorbackend.entity;
 
 import com.cs5324.monitorbackend.entity.enums.ItemStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -14,9 +13,12 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode(exclude = "notification")
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -37,9 +39,16 @@ public class Event {
 
     @NotNull
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ItemStatus approvalStatus = ItemStatus.PENDING;
 
     @OneToOne(cascade = CascadeType.ALL)
+//    @JsonIdentityInfo(
+//            generator = ObjectIdGenerators.PropertyGenerator.class,
+//            property = "id"
+//    )
+//    @JsonIdentityReference(alwaysAsId = true)
+    @JsonIgnore
     private Notification notification;
 
     @OneToOne(mappedBy = "event")
