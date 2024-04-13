@@ -1,0 +1,2580 @@
+{
+	"info": {
+		"_postman_id": "de6e8ceb-38eb-4e76-866c-f98b83c0f415",
+		"name": "CS Department Automated Information Timeline",
+		"description": "This is a Postman Workspace for the CSI 5324 project team, The Incredibles, to build and test our API. Team members consist of:\n\n- Sarah Faron\n- Pawan Bhandari\n- Tim Klimpel\n- Matt Hays",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25830847",
+		"_collection_link": "https://the-incredibles-team.postman.co/workspace/the-incredibles-Workspace~b68f1adc-4a32-4480-8cec-1eba776e7138/collection/25830847-de6e8ceb-38eb-4e76-866c-f98b83c0f415?action=share&source=collection_link&creator=25830847"
+	},
+	"item": [
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "GET all media",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/media",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"media"
+							]
+						},
+						"description": "Gets all media present in DB, regardless of status"
+					},
+					"response": [
+						{
+							"name": "GET all media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/media",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"media"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:31:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 5,\n    \"media\": [\n        {\n            \"id\": \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\",\n            \"version\": 1,\n            \"createdAt\": \"2024-04-12T21:28:26.105128\",\n            \"updatedAt\": \"2024-04-12T21:30:55.669244\",\n            \"title\": \"Dummy Title 4\",\n            \"link\": \"Dummy link 4\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": true,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"8cd9ad76-80d8-4ded-8663-73715f7f778a\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.103043\",\n            \"updatedAt\": \"2024-04-12T21:28:26.103043\",\n            \"title\": \"Dummy Title 3\",\n            \"link\": \"Dummy link 3\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"373667b2-1ee0-46e2-a1b1-f960b7e4a597\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.100859\",\n            \"updatedAt\": \"2024-04-12T21:28:26.100946\",\n            \"title\": \"Dummy Title 2\",\n            \"link\": \"Dummy link 2\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"d943648a-cc0a-4dc9-b59e-6e7d5145e658\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.098779\",\n            \"updatedAt\": \"2024-04-12T21:28:26.098779\",\n            \"title\": \"Dummy Title 1\",\n            \"link\": \"Dummy link 1\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"d931b9f2-704a-49a2-8700-6db7fbb8c821\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.096154\",\n            \"updatedAt\": \"2024-04-12T21:28:26.096154\",\n            \"title\": \"Dummy Title 0\",\n            \"link\": \"Dummy link 0\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET single media",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/media/{{media-id}}",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"media",
+								"{{media-id}}"
+							]
+						},
+						"description": "Gets a single media item based on the {{media-id}} UUID that is pased in the path"
+					},
+					"response": [
+						{
+							"name": "GET single media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/media/{{media-id}}",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"media",
+										"{{media-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:32:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"successful\",\n    \"media\": {\n        \"id\": \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\",\n        \"version\": 1,\n        \"createdAt\": \"2024-04-12T21:28:26.105128\",\n        \"updatedAt\": \"2024-04-12T21:30:55.669244\",\n        \"title\": \"Dummy Title 4\",\n        \"link\": \"Dummy link 4\",\n        \"mediaType\": \"IMAGE\",\n        \"isTagged\": true,\n        \"itemStatus\": \"APPROVED\",\n        \"post\": null,\n        \"notification\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "POST create single media item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Not a dummy guy\",\r\n    \"type\": \"image\",\r\n    \"link\": \"dummy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/media",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"media"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfull Create - image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Create first Media Image Item\",\r\n    \"type\": \"image\",\r\n    \"link\": \"http://localhost:8080/some-cdn-link\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/media",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"media"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:12:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"successful\",\n    \"savedMedia\": {\n        \"id\": \"c84f5019-18c5-4267-b731-21b8600dd533\",\n        \"version\": 0,\n        \"createdAt\": \"2024-04-12T21:12:17.95379\",\n        \"updatedAt\": \"2024-04-12T21:12:17.95379\",\n        \"title\": \"Create first Media Image Item\",\n        \"link\": \"http://localhost:8080/some-cdn-link\",\n        \"mediaType\": \"IMAGE\",\n        \"isTagged\": false,\n        \"itemStatus\": \"PENDING\",\n        \"post\": null,\n        \"notification\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "PATCH update media",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Update 2\",\r\n    \"type\": \"pic\",\r\n    \"link\": \"updated linky link boy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/media/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"media",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfull Link update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"link\": \"http://localhost:8080/updated-CDN-link-goes-here\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/media/{{media-id}}",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"media",
+										"{{media-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:15:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"successful\",\n    \"updatedMedia\": {\n        \"id\": \"c84f5019-18c5-4267-b731-21b8600dd533\",\n        \"version\": 1,\n        \"createdAt\": \"2024-04-12T21:12:17.95379\",\n        \"updatedAt\": \"2024-04-12T21:15:23.934009\",\n        \"title\": null,\n        \"link\": \"http://localhost:8080/updated-CDN-link-goes-here\",\n        \"mediaType\": \"IMAGE\",\n        \"isTagged\": false,\n        \"itemStatus\": \"PENDING\",\n        \"post\": null,\n        \"notification\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE single media",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/media/7660be15-ce3b-446b-a65a-0d5e02b03b02",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"media",
+								"7660be15-ce3b-446b-a65a-0d5e02b03b02"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Delete request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/media/{{media-id}}",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"media",
+										"{{media-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:15:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"successful\",\n    \"msg\": \"media with ID c84f5019-18c5-4267-b731-21b8600dd533 deleted\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Base Folder for housing all API calls directly modifying or fetching **Media** items"
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "POST create event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateOfEvent\": \"2022-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/events",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Even create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"dateOfEvent\": \"2022-01-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/events",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:16:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d7eb911c-d5af-46d4-80b4-9a4c1268fb82\",\n    \"version\": 0,\n    \"createdAt\": \"2024-04-12T21:16:12.54183\",\n    \"updatedAt\": \"2024-04-12T21:16:12.54183\",\n    \"dateOfEvent\": \"2022-01-01\",\n    \"approvalStatus\": \"PENDING\",\n    \"page\": null,\n    \"user\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "GET event by eventId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/events/selected?id=ffadf51b-4508-4875-b161-56551fc989b2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"events",
+								"selected"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "ffadf51b-4508-4875-b161-56551fc989b2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful event retrieve",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/events/selected?id={{event-id}}",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"events",
+										"selected"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{event-id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:16:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d7eb911c-d5af-46d4-80b4-9a4c1268fb82\",\n    \"version\": 0,\n    \"createdAt\": \"2024-04-12T21:16:12.54183\",\n    \"updatedAt\": \"2024-04-12T21:16:12.54183\",\n    \"dateOfEvent\": \"2022-01-01\",\n    \"approvalStatus\": \"PENDING\",\n    \"page\": null,\n    \"user\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "PATCH edit event",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2a55bd61-f41b-483e-8fc0-51b6b9c4b40f\",\r\n    \"version\": 0,\r\n    \"createdAt\": \"2024-03-30\",\r\n    \"updatedAt\": \"2024-03-30\",\r\n    \"dateOfEvent\": \"2024-03-30\",\r\n    \"approvalStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/events/selected/edit",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"events",
+								"selected",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful event edit date",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{event-id}}\",\r\n    \"dateOfEvent\": \"2023-01-30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/events/selected/edit",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"events",
+										"selected",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:24:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b4c12b8f-3b19-438b-b93a-0aea3ba99772\",\n    \"createdAt\": \"2024-04-12T21:24:01.680166\",\n    \"version\": 0,\n    \"post\": null,\n    \"media\": null,\n    \"event\": {\n        \"id\": \"d7eb911c-d5af-46d4-80b4-9a4c1268fb82\",\n        \"version\": 7,\n        \"createdAt\": \"2024-04-12T21:16:12.54183\",\n        \"updatedAt\": \"2024-04-12T21:24:01.683276\",\n        \"dateOfEvent\": \"2023-01-30\",\n        \"approvalStatus\": \"PENDING\",\n        \"page\": null,\n        \"user\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE event",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "succesful delete event",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"{{event-id}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/events",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:26:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Base Folder for housing all API calls directly modifying or fetching Event items"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GET all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/users",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/users",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:32:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 5,\n    \"users\": [\n        {\n            \"id\": \"8e4d1d0a-57d6-4266-a31d-de2882cf8d32\",\n            \"username\": \"test_admin\",\n            \"email\": null,\n            \"enabled\": true,\n            \"verified\": false,\n            \"roles\": [\n                \"ADMIN\"\n            ],\n            \"events\": [],\n            \"pages\": [],\n            \"posts\": []\n        },\n        {\n            \"id\": \"0618eeeb-086d-4ad2-8452-b805bba4be03\",\n            \"username\": \"test_user1\",\n            \"email\": null,\n            \"enabled\": false,\n            \"verified\": false,\n            \"roles\": [],\n            \"events\": [],\n            \"pages\": [],\n            \"posts\": [\n                \"Post2 Title Populated\",\n                \"Post1 Title Populated\"\n            ]\n        },\n        {\n            \"id\": \"a224c7f2-d6c2-466f-950f-56950c58c92d\",\n            \"username\": \"test_user2\",\n            \"email\": null,\n            \"enabled\": false,\n            \"verified\": false,\n            \"roles\": [],\n            \"events\": [],\n            \"pages\": [],\n            \"posts\": [\n                \"Post3 Title Populated - APPROVED\"\n            ]\n        },\n        {\n            \"id\": \"007f8f06-7f65-49c0-b150-ac6e74b42424\",\n            \"username\": \"Populate user 1\",\n            \"email\": null,\n            \"enabled\": true,\n            \"verified\": false,\n            \"roles\": [],\n            \"events\": [],\n            \"pages\": [],\n            \"posts\": [\n                \"APPROVED - Post 0 | user Populate user 1\",\n                \"APPROVED - Post 2 | user Populate user 1\"\n            ]\n        },\n        {\n            \"id\": \"32fccda5-7d1f-40f9-8112-c715f40591b6\",\n            \"username\": \"Populate user 2\",\n            \"email\": null,\n            \"enabled\": true,\n            \"verified\": false,\n            \"roles\": [],\n            \"events\": [],\n            \"pages\": [],\n            \"posts\": [\n                \"APPROVED - Post 4 | user Populate user 2\",\n                \"APPROVED - Post 1 | user Populate user 2\",\n                \"APPROVED - Post 3 | user Populate user 2\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GET all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/posts/all",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/posts/all",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:32:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"postIds\": null,\n    \"count\": 8,\n    \"posts\": [\n        {\n            \"id\": \"cf94aaa2-a970-47a1-aea5-2c84effaaeb7\",\n            \"createdAt\": \"2024-04-12T21:27:56.219442\",\n            \"version\": 1,\n            \"title\": \"APPROVED - Post 4 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 4\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": true,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"9565233d-032e-4a9f-ad8a-fafb5908caf8\",\n            \"createdAt\": \"2024-04-12T21:27:56.21619\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 3 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 3\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"66560a27-f746-4db7-8c92-6de343440e38\",\n            \"createdAt\": \"2024-04-12T21:27:56.212726\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 2 | user Populate user 1\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 1 2\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 1\"\n        },\n        {\n            \"id\": \"e830a5a2-b66f-4c22-8199-c923d7091416\",\n            \"createdAt\": \"2024-04-12T21:27:56.208931\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 1 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 1\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"35e996c8-07c3-4389-aebb-73e88a9ad501\",\n            \"createdAt\": \"2024-04-12T21:27:56.203578\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 0 | user Populate user 1\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 1 0\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 1\"\n        },\n        {\n            \"id\": \"ac52078b-cd59-4cd9-b173-3cd51fcce976\",\n            \"createdAt\": \"2024-04-12T21:27:39.691445\",\n            \"version\": 0,\n            \"title\": \"Post3 Title Populated - APPROVED\",\n            \"content\": \"Lorem3 Epsum3 Content3\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"test_user2\"\n        },\n        {\n            \"id\": \"640d3c55-6021-41f4-8322-3d139017cc74\",\n            \"createdAt\": \"2024-04-12T21:27:39.686719\",\n            \"version\": 0,\n            \"title\": \"Post2 Title Populated\",\n            \"content\": \"Lorem2 Epsum2 Content2\",\n            \"status\": \"PENDING\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"test_user1\"\n        },\n        {\n            \"id\": \"e13c3ae9-59a3-4c1e-a062-57b393a0609e\",\n            \"createdAt\": \"2024-04-12T21:27:39.68296\",\n            \"version\": 0,\n            \"title\": \"Post1 Title Populated\",\n            \"content\": \"Lorem1 Epsum1 Content1\",\n            \"status\": \"PENDING\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"test_user1\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET post by userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/posts?userId=d284d5cd-2468-41e5-ab4d-91cdc469bea4",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "d284d5cd-2468-41e5-ab4d-91cdc469bea4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET post by userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/posts?userId={{user-id}}",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "{{user-id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:33:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"e13c3ae9-59a3-4c1e-a062-57b393a0609e\",\n        \"createdBy\": \"0618eeeb-086d-4ad2-8452-b805bba4be03\",\n        \"title\": \"Post1 Title Populated\",\n        \"content\": \"Lorem1 Epsum1 Content1\",\n        \"status\": \"PENDING\",\n        \"isTagged\": false,\n        \"createdOn\": \"2024-04-12T21:27:39.68296\"\n    },\n    {\n        \"id\": \"640d3c55-6021-41f4-8322-3d139017cc74\",\n        \"createdBy\": \"0618eeeb-086d-4ad2-8452-b805bba4be03\",\n        \"title\": \"Post2 Title Populated\",\n        \"content\": \"Lorem2 Epsum2 Content2\",\n        \"status\": \"PENDING\",\n        \"isTagged\": false,\n        \"createdOn\": \"2024-04-12T21:27:39.686719\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "post by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/posts/822c747b-ce04-42ad-adf1-784e7caa2105",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"822c747b-ce04-42ad-adf1-784e7caa2105"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"9617e223-24d5-43f6-9397-31c5e514123d\",\r\n    \"title\": \"Updated Title using Post Request\",\r\n    \"content\": \"Updated content using Post Request\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/posts",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Test title\",\n    \"content\": \"Test Content Body That is Long...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/posts",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Test title\",\n    \"content\": \"Test Content Body That is Long...\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/posts",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:33:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"feaac007-9b27-43a7-acbe-c81501478978\",\n    \"createdAt\": \"2024-04-12T21:33:23.525793\",\n    \"version\": 0,\n    \"title\": \"Test title\",\n    \"content\": \"Test Content Body That is Long...\",\n    \"status\": \"PENDING\",\n    \"isTagged\": false,\n    \"media\": null,\n    \"user\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "Base Folder for housing all API calls directly modifying or fetching Posts"
+		},
+		{
+			"name": "Display",
+			"item": [
+				{
+					"name": "GET all eligible media",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/display/media",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"display",
+								"media"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all eligible media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/display/media",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"display",
+										"media"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:30:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mediaIds\": null,\n    \"count\": 5,\n    \"media\": [\n        {\n            \"id\": \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.105128\",\n            \"updatedAt\": \"2024-04-12T21:28:26.105128\",\n            \"title\": \"Dummy Title 4\",\n            \"link\": \"Dummy link 4\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"8cd9ad76-80d8-4ded-8663-73715f7f778a\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.103043\",\n            \"updatedAt\": \"2024-04-12T21:28:26.103043\",\n            \"title\": \"Dummy Title 3\",\n            \"link\": \"Dummy link 3\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"373667b2-1ee0-46e2-a1b1-f960b7e4a597\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.100859\",\n            \"updatedAt\": \"2024-04-12T21:28:26.100946\",\n            \"title\": \"Dummy Title 2\",\n            \"link\": \"Dummy link 2\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"d943648a-cc0a-4dc9-b59e-6e7d5145e658\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.098779\",\n            \"updatedAt\": \"2024-04-12T21:28:26.098779\",\n            \"title\": \"Dummy Title 1\",\n            \"link\": \"Dummy link 1\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"d931b9f2-704a-49a2-8700-6db7fbb8c821\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.096154\",\n            \"updatedAt\": \"2024-04-12T21:28:26.096154\",\n            \"title\": \"Dummy Title 0\",\n            \"link\": \"Dummy link 0\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST update tagged media",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newMediaIds\" : [\r\n        \"f87a0184-aadb-497b-b435-d0c14ebaeaee\",\r\n        \"cb3225e1-e99a-48e7-a2be-d63e3de04123\",\r\n        \"9d1d8c20-0b8d-4865-abd0-40dd07c43af5\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/display/media",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"display",
+								"media"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST update tagged media",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\" : [\r\n        \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/display/media",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"display",
+										"media"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:30:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mediaIds\": null,\n    \"count\": 1,\n    \"media\": [\n        {\n            \"id\": \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\",\n            \"version\": 1,\n            \"createdAt\": \"2024-04-12T21:28:26.105128\",\n            \"updatedAt\": \"2024-04-12T21:30:55.669244\",\n            \"title\": \"Dummy Title 4\",\n            \"link\": \"Dummy link 4\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": true,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET all eligible posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/display/posts",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"display",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/display/posts",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"display",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:31:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"postIds\": null,\n    \"count\": 6,\n    \"posts\": [\n        {\n            \"id\": \"cf94aaa2-a970-47a1-aea5-2c84effaaeb7\",\n            \"createdAt\": \"2024-04-12T21:27:56.219442\",\n            \"version\": 1,\n            \"title\": \"APPROVED - Post 4 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 4\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": true,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"9565233d-032e-4a9f-ad8a-fafb5908caf8\",\n            \"createdAt\": \"2024-04-12T21:27:56.21619\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 3 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 3\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"66560a27-f746-4db7-8c92-6de343440e38\",\n            \"createdAt\": \"2024-04-12T21:27:56.212726\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 2 | user Populate user 1\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 1 2\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 1\"\n        },\n        {\n            \"id\": \"e830a5a2-b66f-4c22-8199-c923d7091416\",\n            \"createdAt\": \"2024-04-12T21:27:56.208931\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 1 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 1\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"35e996c8-07c3-4389-aebb-73e88a9ad501\",\n            \"createdAt\": \"2024-04-12T21:27:56.203578\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 0 | user Populate user 1\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 1 0\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 1\"\n        },\n        {\n            \"id\": \"ac52078b-cd59-4cd9-b173-3cd51fcce976\",\n            \"createdAt\": \"2024-04-12T21:27:39.691445\",\n            \"version\": 0,\n            \"title\": \"Post3 Title Populated - APPROVED\",\n            \"content\": \"Lorem3 Epsum3 Content3\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"test_user2\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST update tagged posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\" : [\r\n        \"363bf416-3d3f-45ac-bb25-e2505e15e14e\",\r\n        \"29cebbd7-5af1-4f5d-ae94-382fcc76eef1\",\r\n        \"e6b256e6-73dd-4ca8-8af6-c29c1c29c6db\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/display/posts",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"display",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST update tagged media Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\" : [\r\n        \"cf94aaa2-a970-47a1-aea5-2c84effaaeb7\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/display/posts",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"display",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:31:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"postIds\": null,\n    \"count\": 1,\n    \"posts\": [\n        {\n            \"id\": \"cf94aaa2-a970-47a1-aea5-2c84effaaeb7\",\n            \"createdAt\": \"2024-04-12T21:27:56.219442\",\n            \"version\": 1,\n            \"title\": \"APPROVED - Post 4 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 4\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": true,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "GET unapproved notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/reviews",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET unapproved notifications",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/reviews",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"reviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:28:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"34587335-1444-42d7-a4cf-5b21e2286137\",\n        \"createdAt\": \"2024-04-12T21:28:39.876064\",\n        \"version\": 0,\n        \"post\": null,\n        \"media\": null,\n        \"event\": {\n            \"id\": \"c740fe3b-1e5d-4b31-b451-4508fa4f271c\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:39.876582\",\n            \"updatedAt\": \"2024-04-12T21:28:39.876582\",\n            \"dateOfEvent\": \"2022-01-01\",\n            \"approvalStatus\": \"PENDING\",\n            \"page\": null,\n            \"user\": null\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Review for Approval",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"513cbe4e-4abf-4717-8032-219daa80c1a8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/reviews?isApproved=true",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "isApproved",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Review for Approval",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"{{notif-id}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/reviews?isApproved=true",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"reviews"
+									],
+									"query": [
+										{
+											"key": "isApproved",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:30:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"34587335-1444-42d7-a4cf-5b21e2286137\",\n    \"createdAt\": \"2024-04-12T21:28:39.876064\",\n    \"version\": 0,\n    \"post\": null,\n    \"media\": null,\n    \"event\": {\n        \"id\": \"c740fe3b-1e5d-4b31-b451-4508fa4f271c\",\n        \"version\": 1,\n        \"createdAt\": \"2024-04-12T21:28:39.876582\",\n        \"updatedAt\": \"2024-04-12T21:29:57.521903\",\n        \"dateOfEvent\": \"2022-01-01\",\n        \"approvalStatus\": \"APPROVED\",\n        \"page\": null,\n        \"user\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Populate",
+			"item": [
+				{
+					"name": "POST populate media",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/media/populate",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"media",
+								"populate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST populate media",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/media/populate?mediaCount=5",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"media",
+										"populate"
+									],
+									"query": [
+										{
+											"key": "mediaCount",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:28:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mediaIds\": [\n        \"d931b9f2-704a-49a2-8700-6db7fbb8c821\",\n        \"d943648a-cc0a-4dc9-b59e-6e7d5145e658\",\n        \"373667b2-1ee0-46e2-a1b1-f960b7e4a597\",\n        \"8cd9ad76-80d8-4ded-8663-73715f7f778a\",\n        \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\"\n    ],\n    \"count\": 0,\n    \"media\": [\n        {\n            \"id\": \"d931b9f2-704a-49a2-8700-6db7fbb8c821\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.096154\",\n            \"updatedAt\": \"2024-04-12T21:28:26.096154\",\n            \"title\": \"Dummy Title 0\",\n            \"link\": \"Dummy link 0\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"d943648a-cc0a-4dc9-b59e-6e7d5145e658\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.098779\",\n            \"updatedAt\": \"2024-04-12T21:28:26.098779\",\n            \"title\": \"Dummy Title 1\",\n            \"link\": \"Dummy link 1\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"373667b2-1ee0-46e2-a1b1-f960b7e4a597\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.100859\",\n            \"updatedAt\": \"2024-04-12T21:28:26.100946\",\n            \"title\": \"Dummy Title 2\",\n            \"link\": \"Dummy link 2\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"8cd9ad76-80d8-4ded-8663-73715f7f778a\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.103043\",\n            \"updatedAt\": \"2024-04-12T21:28:26.103043\",\n            \"title\": \"Dummy Title 3\",\n            \"link\": \"Dummy link 3\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        },\n        {\n            \"id\": \"a9314e5e-a62f-4ea1-aa45-a9a58d9eb483\",\n            \"version\": 0,\n            \"createdAt\": \"2024-04-12T21:28:26.105128\",\n            \"updatedAt\": \"2024-04-12T21:28:26.105128\",\n            \"title\": \"Dummy Title 4\",\n            \"link\": \"Dummy link 4\",\n            \"mediaType\": \"IMAGE\",\n            \"isTagged\": false,\n            \"itemStatus\": \"APPROVED\",\n            \"post\": null,\n            \"notification\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GET populate posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/posts/populate",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"populate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET populate posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/posts/populate",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"populate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:27:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"e13c3ae9-59a3-4c1e-a062-57b393a0609e\",\n        \"createdBy\": \"0618eeeb-086d-4ad2-8452-b805bba4be03\",\n        \"title\": \"Post1 Title Populated\",\n        \"content\": \"Lorem1 Epsum1 Content1\",\n        \"status\": \"PENDING\",\n        \"isTagged\": false,\n        \"createdOn\": \"2024-04-12T21:27:39.68296\"\n    },\n    {\n        \"id\": \"640d3c55-6021-41f4-8322-3d139017cc74\",\n        \"createdBy\": \"0618eeeb-086d-4ad2-8452-b805bba4be03\",\n        \"title\": \"Post2 Title Populated\",\n        \"content\": \"Lorem2 Epsum2 Content2\",\n        \"status\": \"PENDING\",\n        \"isTagged\": false,\n        \"createdOn\": \"2024-04-12T21:27:39.686719\"\n    },\n    {\n        \"id\": \"ac52078b-cd59-4cd9-b173-3cd51fcce976\",\n        \"createdBy\": \"a224c7f2-d6c2-466f-950f-56950c58c92d\",\n        \"title\": \"Post3 Title Populated - APPROVED\",\n        \"content\": \"Lorem3 Epsum3 Content3\",\n        \"status\": \"APPROVED\",\n        \"isTagged\": false,\n        \"createdOn\": \"2024-04-12T21:27:39.691445\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "POST populate approved posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/posts/populate/approved?postCount=5&userCount=1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"populate",
+								"approved"
+							],
+							"query": [
+								{
+									"key": "postCount",
+									"value": "5"
+								},
+								{
+									"key": "userCount",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/posts/populate/approved?postCount=5&userCount=2",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"populate",
+										"approved"
+									],
+									"query": [
+										{
+											"key": "postCount",
+											"value": "5"
+										},
+										{
+											"key": "userCount",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 13 Apr 2024 01:27:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"postIds\": [\n        \"35e996c8-07c3-4389-aebb-73e88a9ad501\",\n        \"e830a5a2-b66f-4c22-8199-c923d7091416\",\n        \"66560a27-f746-4db7-8c92-6de343440e38\",\n        \"9565233d-032e-4a9f-ad8a-fafb5908caf8\",\n        \"cf94aaa2-a970-47a1-aea5-2c84effaaeb7\"\n    ],\n    \"count\": 0,\n    \"posts\": [\n        {\n            \"id\": \"35e996c8-07c3-4389-aebb-73e88a9ad501\",\n            \"createdAt\": \"2024-04-12T21:27:56.203578\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 0 | user Populate user 1\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 1 0\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 1\"\n        },\n        {\n            \"id\": \"e830a5a2-b66f-4c22-8199-c923d7091416\",\n            \"createdAt\": \"2024-04-12T21:27:56.208931\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 1 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 1\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"66560a27-f746-4db7-8c92-6de343440e38\",\n            \"createdAt\": \"2024-04-12T21:27:56.212726\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 2 | user Populate user 1\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 1 2\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 1\"\n        },\n        {\n            \"id\": \"9565233d-032e-4a9f-ad8a-fafb5908caf8\",\n            \"createdAt\": \"2024-04-12T21:27:56.21619\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 3 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 3\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        },\n        {\n            \"id\": \"cf94aaa2-a970-47a1-aea5-2c84effaaeb7\",\n            \"createdAt\": \"2024-04-12T21:27:56.219442\",\n            \"version\": 0,\n            \"title\": \"APPROVED - Post 4 | user Populate user 2\",\n            \"content\": \"Lorem ipsum lorem ipsum lorem ipsum Populate user 2 4\",\n            \"status\": \"APPROVED\",\n            \"isTagged\": false,\n            \"media\": null,\n            \"user\": \"Populate user 2\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "media-id",
+			"value": "a9314e5e-a62f-4ea1-aa45-a9a58d9eb483",
+			"type": "string"
+		},
+		{
+			"key": "event-id",
+			"value": "c740fe3b-1e5d-4b31-b451-4508fa4f271c",
+			"type": "string"
+		},
+		{
+			"key": "notif-id",
+			"value": "34587335-1444-42d7-a4cf-5b21e2286137",
+			"type": "string"
+		},
+		{
+			"key": "user-id",
+			"value": "0618eeeb-086d-4ad2-8452-b805bba4be03",
+			"type": "string"
+		}
+	]
+}

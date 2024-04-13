@@ -1,0 +1,265 @@
+% The first argument is the \documentclass, which tells latex which template
+% we're using to build this document. It's usually safe to just use "article".
+\documentclass{article}
+
+% include some packages...
+\usepackage{fullpage} % change settings for a smaller margin
+\usepackage{graphicx} % gives access to the \includegraphics commands
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[export]{adjustbox}
+\usepackage{bookmark}
+% \usepackage{subfiles}
+\graphicspath{{./images/}}
+
+% tell Latex to use no paragraph indentation, but leave some space between
+% paragraphs
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\newcommand{\tib}[1]{\textit{\textbf{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+% Remove blank pages
+%\let\cleardoublepage=\clearpage
+
+% these commands merely set the values for the title/date/author; they don't put
+% them in the document... see \maketitle below
+\title{CS Department Automated Information Timeline \\ Iteration 2 Submission}
+\date{\today}
+\author{Matthew Hays, Pawan Bhandari, Sarah Faron, Tim Klimpel \\ The Incredibles}
+
+% all document content goes between \begin{document} and \end{document}
+\begin{document}
+
+% this command actually creates the title/date/author in the document
+\maketitle
+\newpage
+\tableofcontents
+\listoffigures
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Change Log}
+
+\input{sections/changelog.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vision Statement}
+
+\input{sections/vision_statement.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Requirements}
+\subsection{Functional Requirements}
+
+\input{sections/func_requirements.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Non-Functional Requirements}
+
+\input{sections/non_func_requirements.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Glossary} \label{sec:Glossary}
+
+\input{sections/glossary.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Domain Model}
+
+The below Domain model represents a Draft version of the current planned domain model.  Classes/objects are noted with a \textit{\_D} to indicate they are \textit{draft} classes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.05\textwidth]{images/DomainModel.png}
+    \centering
+    \caption{Domain Model for CS Department Automated Information Timeline}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Use Cases}
+\subsection{Use Case Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.64\textwidth]{images/UCD.png}
+    \centering
+    \caption{Use Case Diagram for CS Department Automated Information Timeline}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Use Cases}
+There are a total of 16 use cases written at this stage in the project. Each team member was assigned 3 use cases to fully analyze. Each of these 12 use cases are written in fully-dressed form and accompanied by System Sequence Diagrams (SSDs) and Operations Contracts (OCs). The remaining 4 use cases are written in brief/casual form.
+
+The assigned (fully-dressed) use cases are as follows:
+
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | }
+        \hline
+        Bhandari & Faron & Hays & Klimpel \\
+        \hline
+        UC11     & UC05  & UC04 & UC15    \\
+        \hline
+        UC12     & UC06  & UC09 & UC16    \\
+        \hline
+        UC13     & UC07  & UC10 & UC01    \\
+        \hline
+    \end{tabular}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC01: View Media Library}
+\input{sections/uc01.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC02: View All Posts}
+\input{sections/uc02.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC03: View Event Calendar}
+\input{sections/uc03.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC04: Create Event}
+\input{sections/uc04.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC05: Edit Event}
+\input{sections/uc05.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC06: Delete Event}
+\input{sections/uc06.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC07: View Event}
+\input{sections/uc07.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC08: Submit For Review}
+\input{sections/uc08.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC09: Review For Approval}
+\input{sections/uc09.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC10: Create Post}
+\input{sections/uc10.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC11: Edit Post}
+\input{sections/uc11.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC12: Delete Post}
+\input{sections/uc12.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC13: View Post}
+\input{sections/uc13.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC14: Edit Page of Event}
+\input{sections/uc14.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC15: Manage Displayed Posts}
+\input{sections/uc15.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{UC16: Manage Displayed Media}
+\input{sections/uc16.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Activity Diagram: Create Event}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.98\textwidth]{images/SubmitEvent.png}
+    \centering
+    \caption{Activity Diagram: Create Event}
+    \label{fig:activityDiagram}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wireframes}
+\subsection{Login Screen}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_login.png}
+    \centering
+    \caption{Wireframe: Login Screen}
+\end{figure}
+
+\subsection{Create Post Screen}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_createPost.png}
+    \centering
+    \caption{Wireframe: Create Post Screen}
+\end{figure}
+
+\subsection{Review Post Screen}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_reviewPost.png}
+    \centering
+    \caption{Wireframe: Review Post Screen}
+\end{figure}
+
+\subsection{Faculty Dashboard}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_FacultyDashboard.png}
+    \centering
+    \caption{Wireframe: Faculty Dashboard}
+\end{figure}
+
+\subsection{TV}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_TV_Display.png}
+    \centering
+    \caption{Wireframe: TV}
+\end{figure}
+
+\subsection{Web UI}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/wireframe_webUI.png}
+    \centering
+    \caption{Wireframe: Web UI}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Class Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/ClassDiagram.png}
+    \centering
+    \caption{Class Diagram}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{GRASP Patterns}
+
+\input{sections/grasp_patterns_sd.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Object Constraint Language}
+
+\input{sections/ocl.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State Machine Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.98\textwidth]{images/State_Machine_Diagram.png}
+    \centering
+    \caption{State Machine Diagram for review and staging of submitted posts, events and pages.}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Package Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.64\textwidth]{images/Package_Diagram.png}
+    \centering
+    \caption{Package Diagram}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Deployment Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.38\textwidth]{images/Deployment_Diagram.png}
+    \centering
+    \caption{Deployment Diagram}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Component Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{images/component_diagram.png}
+    \centering
+    \caption{Component Diagram}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Code}
+\input{sections/code.tex}
+
+\end{document}
