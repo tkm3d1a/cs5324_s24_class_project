@@ -8,10 +8,7 @@ import com.cs5324.monitorbackend.responsebody.GenericPostResponse;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -145,8 +142,96 @@ public class DisplayWebTests {
         for(Media m : resp.getMedia()){
             assertSame(ItemStatus.APPROVED, m.getItemStatus());
             assertTrue(m.getIsTagged());
+            WebClient.create()
+                    .delete()
+                    .uri("http://localhost:8080/api/media/"+m.getId())
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block();
+        }
+    }
+
+    @Test
+    @Order(1)
+    public void tagPosts_onlyApproved_stillTenEntries_tagFive() throws JSONException {
+        GenericPostResponse getResp = WebClient.create()
+                .get()
+                .uri("http://localhost:8080/api/posts/all")
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(GenericPostResponse.class)
+                .block();
+        assert getResp != null;
+        for(Post p : getResp.getPosts()){
+            createdPostIds.add(p.getId());
         }
 
-        //TODO: Add teardown to remove the updated media items to allow multiple test runs
+        JSONArray jArray = new JSONArray();
+        for(int i = 0; i < 5; i++){
+            jArray.put(createdPostIds.get(i).toString());
+        }
+
+        String requestBody = new JSONObject()
+                .put("ids", jArray)
+                .toString();
+
+        GenericPostResponse resp = webTestClient.post()
+                .uri("/api/display/posts")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(requestBody)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(GenericPostResponse.class)
+                .returnResult().getResponseBody();
+
+        assert resp != null;
+        assertEquals(5, resp.getCount());
+        for(Post p : resp.getPosts()){
+            assertSame(ItemStatus.APPROVED, p.getStatus());
+            assertTrue(p.getIsTagged());
+            WebClient.create()
+                    .delete()
+                    .uri("http://localhost:8080/api/posts/"+p.getId())
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block();
+        }
+    }
+
+    @AfterAll
+    public static void tearDown(){
+        GenericMediaResponse getRespMedia = WebClient.create()
+                .get()
+                .uri("http://localhost:8080/api/media")
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(GenericMediaResponse.class)
+                .block();
+        assert getRespMedia != null;
+        for(Media m : getRespMedia.getMedia()){
+            WebClient.create()
+                    .delete()
+                    .uri("http://localhost:8080/api/media/"+m.getId())
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block();
+        }
+
+        GenericPostResponse getRespPost = WebClient.create()
+                .get()
+                .uri("http://localhost:8080/api/posts/all")
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(GenericPostResponse.class)
+                .block();
+        assert getRespPost != null;
+        for(Post p : getRespPost.getPosts()){
+            WebClient.create()
+                    .delete()
+                    .uri("http://localhost:8080/api/posts/"+p.getId())
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block();
+        }
     }
 }
